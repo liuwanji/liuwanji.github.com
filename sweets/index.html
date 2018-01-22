@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+    <meta charset="GB2312" name="viewport" content="width=device-width,inital-scale=1">
+    <title>表格插件运用示例</title>
+    <!--主题css的引用-->
+    <link rel="stylesheet" href="themes/mythemer.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <!--jquery库的引用-->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--jquery mobile的引用-->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <style type="text/css">
+        #content{
+            text-align:center;
+            margin:100px auto;
+        }
+        #button1,#button2,#button3{
+            background-color:#c2b7b7;
+        }
+
+    </style>
+</head>
+<body>
+    <div data-role="page" data-title="主页" id="main">
+        <div data-role="header">
+            <h4>甜点订购系统</h4>
+        </div>
+        <div data-role="content" id="content">
+            <img src="images/index.png"></img><br><br><br>
+            <a id="button1" href="index1.html" data-ajax="false" data-role="button" data-icon="check" data-iconpos="top" data-inline="true" data-mini="true"><img src="images/food.png"/><br>订购</a>
+            <a id="button2" href="index2.html" data-ajax="false" data-role="button" data-icon="star" data-iconpos="top" data-inline="true" data-mini="true"><img src="images/check.png"/><br>查订单</a>
+            <a id="button3" href="index3.html" data-ajax="false" data-role="button" data-icon="search" data-iconpos="top" data-inline="true" data-mini="true"><img src="images/store.png"/><br>找店家</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>订购电话：xxxxxx</h4>
+        </div>
+    </div>
+
+</body>
+</html>

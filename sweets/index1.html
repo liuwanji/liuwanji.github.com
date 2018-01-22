@@ -1,0 +1,143 @@
+﻿<html>
+<head>
+    <meta charset="GB2312" name="viewport" content="width=device-width,inital-scale=1">
+    <title>表格插件运用示例</title>
+    <!--主题css的引用-->
+    <link rel="stylesheet" href="themes/mythemer.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <!--jquery库的引用-->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--jquery mobile的引用-->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--table插件css的引用-->
+    <link rel="stylesheet" href="themes/blue/style.css" type="text/css"></link>
+    <script type="text/javascript" src="jquery.tablesorter.js"></script>
+
+   <script type="text/javascript">
+       var db;
+
+       $(function () {
+           $("#tianping1").on("tap",function () {
+               window.localStorage.tianping="巧克力";
+           });
+           $("#tianping2").on("tap",function () {
+               window.localStorage.tianping="饼干";
+           });
+           $("#tianping3").on("tap",function () {
+               window.localStorage.tianping="蛋糕";
+           });
+           $("#tianping4").on("tap",function () {
+               window.localStorage.tianping="面包";
+           });
+           $("#dinggou").on("tap",function () {
+                window.localStorage.baozhuang=$("#selectitem").val();
+                window.localStorage.kouwei=$("input[name='kouwei']:checked").val();
+                window.localStorage.num=$("#num").val();
+               var size=2*1024*1024;
+               db=openDatabase("tianping","","",size);
+               db.transaction(function (tx) {
+                   tx.executeSql("create table if not exists tp(id integer primary key,lx char(10),bz char(10),kw char(10),sm char(10))",[],function (tx,result) {
+                   },function (e) {
+                   });
+               });
+                db.transaction(function (tx) {
+                    var lx=window.localStorage.tianping;
+                    var bz=$("#selectitem").val();
+                    var kw=$("input[name='kouwei']:checked").val();
+                    var sm=$("#num").val();
+
+                   tx.executeSql("insert into tp(lx,bz,kw,sm) values(?,?,?,?)",[lx,bz,kw,sm],function (tx,result) {
+                   },function (e) {
+                   });
+
+                    $.mobile.changePage($("#three"),{transition:"slide"});
+                });
+
+           });
+           $("#three").on("pageinit",function () {
+               var str="";
+               db.transaction(function (tx) {
+                   tx.executeSql("select id,lx,bz,kw,sm from tp",[],function (tx,result) {
+                       str+="<table class='tablesorter'><thead><tr><td>id</td><td>甜品名称</td><td>包装</td> <td>口味</td><td>数目</td></tr></thead><tbody>";
+
+                           var item=result.rows.item(result.rows.length-1);
+                           str+="<tr><td>"+item["id"]+"</td><td>"+item["lx"]+"</td><td>"+item["bz"]+"</td><td>"+item["kw"]+"</td><td>"+item["sm"]+"</td></tr>"
+
+                       str+="</tbody></table>";
+                       $("#neirong").html(str);
+                   },function (e) {
+                   });
+               });
+           });
+
+
+       });
+
+   </script>
+</head>
+<body>
+
+<div data-role="page" data-title="甜点列表" id="first">
+    <div data-role="header">
+        <a href="index.html" data-role="button"  data-ajax="false" data-icon="" data-iconpos="left" data-inline="true" data-mini="true">Back</a>
+        <h4>甜点列表</h4>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true" data-filter="true">
+            <li><a href="#second" id="tianping1"><img src="images/chocolat.png"/><h3>巧克力</h3><p>巧克力采顶级可可粉制作，韵味浓厚，入口即化!</p></a></li>
+            <li><a href="#second" id="tianping2"><img src="images/cookie.png"/><h3>饼干</h3><p>饼干低糖，低脂，香气迷人!</p></a></li>
+            <li><a href="#second" id="tianping3"><img src="images/cake.png"/><h3>蛋糕</h3><p>蛋糕精选高级巧克力奶油搭配绵密海绵蛋糕，绝佳口感!</p></a></li>
+            <li><a href="#second" id="tianping4"><img src="images/bread.png"/><h3>面包</h3><p>面包纯手工制作天然不含任何添加剂!</p></a></li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h4>订购电话：xxxxxx</h4>
+    </div>
+</div>
+
+<div data-role="page" data-title="选择甜点" id="second">
+    <div data-role="header">
+        <a href="#first" data-role="button"  data-ajax="false" data-icon="" data-iconpos="left" data-inline="true" data-mini="true">Back</a>
+        <h4>选择甜点</h4>
+    </div>
+    <div data-role="content">
+        <p>包装类型:</p>
+        <select id="selectitem">
+            <option>粉红包装盒</option>
+            <option>一般盒装</option>
+            <option>贴合精致包装</option>
+        </select>
+        <fieldset data-role="controlgroup">
+            <legend>选择口味</legend>
+            <input type="radio" name="kouwei" value="核桃口味" id="kouwei1" checked></input><label for="kouwei1">核桃</label>
+            <input type="radio" name="kouwei" value="夏威夷豆" id="kouwei2"></input><label for="kouwei2">夏威夷豆</label>
+            <input type="radio" name="kouwei" value="花生" id="kouwei3"></input><label for="kouwei3">花生</label>
+            <input type="radio" name="kouwei" value="xx巧克力" id="kouwei4"></input><label for="kouwei4">xx巧克力</label>
+        </fieldset>
+        <p>订购数量:</p>
+        <input type="range" value="1" min="0" max="100" data-highlight="true" id="num"></input><br>
+        <button id="dinggou">订购</button>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h4>订购电话：xxxxxx</h4>
+    </div>
+</div>
+
+<div data-role="page" data-title="订单完成" id="three">
+    <div data-role="header">
+        <a href="index.html" data-role="button"  data-ajax="false" data-icon="" data-iconpos="left" data-inline="true" data-mini="true">返回首页</a>
+        <h4>订单完成</h4>
+    </div>
+    <div data-role="content">
+       <img src="images/present.png"/><br>
+        <p>感谢订购我方甜点</p>
+        <p>你的订单如下：</p>
+        <div id="neirong"></div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h4>订购电话：xxxxxx</h4>
+    </div>
+</div>
+</body>
+</html>

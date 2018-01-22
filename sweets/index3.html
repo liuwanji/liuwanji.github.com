@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+    <meta charset="GB2312" name="viewport" content="width=device-width,inital-scale=1">
+    <title>表格插件运用示例</title>
+    <!--主题css的引用-->
+    <link rel="stylesheet" href="themes/mythemer.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <!--jquery库的引用-->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--jquery mobile的引用-->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).on("pageinit",function () {
+            var str="";
+            str+="<table class='tablesorter'><thead><tr><td>甜品名称</td><td>包装</td> <td>口味</td><td>数目</td></tr></thead>";
+            str+="<tbody><tr><td>"+window.localStorage.tianping+"</td><td>"+window.localStorage.baozhuang+"</td><td>"+window.localStorage
+                    .kouwei+"</td><td>"+window.localStorage.num+"</td></tr>"
+            str+="</tbody></table>";
+            $("#dingdanlist").html(str);
+        });
+    </script>
+</head>
+<body>
+<div data-role="page" data-title="分店介绍" id="first">
+    <div data-role="header">
+        <a href="index.html" data-role="button"  data-ajax="false" data-icon="" data-iconpos="left" data-inline="true" data-mini="true">返回首页</a>
+        <h4>分店介绍</h4>
+    </div>
+    <div data-role="content" id="content">
+        <ul data-role="listview" data-inset="true" data-filter="true">
+            <li><a href="http://hydgwgg.chinapyp.com/"><img src="images/chocolat.png"/><h3>好又多购物广场</h3><p>电话：1351511</p></a></li>
+            <li><a href="http://wangfujing.youzan.com/"><img src="images/cookie.png"/><h3>王府井购物中心</h3><p>电话：6541311</p></a></li>
+            <li><a href="http://www.dianping.com/shop/12056374"><img src="images/bread.png"/><h3>新世贸购物中心</h3><p>电话：5321584</p></a></li>
+            <li><a href="http://www.xinaoshopping.com/"><img src="images/cake.png"/><h3>新奥购物中心</h3><p>电话：5432132</p></a></li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h4>订购电话：xxxxxx</h4>
+    </div>
+</div>
+</body>
+</html>
