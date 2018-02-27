@@ -1,4 +1,92 @@
-/*头部css*/
+body{
+    /*background:#D1D1D1;*/
+}
+#book{
+    width:400px;
+    margin:0 auto;
+    border:1px #330000 solid;
+    overflow:hidden;
+    font-family: Arial;
+    font-size: 15px;
+    color:#ffffff;
+}
+h2{
+    text-align: center;
+    color:#000000;
+}
+#book_ul li{
+    width:400px;
+    background:#8B8378;
+}
+.title{
+    position: absolute;
+    top:0px;
+    left:200px;
+    width:200px;
+    height:80px;
+    padding:5px 10px;
+    background: #000000;
+}
+.author{
+    position: absolute;
+    top:90px;
+    left:200px;
+    width:200px;
+    padding:5px 10px;
+}
+
+
+#biaoge{
+    width:400px;
+    margin:0 auto;
+}
+#biaoge table{
+    text-align: left;
+    width:300px;
+    line-height: 28px;
+    background:	#FAFAFA;
+    empty-cells:show;
+    border-collapse:collapse;
+    text-indent: 10px;
+}
+thead{
+    background: #000000;
+    color:#fff;
+}
+
+.class1{
+    border-top:1px #330000 solid;
+    border-bottom:1px #330000 solid;
+    font-size:20px;
+    color:#ff0000;
+}
+
+h2{
+    text-shadow: -6px 6px 3px #333;
+    height:50px;
+}
+#showdiv{
+    border:1px #eeaaaa solid;
+    width:110px;
+    position:absolute;
+    left:900px;
+    top:380px;
+    background:#333333;
+    text-align:center;
+    display: none;
+}
+#showdiv tr{
+    font-size: 20px;
+    text-decoration: none;
+    color:#fff;
+    width:150px;
+    height:40px;
+}
+.a_hover{
+    font-size:25px;
+    background:gainsboro;
+}
+/*澶撮儴css*/
 #toubu{
     margin:0 auto;
     position: absolute;
@@ -60,7 +148,7 @@
     text-align: center;
     background: #CD4F39;
 }
-/*切图css*/
+/*鍒囧浘css*/
 #bigimage{
     margin-top: 0px;
     width:1450px;
@@ -71,7 +159,7 @@
     list-style: none;
     position: absolute;
 }
-/*导航css*/
+/*瀵艰埅css*/
 #daohang{
     width:100%;
     height:60px;
@@ -106,13 +194,13 @@
 #daohang2 td{
     height:40px;
 }
-/*内容css*/
+/*鍐呭css*/
 #neirong{
     width:1000px;
     overflow: hidden;
     margin:0 auto;
 }
-/*内容1css*/
+/*鍐呭1css*/
 #neirong1{
     float: left;
     width:330px;
@@ -160,7 +248,7 @@
 #kongzhi td:hover{
     background: #EE5C42;
 }
-/*内容2css*/
+/*鍐呭2css*/
 #neirong2{
     float: left;
     width:330px;
@@ -213,7 +301,7 @@
 #neirong2 li div{
     float: right;
 }
-/*内容3.css*/
+/*鍐呭3.css*/
 #neirong3{
     float: left;
     width:250px;
@@ -251,7 +339,7 @@
     width:100%;
     background:#EAEAEA;
 }
-/*内容4css*/
+/*鍐呭4css*/
 #neirong4{
     font-size: 20px;
     width:900px;
@@ -271,7 +359,7 @@
    text-decoration: none;
     color:#000;
 }
-/*底部css*/
+/*搴曢儴css*/
 #footer{
     width:100%;
     height:150px;
