@@ -1,5 +1,5 @@
 ﻿$(function () {
-    /*切图代码*/
+       /*切图代码*/
     $("#bigimage li:not(:nth-child(1))").hide();
     var index=0;
     setInterval(autoplay,2000);
@@ -10,23 +10,30 @@
     }
 
     /*导航代码*/
-    for(var i=2;i<=10;i++){
-        $("#nav"+i).css({
-            left:360+i*91+"px",
-        });
-    }
     $("#nav td").hover(function () {
         $(this).css({
             background:"#836FFF"
         });
         var index = $(this).index()+1;
         $("#nav"+index).show();
+        var _left = $("#nav td").eq(0).offset().left;
+        for(var i=2;i<=10;i++){
+            $("#nav"+i).css({
+                left:_left+(i-1)*91+"px",
+                top:"709px",
+            });
+        }
     },function () {
         $(this).css({
             background:"#000"
         });
         var index = $(this).index()+1;
         $("#nav"+index).hide();
+        $("#nav"+index).hover(function () {
+            $("#nav"+index).show();
+        },function () {
+            $("#nav"+index).hide();
+        });
     });
 
     /*主体代码*/

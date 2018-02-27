@@ -1,10 +1,9 @@
-﻿
-/*头部css*/
+﻿/*头部css*/
 #toubu{
     margin:0 auto;
     position: absolute;
     top:25px;
-    left:500px;
+    left:30%;
     width:500px;
 }
 #toubu_right{
@@ -107,6 +106,10 @@
 #daohang2 td{
     height:40px;
 }
+#daohang2 td:hover{
+    background: #836FFF;
+    font-size: 16px;
+}
 /*内容css*/
 #neirong{
     width:1000px;
@@ -135,8 +138,7 @@
     list-style: none;
     position: absolute;
     top:770px;
-    left:480px;
-
+    margin-left:-25px;
 }
 .img_span{
     width:200px;
