@@ -1,0 +1,285 @@
+/*头部css*/
+#toubu{
+    margin:0 auto;
+    position: absolute;
+    top:25px;
+    left:500px;
+    width:500px;
+}
+#toubu_right{
+    position:absolute;
+    top:10px;
+    left:500px;
+    width:170px;
+    height:21px;
+    border:1px black solid;
+    border-radius: 10px;
+}
+#toubu_right input[type="text"]{
+    width:130px;
+    height:15px;
+    margin:1px 5px;
+    border: none;
+    background-color: transparent;
+}
+#toubu_right input[type="submit"]{
+    position: absolute;
+    top:0px;
+    left:140px;
+    background-image: url("images/chazhao.jpg");
+    display: block;
+    border: none;
+    width:20px;
+    height:20px;
+}
+#xinxiang{
+    position: absolute;
+    top:20px;
+    left:750px;
+    width:100px;
+}
+#zhongwen{
+    position: absolute;
+    top:20px;
+    left:850px;
+    width:80px;
+    height:25px;
+    color: white;
+    line-height: 25px;
+    text-align: center;
+    background: #BCD2EE;
+}
+#english{
+    position: absolute;
+    top:20px;
+    left:930px;
+    width:80px;
+    height:25px;
+    color: white;
+    line-height: 25px;
+    text-align: center;
+    background: #CD4F39;
+}
+/*切图css*/
+#bigimage{
+    margin-top: 0px;
+    width:1450px;
+    height:634px;
+    margin:0 auto;
+}
+#bigimage li{
+    list-style: none;
+    position: absolute;
+}
+/*导航css*/
+#daohang{
+    width:100%;
+    height:60px;
+    background: #000000;
+}
+#nav{
+    width:1000px;
+    font-size: 15px;
+    color:#fff;
+    empty-cells: show;
+    border-collapse:collapse;
+    text-align: center;
+    margin:0 auto;
+}
+#nav td{
+    border-left:1px dimgray solid;
+    border-right:1px dimgray solid;
+    width:91px;
+    height:57px;
+}
+#nav2,#nav3,#nav4,#nav5,#nav6,#nav7,#nav8,#nav9,#nav10{
+    width:90px;
+    font-size:15px;
+    color:#fff;
+    border-collapse:collapse;
+    background:#000;
+    text-align: center;
+    position: absolute;
+    display: none;
+    z-index:100;
+}
+#daohang2 td{
+    height:40px;
+}
+/*内容css*/
+#neirong{
+    width:1000px;
+    overflow: hidden;
+    margin:0 auto;
+}
+/*内容1css*/
+#neirong1{
+    float: left;
+    width:330px;
+    height:340px;
+    background:#D1D1D1;
+    margin: 15px 15px;
+}
+#a1{
+    float: left;
+    margin:15px 15px;
+}
+#a2 a{
+    float: right;
+    margin:15px 15px;
+    text-decoration: none;
+    color:#000;
+}
+#neirong1_img li{
+    list-style: none;
+    position: absolute;
+    top:770px;
+    left:480px;
+
+}
+.img_span{
+    width:200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#neirong1_img img{
+    width:300px;
+    height:260px;
+}
+#kongzhi table{
+    width:100px;
+    position: relative;
+    top:290px;
+    left:120px;
+    text-align: center;
+}
+#kongzhi td{
+    background: #C7C7C7;
+}
+#kongzhi td:hover{
+    background: #EE5C42;
+}
+/*内容2css*/
+#neirong2{
+    float: left;
+    width:330px;
+    height:340px;
+    background:#D1D1D1;
+    margin: 15px 15px;
+}
+#a3{
+    float: left;
+    margin: 15px 15px;
+}
+#a4 a{
+    float: right;
+    margin:15px 15px;
+    text-decoration: none;
+    color:#000;
+}
+#neirong2_p1{
+    font-size: 15px;
+    font-weight: bold;
+    text-indent: 25px;
+}
+#neirong2_p1:hover {
+    color: red;
+}
+#neirong2_span{
+    width:300px;
+    font-size: 15px;
+    text-indent: 25px;
+    margin: 0 auto;
+}
+#neirong2_span a{
+    text-decoration: none;
+    color:red;
+}
+#neirong2 li{
+    width:300px;
+    list-style: disc;
+    margin-left:-15px;
+    line-height: 25px;
+}
+#neirong2 li a{
+    text-decoration: none;
+    font-size: 15px;
+    color:#000;
+}
+#neirong2 li a:hover{
+    color: red;
+}
+#neirong2 li div{
+    float: right;
+}
+/*内容3.css*/
+#neirong3{
+    float: left;
+    width:250px;
+    height:340px;
+    background:#D1D1D1;
+    margin: 15px 15px;
+}
+#a5{
+    float: left;
+    margin: 15px 15px;
+}
+#neirong3_img{
+    width:220px;
+    margin:0 auto;
+    padding:0 0;
+}
+.neirong3_div{
+    text-align: center;
+    float: left;
+    margin:2px 2px;
+    padding-top:10px;
+    width:100px;
+    height:25px;
+    background: cornflowerblue;
+}
+.neirong3_div:hover{
+   background: red;
+}
+.neirong3_div a{
+    font-size: 10px;
+    color:#fff;
+    text-decoration: none;
+}
+#neirong_2{
+    width:100%;
+    background:#EAEAEA;
+}
+/*内容4css*/
+#neirong4{
+    font-size: 20px;
+    width:900px;
+    margin:0 auto;
+}
+#neirong4 p{
+    padding-top:15px;
+}
+#neirong4 table{
+    margin: 0 auto;
+    width:900px;
+}
+#neirong4 td{
+    text-align: center;
+}
+#neirong4 td a{
+   text-decoration: none;
+    color:#000;
+}
+/*底部css*/
+#footer{
+    width:100%;
+    height:150px;
+    margin:0 auto;
+    background: #836FFF;
+}
+#footer_p{
+    width:700px;
+    margin:0 auto;
+    padding-top: 40px;
+}
