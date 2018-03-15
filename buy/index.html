@@ -46,7 +46,15 @@
 	    </header>
 	    
 	    <div class="mui-inner-wrap">
-	    	<!--
+	    	
+        <!--
+        	作者：695750870@qq.com
+        	时间：2018-03-15
+        	描述：这里设置一个header用作上拉刷新
+        -->
+        <header class="mui-bar-nav"></header>
+        
+        <!--
             	作者：695750870@qq.com
             	时间：2018-03-15
             	描述：底部的4个导航按钮
@@ -95,8 +103,7 @@
             	时间：2018-03-15
             	描述：首页的内容都在这里
             -->
-	        <div id="neirong1">
-	        	<br/><br/>
+	        <div id="neirong1">    	
 	        	<!--
                 	作者：695750870@qq.com
                 	时间：2018-03-15
@@ -285,7 +292,6 @@
             	描述：消息的内容都在这里
             -->
 	        <div id="neirong2">
-	        	<br/><br/>
 	        	<!--
                 	作者：695750870@qq.com
                 	时间：2018-03-15
@@ -390,7 +396,6 @@
             	描述：购物车的内容都在这里
             -->
 	        <div id="neirong3">
-	        		<br/><br/>
 	        		<!--
                     	作者：695750870@qq.com
                     	时间：2018-03-15
@@ -509,7 +514,6 @@
             	描述：和人中心的内容都在这里
             -->
 	        <div id="neirong4">
-	        	<br/><br/>
 	        	<!--
                 	作者：695750870@qq.com
                 	时间：2018-03-15
@@ -701,7 +705,7 @@
       				contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
       				callback :function pullfresh(){
       					setTimeout(function(){
-      						mui('#_container').pullRefresh().endPulldownToRefresh(false);
+      						mui('#_container').pullRefresh().endPulldownToRefresh(true);
       					},1000);
       					
       				} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
