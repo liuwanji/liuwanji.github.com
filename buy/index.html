@@ -28,16 +28,29 @@
 	    <!-- 主页面标题 -->
 	    <header class="mui-bar mui-bar-nav" id="_title">
 	     <!-- <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"  href="#offCanvasSide" ></a>-->
+	     <!--
+         	作者：695750870@qq.com
+         	时间：2018-03-15
+         	描述：界面头部“标题”，包括首页的搜索框，和其他导航页面顶部的标题内容。
+         -->
 	     <div id="biaoti">
-	     	<div  id="_seacher">
+	     	<!--
+             	作者：695750870@qq.com
+             	时间：2018-03-15
+             	描述：首页顶部的搜索框
+             -->
 	      		<div class="mui-input-row mui-search">
     				<input type="search" class="mui-input-clear" placeholder="">
 				</div>
-			</div>
 	     </div>
 	    </header>
 	    
 	    <div class="mui-inner-wrap">
+	    	<!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：底部的4个导航按钮
+            -->
 	  	<nav class="mui-bar mui-bar-tab">
 		    <a class="mui-tab-item mui-active" href="javascript:_nav(1);">
 		        <span class="mui-icon mui-icon-home"></span>
@@ -57,6 +70,11 @@
 		    </a>
 		</nav>
 		
+		<!--
+        	作者：695750870@qq.com
+        	时间：2018-03-15
+        	描述：购物车的底部结算栏
+        -->
 		<nav class="mui-bar mui-bar-tab" style="margin-bottom: 50px;" id="jiesuan">
 		    <div class="mui-input-row mui-checkbox mui-left" style="float: left;margin-top: 8px;">
   				<label>全选</label>
@@ -68,12 +86,23 @@
 			</div>
 		</nav>
 		
-	    <div class="mui-content mui-scroll-wrapper">
+	    <div class="mui-content mui-scroll-wrapper" id="_container">
 	      <div class="mui-scroll">
 	        <!-- 主界面具体展示内容 -->
+	        
+	        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：首页的内容都在这里
+            -->
 	        <div id="neirong1">
 	        	<br/><br/>
-	         	<div id="slider" class="mui-slider" >
+	        	<!--
+                	作者：695750870@qq.com
+                	时间：2018-03-15
+                	描述：首页的图片轮播
+                -->
+	         <div id="slider" class="mui-slider" >
 	            <div class="mui-slider-group mui-slider-loop">
 	            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 	            <div class="mui-slider-item mui-slider-item-duplicate">
@@ -111,152 +140,184 @@
 	                <img src="http://placehold.it/400x300">
 	              </a>
 	            </div>
-	           </div>
-	          <div class="mui-slider-indicator">
-	            <div class="mui-indicator mui-active"></div>
-	            <div class="mui-indicator"></div>
-	            <div class="mui-indicator"></div>
-	            <div class="mui-indicator"></div>
+	            </div>
+	            <div class="mui-slider-indicator">
+	            	<div class="mui-indicator mui-active"></div>
+	            	<div class="mui-indicator"></div>
+	            	<div class="mui-indicator"></div>
+	            	<div class="mui-indicator"></div>
+	            </div>
 	          </div>
-	         </div>
-	         <ul class="mui-table-view mui-grid-view mui-grid-9">
-	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	            <a href="#">
-	                <span class="mui-icon mui-icon-home"></span>
-	                <div class="mui-media-body">女装</div>
-	            </a>
-	         </li>
-	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	             <a href="#">
-	                <span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
-	                <div class="mui-media-body">男装</div>
-	            </a>
-	         </li>
-	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	            <a href="#">
-	                <span class="mui-icon mui-icon-chatbubble"></span>
-	                <div class="mui-media-body">美妆</div>
-	            </a>
-	         </li>
-	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	            <a href="#">
-	                <span class="mui-icon mui-icon-location"></span>
-	                <div class="mui-media-body">配饰</div>
-	            </a>
-	         </li>
-	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	            <a href="#">
-	                <span class="mui-icon mui-icon-search"></span>
-	                <div class="mui-media-body">鞋品</div>
-	            </a>
-	         </li>
-	         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	            <a href="#">
-	                <span class="mui-icon mui-icon-phone"></span>
-	                <div class="mui-media-body">箱包</div>
-	            </a>
-	         </li>
-	            </ul>
+	         
+	         <!--
+             	作者：695750870@qq.com
+             	时间：2018-03-15
+             	描述：首页的中部6个导航链接图标
+             -->
+	         	<ul class="mui-table-view mui-grid-view mui-grid-9">
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	            		<a href="#">
+	                		<span class="mui-icon mui-icon-home"></span>
+	                		<div class="mui-media-body">女装</div>
+	            		</a>
+	         		</li>
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	             		<a href="#">
+	                		<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
+	                		<div class="mui-media-body">男装</div>
+	            		</a>
+	         		</li>
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	            		<a href="#">
+	                		<span class="mui-icon mui-icon-chatbubble"></span>
+	                		<div class="mui-media-body">美妆</div>
+	            		</a>
+	         		</li>
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	            		<a href="#">
+	                		<span class="mui-icon mui-icon-location"></span>
+	                		<div class="mui-media-body">配饰</div>
+	            		</a>
+	         		</li>
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	            		<a href="#">
+	                		<span class="mui-icon mui-icon-search"></span>
+	                		<div class="mui-media-body">鞋品</div>
+	            		</a>
+	         		</li>
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	            		<a href="#">
+	                		<span class="mui-icon mui-icon-phone"></span>
+	                		<div class="mui-media-body">箱包</div>
+	            		</a>
+	         		</li>
+	        	</ul>
 	            
 	            <br/><h3 style="text-align: center;">栏目精选</h3><br/>
 	            
+	            <!--
+                	作者：695750870@qq.com
+                	时间：2018-03-15
+                	描述：首页中部的4个图片链接
+                -->
 	            <div style="text-align:center;>
 	             	<a href="img1.html" style="margin:0px 0px 0px 0px">
-	                <img src="http://placehold.it/180x180">
+	                	<img src="http://placehold.it/180x180">
 	              	</a>
-	              	 <a href="img1.html" tyle="margin:0px 0px 0px 0px">
-	                <img src="http://placehold.it/180x180">
+	              	<a href="img1.html" tyle="margin:0px 0px 0px 0px">
+	                	<img src="http://placehold.it/180x180">
 	              	</a>
-	              	 <a href="img1.html" tyle="margin:0px 0px 0px 0px">
-	                <img src="http://placehold.it/180x180">
+	              	<a href="img1.html" tyle="margin:0px 0px 0px 0px">
+	                	<img src="http://placehold.it/180x180">
 	              	</a>
-	              	 <a href="img1.html" tyle="margin:0px 0px 0px 0px">
-	                <img src="http://placehold.it/180x180">
+	              	<a href="img1.html" tyle="margin:0px 0px 0px 0px">
+	                	<img src="http://placehold.it/180x180">
 	              	</a>
 	            </div>
-	             <br/><h3 style="text-align: center;">-- 每日10点上线，好卷不断 --</h3><br/>
-	          		<ul class="mui-table-view">
-	          		  <li class="mui-table-view-cell mui-media">
-	                <a href="javascript:;">
-	                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-	                    <div class="mui-media-body">
-	                     	   幸福
-	                        <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-	                    </div>
-	                </a>
-	            </li>
-	            <li class="mui-table-view-cell mui-media">
-	                <a href="javascript:;">
-	                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-	                    <div class="mui-media-body">
-	                     	   木屋
-	                        <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
-	                    </div>
-	                </a>
-	            </li>
-	            <li class="mui-table-view-cell mui-media">
-	                <a href="javascript:;">
-	                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-	                    <div class="mui-media-body">
-	                        CBD
-	                        <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
-	                    </div>
-	                </a>
-	            </li>
-	             <li class="mui-table-view-cell mui-media">
-	                <a href="javascript:;">
-	                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-	                    <div class="mui-media-body">
-	                     	   幸福
-	                        <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-	                    </div>
-	                </a>
-	            </li>
-	            <li class="mui-table-view-cell mui-media">
-	                <a href="javascript:;">
-	                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-	                    <div class="mui-media-body">
-	                      	  木屋
-	                        <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
-	                    </div>
-	                </a>
-	            </li>
-	            <li class="mui-table-view-cell mui-media">
-	                <a href="javascript:;">
-	                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-	                    <div class="mui-media-body">
-	                        CBD
-	                        <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
-	                    </div>
-	                </a>
-	            </li>
-	           </ul>
+	            <br/><h3 style="text-align: center;">-- 每日10点上线，好卷不断 --</h3><br/>
+	             
+	            <!--
+                 	作者：695750870@qq.com
+                 	时间：2018-03-15
+                 	描述：首页中部的6个图片列表链接
+                -->
+	          	<ul class="mui-table-view">
+	          		  	<li class="mui-table-view-cell mui-media">
+	                		<a href="javascript:;">
+	                    		<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+	                    		<div class="mui-media-body">
+	                     	   		幸福
+	                        		<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+	                    		</div>
+	                		</a>
+	            		</li>
+	            		<li class="mui-table-view-cell mui-media">
+	                		<a href="javascript:;">
+	                    		<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+	                    		<div class="mui-media-body">
+	                     	   		木屋
+	                        		<p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+	                    		</div>
+	                		</a>
+	            		</li>
+	            		<li class="mui-table-view-cell mui-media">
+	                		<a href="javascript:;">
+	                    		<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+	                    		<div class="mui-media-body">
+	                        		CBD
+	                        		<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+	                    		</div>
+	                		</a>
+	            		</li>
+	             		<li class="mui-table-view-cell mui-media">
+	                		<a href="javascript:;">
+	                    		<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+	                    		<div class="mui-media-body">
+	                     	   		幸福
+	                        		<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+	                    		</div>
+	                		</a>
+	            		</li>
+	            		<li class="mui-table-view-cell mui-media">
+	                		<a href="javascript:;">
+	                    		<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+	                    		<div class="mui-media-body">
+	                      	  		木屋
+	                        		<p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+	                    		</div>
+	                		</a>
+	            		</li>
+	            		<li class="mui-table-view-cell mui-media">
+	                		<a href="javascript:;">
+	                    		<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+	                    		<div class="mui-media-body">
+	                        		CBD
+	                        		<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+	                    		</div>
+	                		</a>
+	            		</li>
+	            </ul>
 	        </div>
 	        
+	        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：消息的内容都在这里
+            -->
 	        <div id="neirong2">
 	        	<br/><br/>
+	        	<!--
+                	作者：695750870@qq.com
+                	时间：2018-03-15
+                	描述：消息界面中的三个顶部功能按钮
+                -->
 	        	<ul class="mui-table-view mui-grid-view mui-grid-9">
-	        	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	        	    <a href="#">
-	        	        <span class="mui-icon mui-icon-home"></span>
-	        	        <div class="mui-media-body">交易物流</div>
-	        	    </a>
-	        	</li>
-	        	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	        	    <a href="#">
-	        	        <span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
-	        	        <div class="mui-media-body">通知</div>
-	        	    </a>
-	        	</li>
-	        	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-	        	    <a href="#">
-	        	        <span class="mui-icon mui-icon-chatbubble"></span>
-	        	        <div class="mui-media-body">互动</div>
-	        	    </a>
-	        	</li>
-	        	    </ul><br/>
+	        		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	        	    	<a href="#">
+	        	        	<span class="mui-icon mui-icon-home"></span>
+	        	       		<div class="mui-media-body">交易物流</div>
+	        	   		</a>
+	        		</li>
+	        		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	        	    	<a href="#">
+	        	        	<span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
+	        	        	<div class="mui-media-body">通知</div>
+	        	    	</a>
+	        		</li>
+	        		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+	        	    	<a href="#">
+	        	        	<span class="mui-icon mui-icon-chatbubble"></span>
+	        	        	<div class="mui-media-body">互动</div>
+	        	    	</a>
+	        		</li>
+	        	</ul><br/>
 	        	    
-	        	    <ul class="mui-table-view">
+	        	    <!--
+                    	作者：695750870@qq.com
+                    	时间：2018-03-15
+                    	描述：最近的消息：图文列表链接
+                    -->
+	        	<ul class="mui-table-view">
 	        	        <li class="mui-table-view-cell mui-media">
 	        	            <a href="javascript:;">
 	        	                <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
@@ -284,9 +345,15 @@
 	        	                </div>
 	        	            </a>
 	        	        </li>
-	        	    </ul><br/>
-	        	    <h4 style="text-indent:15px;;">两周前的消息</h4>
-	        	    <ul class="mui-table-view">
+	        	</ul><br/>
+	        	    
+	        	    <!--
+                    	作者：695750870@qq.com
+                    	时间：2018-03-15
+                    	描述：两周前的消息：图文列表链接
+                    -->
+	        	<h4 style="text-indent:15px;;">两周前的消息</h4>
+	        	<ul class="mui-table-view">
 	        	        <li class="mui-table-view-cell mui-media">
 	        	            <a href="javascript:;">
 	        	                <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
@@ -314,13 +381,21 @@
 	        	                </div>
 	        	            </a>
 	        	        </li>
-	        	    </ul>
-	        	    <br/><br/><br/><br/><br/><br/>
-	        	
+	        	</ul><br/>
 	        </div>
 	        
+	        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：购物车的内容都在这里
+            -->
 	        <div id="neirong3">
 	        		<br/><br/>
+	        		<!--
+                    	作者：695750870@qq.com
+                    	时间：2018-03-15
+                    	描述：购物列表在此，包括各个不同的店面与其被加入购物车的商品
+                    -->
 	        	<div id="list1" name="_list">
 	        		<div class="mui-input-row mui-checkbox mui-left"  style="background-color: #fff;">
   						<label>simwood旗舰店</label>
@@ -341,7 +416,7 @@
   						    	</li>
   							</ul>
   						</label>
-  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;" onclick="_radioselect()">
+  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;" onclick="_radioselect(this)">
 					</div>
 					<div class="mui-input-row mui-checkbox mui-left" style="background-color: #fff;">
   						<label><ul class="mui-table-view">
@@ -356,7 +431,7 @@
   						        </a>
   						    </li>
   						</ul></label>
-  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect()">
+  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect(this)">
 					</div>
 					<div class="mui-input-row mui-checkbox mui-left" style="background-color: #fff;">
   						<label><ul class="mui-table-view">
@@ -371,7 +446,7 @@
   						        </a>
   						    </li>
   						</ul></label>
-  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect()">
+  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect(this)">
 					</div>
 				</div><br/>
 				
@@ -393,7 +468,7 @@
   						        </a>
   						    </li>
   						</ul></label>
-  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect()">
+  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect(this)">
 					</div>
 					<div class="mui-input-row mui-checkbox mui-left" style="background-color: #fff;">
   						<label><ul class="mui-table-view">
@@ -408,7 +483,7 @@
   						        </a>
   						    </li>
   						</ul></label>
-  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect()">
+  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect(this)">
 					</div>
 					<div class="mui-input-row mui-checkbox mui-left" style="background-color: #fff;">
   						<label><ul class="mui-table-view">
@@ -423,14 +498,24 @@
   						        </a>
   						    </li>
   						</ul></label>
-  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect()">
+  						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect(this)">
 					</div>
 				</div><br/>
 	        </div>
 	        
+	        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：和人中心的内容都在这里
+            -->
 	        <div id="neirong4">
 	        	<br/><br/>
-	        	<ul class="mui-table-view mui-grid-view mui-grid-9" style="text-align: center;">
+	        	<!--
+                	作者：695750870@qq.com
+                	时间：2018-03-15
+                	描述：个人中心的个人头像，名称，id
+                -->
+	        	<ul class="mui-table-view mui-grid-view mui-grid-9" style="text-align: center;border: none;">
 	        	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
 	        	    <a href="#">
 	        	        <span class="mui-icon mui-icon-contact"></span>
@@ -439,6 +524,12 @@
 	        	    </a>
 	        	</li>
 	        	</ul>
+	        	
+	        	<!--
+                	作者：695750870@qq.com
+                	时间：2018-03-15
+                	描述：个人中心中部的三个功能按钮
+                -->
 	        	<ul class="mui-table-view mui-grid-view mui-grid-9"  style="text-align: center;">
 	        	<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
 	        	    <a href="#">
@@ -459,6 +550,12 @@
 	        	    </a>
 	        	</li>
 	        	    </ul><br/>
+	        	    
+	        	    <!--
+                    	作者：695750870@qq.com
+                    	时间：2018-03-15
+                    	描述：个人中心中部的各个功能列表（包括多重列表）
+                    -->
 	        	    <ul class="mui-table-view"> 
         				<li class="mui-table-view-cell mui-collapse">
             			<a class="mui-navigate-right" href="#">赚取积分</a>
@@ -492,23 +589,23 @@
     				               	 积分商城
     				            </a>
     				        </li>
-    				        <li class="mui-table-view-cell" href="#">
-    				            <a class="mui-navigate-right">
+    				        <li class="mui-table-view-cell">
+    				            <a class="mui-navigate-right" href="#">
     				           		     收藏夹
     				            </a>
     				        </li>
-    				        <li class="mui-table-view-cell" href="#">
-    				            <a class="mui-navigate-right">
+    				        <li class="mui-table-view-cell">
+    				            <a class="mui-navigate-right" href="#">
     				           	           我的足迹
     				            </a>
     				        </li>
-    				        <li class="mui-table-view-cell" href="#">
-    				            <a class="mui-navigate-right">
+    				        <li class="mui-table-view-cell">
+    				            <a class="mui-navigate-right" href="#">
     				                                             地址管理
     				            </a>
     				        </li>
-    				        <li class="mui-table-view-cell" href="#">
-    				            <a class="mui-navigate-right">
+    				        <li class="mui-table-view-cell">
+    				            <a class="mui-navigate-right" href="#">
     				            	    兑换记录
     				            </a>
     				        </li>
@@ -519,8 +616,8 @@
     				               	 最新公告
     				            </a>
     				        </li>
-    				        <li class="mui-table-view-cell" href="#">
-    				            <a class="mui-navigate-right">
+    				        <li class="mui-table-view-cell">
+    				            <a class="mui-navigate-right" href="#">
     				           		     建议反馈
     				            </a>
     				        </li>
@@ -533,78 +630,162 @@
            						 </div>
         						</li>
     				</ul><br/>
-	       </div>
+	        </div>
 	      </div>
 	    </div> 
 	    <div class="mui-off-canvas-backdrop"></div>
 	  </div> 
 	</div>
 	
+	<!--
+    	作者：695750870@qq.com
+    	时间：2018-03-15
+    	描述：在这里加载js可以让页面加载的更快一点，包括mui和jquery的导入以供后面使用
+    -->
     <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--
+    	作者：695750870@qq.com
+    	时间：2018-03-15
+    	描述：整体js逻辑写在了这里
+    -->
     <script type="text/javascript">
-    mui.init();
-    mui(".mui-scroll-wrapper").scroll();
+    /*在有后端的情况下，在onload中写入mui.ajax()进行与服务器的数据交互，对DOM内容进行相应的变更显示*/
+   /*在有后端的情况下，下拉刷新将重新上一步，进行一次数据交互，对整体DOM内容初始化变更显示*/
+    var index=0;
+	mui.init({
+  			pullRefresh : {
+   			 	container:"#_container",//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+    			//首页界面的上拉刷新，在有后端的情况下进行数据交互，暂时写死留作后用
+    			up : {
+     			 	height:250,//可选.默认50.触发上拉加载拖动距离
+      				auto:false,//可选,默认false.自动上拉加载一次
+      				contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+      				contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+      				callback :function pullfresh(){
+      					setTimeout(function () {  
+      						if(index<9){
+      							var s="<br/><ul class='mui-table-view'>";
+	          		  			for(var i=0;i<3;i++){
+	          		  				s+=
+	          		  				"<li class='mui-table-view-cell mui-media'>"+
+	                					"<a href='javascript:;'>"+
+	                    					"<img class='mui-media-object mui-pull-left' src='http://placehold.it/40x30'>"+
+	                    					"<div class='mui-media-body'>"+
+	                     	   					"这是新加的内容"+
+	                        					"<p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>"+
+	                    					"</div>"+
+	                					"</a>"+
+	            					"</li>";
+	          		  			}
+	          		  			s+="</ul>";          		  		      					
+      							index+=3;
+      						}
+      						if(s)
+      						$("#neirong1").append(s);
+      						if(index<9){
+      							mui('#_container').pullRefresh().endPullupToRefresh(false);
+      							mui('#_container').pullRefresh().refresh(true);
+      						}else{
+      							mui('#_container').pullRefresh().endPullupToRefresh(true);
+      						}
+      					},1000);
+
+      				} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+   				},
+   				down : {
+      				height:50,//可选,默认50.触发下拉刷新拖动距离,
+      				auto: true,//可选,默认false.首次加载自动下拉刷新一次
+      				contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+      				contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+      				contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+      				callback :function pullfresh(){
+      					setTimeout(function(){
+      						mui('#_container').pullRefresh().endPulldownToRefresh(false);
+      					},1000);
+      					
+      				} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+    			}
+  			}
+	});
+	
+    /*设置界面可以滚动（srcoll初始化）和让界面中的a链接可以正常点击进入使用*/
+    mui('.mui-scroll-wrapper').scroll({
+		deceleration: 0.1, 
+		indicators:false
+	});
     mui('body').on('tap','a',function(){document.location.href=this.href;});  
+
+    /*初始化界面显示，包括一开始让首页显示，消息，购物车，个人中心隐藏起来，购物车的底部结算界面也隐藏*/
     document.getElementById("neirong2").classList.add("mui-hidden");
     document.getElementById("neirong3").classList.add("mui-hidden");
     document.getElementById("neirong4").classList.add("mui-hidden");
     document.getElementById("jiesuan").classList.add("mui-hidden");
+    
+    /*初始化让首页的图片自动循环滚动播放*/
     var gallery = mui('.mui-slider');
 	gallery.slider({
  	 interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
 	});
 	
-	(function($){
-//		$("#neirong3 input").on("tap",function(){
-//				var s=0;
-//				$(this).
-//			$("#neirong3 input:checked").each(function(i,val){
-//				alert("asdsa");
-//				if(val.value!=-1){
-//					s += parseInt(val.value());
-//				}
-//			});
-//			$("#sum").html("￥"+s);
-//		});
-	
-	})(jQuery);
-	
+	/*此为底部导航按钮的点击触发事件，进行基本的界面切换*/
     function _nav(x){
     
     	switch(x){
-    		case 1: document.getElementById("neirong2").classList.add("mui-hidden");
+    		case 1: /*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+    				document.getElementById("neirong2").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
     				document.getElementById("neirong4").classList.add("mui-hidden");
     				document.getElementById("jiesuan").classList.add("mui-hidden");
     				document.getElementById("neirong1").classList.remove("mui-hidden");
+    				/*将顶部内容换成搜索框*/
     				document.getElementById("biaoti").innerHTML="<div class='mui-input-row mui-search'>"+
     				"<input type='search' class='mui-input-clear' placeholder='' data-input-clear='4' data-input-search='4'>"+
     					"<span class='mui-icon mui-icon-clear mui-hidden'></span><span class='mui-placeholder'>"+
-    						"<span class='mui-icon mui-icon-search'></span><span></span></span></div>";break;
-    		case 2: document.getElementById("neirong1").classList.add("mui-hidden");
+    						"<span class='mui-icon mui-icon-search'></span><span></span></span></div>";
+    				//100毫秒滚动到顶
+   					mui('#_container').pullRefresh().scrollTo(0,0,100);
+   					mui('#_container').pullRefresh().enablePullupToRefresh();
+   					mui('#_container').scroll().scrollTo(0,0,100);break;
+    		case 2: /*将除了消息以外的其他导航界面隐藏（购物车的结算界面）*/
+    				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
     				document.getElementById("neirong4").classList.add("mui-hidden");
     				document.getElementById("jiesuan").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.remove("mui-hidden");
-   					document.getElementById("biaoti").innerHTML="<h1 class='mui-title'>消息(8)</h1>"; break;
-    		case 3: document.getElementById("neirong1").classList.add("mui-hidden");
+    				/*将顶部内容换成消息*/
+   					document.getElementById("biaoti").innerHTML="<h1 class='mui-title'>消息(8)</h1>"; 
+   					//100毫秒滚动到顶
+   					mui('#_container').pullRefresh().scrollTo(0,0,100);
+   					mui('#_container').pullRefresh().disablePullupToRefresh();break;
+    		case 3: /*将除了购物车以外的其他导航界面隐藏，将结算界面显示*/
+    				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.add("mui-hidden");
     				document.getElementById("neirong4").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.remove("mui-hidden");
     				document.getElementById("jiesuan").classList.remove("mui-hidden");
-   					document.getElementById("biaoti").innerHTML="<h1 class='mui-title'>购物车(42)</h1>"; break;
-    		case 4: document.getElementById("neirong1").classList.add("mui-hidden");
+    				/*将顶部内容换成购物车*/
+   					document.getElementById("biaoti").innerHTML="<h1 class='mui-title'>购物车(42)</h1>";
+   					//100毫秒滚动到顶
+   					mui('#_container').pullRefresh().scrollTo(0,0,100);
+   					mui('#_container').pullRefresh().disablePullupToRefresh();break;
+    		case 4: /*将除了个人中心以外的其他导航界面隐藏（购物车的结算界面）*/
+    				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
     				document.getElementById("jiesuan").classList.add("mui-hidden");
     				document.getElementById("neirong4").classList.remove("mui-hidden");
-    				
-   					document.getElementById("biaoti").innerHTML="<h1 class='mui-title'>个人中心</h1>"; break;
+    				/*将顶部内容换成个人中心*/
+   					document.getElementById("biaoti").innerHTML="<h1 class='mui-title'>个人中心</h1>"; 
+   					//100毫秒滚动到顶
+   					mui('#_container').pullRefresh().scrollTo(0,0,100);
+   					mui('#_container').pullRefresh().disablePullupToRefresh();break;
     	}
     }
     
-    function _radioselect(){
+    /*此为购物车单个radio点击事件，进行购物数量和购物总价的结算并显示出来*/
+    function _radioselect(_this){
+    	/*这里对所有的radio进行判断是否被选中和结算，并在结算界面显示出来*/
     	var s=0;
     	var n=0;
     		$("#neirong3 input:checked").each(function(i,val){
@@ -614,10 +795,36 @@
     			}
     		});
     		$("#sum").html("￥"+s);
-    			$("#num").html("结算("+(n)+")");
+    		$("#num").html("结算("+(n)+")");
+    		
+    		/*在这里进行判断是否此商店所有购物车商品(radio)都被选择或未被选择，从而决定商店radio是否选中*/
+    		var _xiong=0;
+    		$(_this).parent().siblings().children("input").each(function(i,val){
+    			if(val.value!=-1)
+    			if(val.checked==true){
+    				_xiong++;
+    			}
+    		});
+    		if($(_this).prop("checked")==true)
+    			_xiong++;
+    		if(_xiong==$(_this).parent().parent().children().length-1){
+    			$(_this).parent().siblings().children("input").each(function(i,val){
+    				if(val.value==-1){
+    					val.checked=true;
+    				}
+    			});
+    		}else{
+    			$(_this).parent().siblings().children("input").each(function(i,val){
+    				if(val.value==-1){
+    					val.checked=false;
+    				}
+    			});
+    		}
     }
     
+    /*此为购物车中"商店"radio的点击事件，包括进行该商店下的商品选择或取消并进行结算显示*/
     function _select(x){
+    	/*这里将该商店下的购物车商品进行选中或取消选中*/
     	var list = document.getElementById("list"+x).getElementsByTagName("input");
     	if(list[0].checked==true)
     		for(var i=0;i<list.length;i++){
@@ -627,6 +834,7 @@
     		for(var i=0;i<list.length;i++){
     			list[i].checked=false;
     		}
+    	/*这里对所有的radio进行判断是否被选中和结算，并在结算界面显示出来*/
     		var s=0;
     		var n=0;
     	$("#neirong3 input:checked").each(function(i,val){
@@ -638,27 +846,32 @@
     	$("#sum").html("￥"+s);
     	$("#num").html("结算("+(n)+")");
     }
+    
+    /*此为购物车中底部结算界面的“全选”radio按钮的点击事件，进行全部商品的选择或取消并进行结算*/
     function quanxuan(_this){
-    	
-    	var list = document.getElementById("neirong3").getElementsByTagName("input");
-    	var shop_sum = document.getElementsByName("_list");
+    	/*这里对所有的radio进行判断是否被选中和结算，并在结算界面显示出来*/
     	if(_this.checked==true){
-    		for(var i=0;i<list.length;i++)
-    			list[i].checked=true;
-    		var s_list = document.getElementsByName("danjia");
+    		$("#neirong3 input").each(function(i,val){
+    			val.checked=true;
+    		});
     		var s=0;
-    		for(var i=0;i<s_list.length;i++){
-    			s += parseInt(s_list[i].innerHTML);
-    		}
-    		var n = list.length-shop_sum.length;
-    		document.getElementById("sum").innerHTML="￥"+s;
-    		document.getElementById("num").innerHTML="结算("+(n)+")";
+    		var n=0;
+    		$("#neirong3 input:checked").each(function(i,val){
+    			if(val.value!=-1){
+    				s+=parseInt(val.value);
+    				n++;
+    			}
+    		});
+    		$("#sum").html("￥"+s);
+    		$("#num").html("结算("+(n)+")");
     	}else{
-    		for(var i=0;i<list.length;i++)
-    			list[i].checked=false;
-    		document.getElementById("sum").innerHTML="￥0";
-    		document.getElementById("num").innerHTML="结算(0)";
+    		$("#neirong3 input").each(function(i,val){
+    			val.checked=false;
+    		});
+    		$("#sum").html("￥0");
+    		$("#num").html("结算(0)");
     	}
+    	
     }
     </script>
     
