@@ -162,7 +162,7 @@
              	描述：首页的中部6个导航链接图标
              -->
 	         	<ul class="mui-table-view mui-grid-view mui-grid-9">
-	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="asd">
 	            		<a href="#">
 	                		<span class="mui-icon mui-icon-home"></span>
 	                		<div class="mui-media-body">女装</div>
@@ -720,7 +720,7 @@
 		indicators:false
 	});
     mui('body').on('tap','a',function(){document.location.href=this.href;});  
-
+	
     /*初始化界面显示，包括一开始让首页显示，消息，购物车，个人中心隐藏起来，购物车的底部结算界面也隐藏*/
     document.getElementById("neirong2").classList.add("mui-hidden");
     document.getElementById("neirong3").classList.add("mui-hidden");
