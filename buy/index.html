@@ -89,7 +89,7 @@
   				<input name="checkbox1" value="Item 1" type="checkbox" onclick="quanxuan(this)">
 			</div>
 			<div style="float: right;">
-				 合计： <b style="color:red;" id="sum">￥0</b>
+				<div style="float: left;margin-top: 15px;">合计： <b style="color:red;" id="sum">￥0</b>&nbsp;&nbsp;</div>
 				<button type="button" class="mui-btn mui-btn-danger" id="num">结算(0)</button>
 			</div>
 		</nav>
@@ -412,7 +412,7 @@
   						   	 	<li class="mui-table-view-cell mui-media">
   						        	<a href="javascript:;">
   						            	<img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-  						            	<div class="mui-media-body">
+  						            	<div class="mui-media-body" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
   						              	  	simwood简木2018春季新款侧拉链酵洗袋鼠兜套头修身连衣帽卫
   						                	<p class="mui-ellipsis">灰色：M</p>
   						                	<b class="mui-ellipsis" style="color:red">￥<span name="danjia">148</span></b>
@@ -428,7 +428,7 @@
   						    <li class="mui-table-view-cell mui-media">
   						        <a href="javascript:;">
   						            <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-  						            <div class="mui-media-body">
+  						            <div class="mui-media-body" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
   						              	  simwood简木2018春季新款侧拉链酵洗袋鼠兜套头修身连衣帽卫
   						                <p class="mui-ellipsis">灰色：M</p>
   						                <b class="mui-ellipsis" style="color:red">￥<span name="danjia">148</span></b>
@@ -443,7 +443,7 @@
   						    <li class="mui-table-view-cell mui-media">
   						        <a href="javascript:;">
   						            <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-  						            <div class="mui-media-body">
+  						            <div class="mui-media-body" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
   						              	  simwood简木2018春季新款侧拉链酵洗袋鼠兜套头修身连衣帽卫
   						                <p class="mui-ellipsis">灰色：M</p>
   						                <b class="mui-ellipsis" style="color:red">￥<span name="danjia">148</span></b>
@@ -465,7 +465,7 @@
   						    <li class="mui-table-view-cell mui-media">
   						        <a href="javascript:;">
   						            <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-  						            <div class="mui-media-body">
+  						            <div class="mui-media-body" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
   						              	  simwood简木2018春季新款侧拉链酵洗袋鼠兜套头修身连衣帽卫
   						                <p class="mui-ellipsis">灰色：M</p>
   						               <b class="mui-ellipsis" style="color:red">￥<span name="danjia">148</span></b>
@@ -480,7 +480,7 @@
   						    <li class="mui-table-view-cell mui-media">
   						        <a href="javascript:;">
   						            <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-  						            <div class="mui-media-body">
+  						            <div class="mui-media-body" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
   						              	  simwood简木2018春季新款侧拉链酵洗袋鼠兜套头修身连衣帽卫
   						                <p class="mui-ellipsis">灰色：M</p>
   						                <b class="mui-ellipsis" style="color:red">￥<span name="danjia">148</span></b>
@@ -495,7 +495,7 @@
   						    <li class="mui-table-view-cell mui-media">
   						        <a href="javascript:;">
   						            <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
-  						            <div class="mui-media-body">
+  						            <div class="mui-media-body" style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
   						              	  simwood简木2018春季新款侧拉链酵洗袋鼠兜套头修身连衣帽卫
   						                <p class="mui-ellipsis">灰色：M</p>
   						                <b class="mui-ellipsis" style="color:red">￥<span name="danjia">148</span></b>
@@ -506,6 +506,7 @@
   						<input name="checkbox1" value="148" type="checkbox" style="margin-top:30px ;"  onclick="_radioselect(this)">
 					</div>
 				</div><br/>
+				<br/>
 	        </div>
 	        
 	        <!--
@@ -736,7 +737,9 @@
     function _nav(x){
     
     	switch(x){
-    		case 1: /*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+    		case 1: /*重置下拉刷新功能*/
+    				mui('#_container').pullRefresh().endPulldownToRefresh(true);
+    				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong2").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
     				document.getElementById("neirong4").classList.add("mui-hidden");
@@ -751,7 +754,9 @@
    					mui('#_container').pullRefresh().scrollTo(0,0,100);
    					mui('#_container').pullRefresh().enablePullupToRefresh();
    					mui('#_container').scroll().scrollTo(0,0,100);break;
-    		case 2: /*将除了消息以外的其他导航界面隐藏（购物车的结算界面）*/
+    		case 2: /*重置下拉刷新功能*/
+    				mui('#_container').pullRefresh().endPulldownToRefresh(true);
+    				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
     				document.getElementById("neirong4").classList.add("mui-hidden");
@@ -762,7 +767,9 @@
    					//100毫秒滚动到顶
    					mui('#_container').pullRefresh().scrollTo(0,0,100);
    					mui('#_container').pullRefresh().disablePullupToRefresh();break;
-    		case 3: /*将除了购物车以外的其他导航界面隐藏，将结算界面显示*/
+    		case 3: /*重置下拉刷新功能*/
+    				mui('#_container').pullRefresh().endPulldownToRefresh(true);
+    				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.add("mui-hidden");
     				document.getElementById("neirong4").classList.add("mui-hidden");
@@ -773,7 +780,9 @@
    					//100毫秒滚动到顶
    					mui('#_container').pullRefresh().scrollTo(0,0,100);
    					mui('#_container').pullRefresh().disablePullupToRefresh();break;
-    		case 4: /*将除了个人中心以外的其他导航界面隐藏（购物车的结算界面）*/
+    		case 4: /*重置下拉刷新功能*/
+    				mui('#_container').pullRefresh().endPulldownToRefresh(true);
+    				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
