@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+</head>
+<body  style="background: #AAAAAA;">
+	
+	  <!-- 主页面容器 -->
+	  
+	    <!-- 主页面标题 -->
+	    <header class="mui-bar mui-bar-nav" style="height:10%;background-color: #B5B5B5" id="_title">
+	     <!-- <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"  href="#offCanvasSide" ></a>-->
+	     <!--
+         	作者：695750870@qq.com
+         	时间：2018-03-15
+         	描述：界面头部信息（包括昵称，ID，金币等）。
+         -->
+	     <div style="width:15%;height:100%;text-align: center;float:left;">
+	     	<div style="width:90%;height:70%;border:1px solid #000000;border-radius: 5px;margin-top: 20%;background: url(http://placehold.it/40x40) no-repeat;background-size: cover;"></div>
+	     </div>
+	     <div style="width:25%;height:100%;text-align:left;margin-left:5px;float:left;">
+	     	<div style="margin-top: 10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size:13px;"><b>昵称</b></div>
+	     	<div style="width:100%;height:40%;border: 1px solid #333;border-radius: 5px;text-align: center;background: #CAE1FF;">
+	     		<img style="float: left;" src="http://placehold.it/24x24"/>
+	     		<p style="margin-top: 5%;font-size: 15px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>999999</b></p>
+	     	</div>
+	     </div>
+	     <div style="width:25%;height:100%;text-align:left;margin-left:5px;float:left;">
+	     	<div style="margin-top: 10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size:13px;"><b>ID:12345678</b></div>
+	     	<div style="width:100%;height:40%;border: 1px solid #333;border-radius: 5px;text-align: center;background: #CAE1FF;">
+	     		<img style="float: left;" src="http://placehold.it/24x24"/>
+	     		<p style="margin-top: 5%;font-size: 15px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>999999</b></p>
+	     	</div>
+	     </div>
+	     <div style="width:20%;height:100%;text-align: center;float:right;">
+	     	<div style="width:100%;height:40%;margin-top:32px;border: 1px solid #333;border-radius: 5px;text-align: center;background: #CAE1FF;">
+	     		<img style="float: left;" src="http://placehold.it/15x24"/>
+	     		<p style="margin-top: 5%;font-size: 10px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>实名认证</b></p>
+	     	</div>
+	     </div>
+	    </header>
+	    
+	    	
+        <!--
+        	作者：695750870@qq.com
+        	时间：2018-03-15
+        	描述：这里设置一个header用作上拉刷新
+        -->
+        
+        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：底部的4个导航按钮
+            -->
+	  	<nav class="mui-bar mui-bar-tab" id="bottom_nav">
+		    <a class="mui-tab-item mui-active" style="border: 1px solid #333333;background: #AAA;" href="javascript:_nav(1);">
+		        	热卖
+		    </a>
+		    <a class="mui-tab-item"  style="border: 1px solid #333333;border-left: none;" href="javascript:_nav(2);">
+		        	活动
+		    </a>
+		    <a class="mui-tab-item"  style="border: 1px solid #333333;border-left: none;" href="javascript:_nav(3);">
+		        	游戏
+		    </a>
+		    <a class="mui-tab-item"  style="border: 1px solid #333333;border-left: none;" href="javascript:_nav(4);">
+		        	个人中心
+		    </a>
+		</nav>
+		
+		
+	    <div class="mui-content" id="_container" style="background: #AAAAAA;">
+	      
+	        <!-- 主界面具体展示内容 -->
+	        
+	        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：首页的内容都在这里
+            -->
+	        <div id="neirong1">    	
+	        	<br/>
+	        	<!--
+                	作者：695750870@qq.com
+                	时间：2018-03-15
+                	描述：首页的图片轮播
+                -->
+                <div style="opacity:0.3;position: absolute;top:10%;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" id="huodong">
+                	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
+                	<input type="text" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: none;"/>
+                </div>
+	         <div id="slider" class="mui-slider">
+	            <div class="mui-slider-group mui-slider-loop">
+	            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+	            <div class="mui-slider-item mui-slider-item-duplicate">
+	              <a href="img4.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            <!-- 第一张 -->
+	            <div class="mui-slider-item">
+	              <a href="img1.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            <!-- 第二张 -->
+	            <div class="mui-slider-item">
+	              <a href="img2.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            <!-- 第三张 -->
+	            <div class="mui-slider-item">
+	              <a href="img3.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+	            <div class="mui-slider-item mui-slider-item-duplicate">
+	              <a href="img1.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            </div>
+	            <div class="mui-slider-indicator">
+	            	<div class="mui-indicator mui-active"></div>
+	            	<div class="mui-indicator"></div>
+	            	<div class="mui-indicator"></div>
+	            </div>
+	          </div>
+	          
+	          <!--
+              	作者：695750870@qq.com
+              	时间：2018-03-16
+              	描述:热门游戏，我的战队，我的比赛在这
+             -->
+             <div style="overflow: hidden;background: #DEDEDE;height:10%" id="scroll_button">
+             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 10px;border-bottom: 3px solid #fff;" onclick="nav_scroll(1)">热门游戏</div>
+             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 10px;" onclick="nav_scroll(2)">我的战队</div>
+             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 10px;" onclick="nav_scroll(3)">我的比赛</div>
+             </div>
+             <!--
+             	作者：695750870@qq.com
+             	时间：2018-03-17
+             	描述：热门游戏选择在此
+             -->
+             <div class="mui-scroll-wrapper" style="top:40%;width:100%;height:35%;background: #AAAAAA;">
+				<div class="mui-scroll">
+					<!--这里放置真实显示的DOM内容-->
+				    <div id="scroll1">
+						<ul class="mui-table-view mui-grid-view mui-grid-9" style="background: #AAAAAA;border: none;">
+	         				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
+	            				<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
+									武汉麻将
+								</div>
+	         				</li>
+	         				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
+	             				<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
+									卡五星
+								</div>
+	         				</li>
+	         				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
+	            				<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
+									斗地主
+								</div>
+	         				</li>
+	         				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
+	            				<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
+									斗地主
+								</div>
+	         				</li>
+	         				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
+	             				<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 20px;float: left;margin-top:15px;background: #DBDBDB;">
+									竞技场二打一
+								</div>
+	         				</li>
+	         				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
+	            				<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
+									比赛中心
+								</div>
+	         				</li>
+	        			</ul>
+	        		</div>
+	        		
+	        		<div id="scroll2">
+	        			
+	        		</div>
+	        		
+	        		<div id="scroll3">
+	        			
+	        		</div>
+					<!--<div style="border:1px solid #333;overflow:hidden;text-align:center;margin: 0 auto;">
+						<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-left: 5%;margin-top:25px;margin-bottom:18px;background: #DBDBDB;">
+							武汉麻将
+						</div>
+						<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-left: 5%;margin-top:25px;margin-bottom:18px;background: #DBDBDB;">
+							卡五星
+						</div>
+						<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-left: 5%;margin-top:25px;margin-bottom:18px;background: #DBDBDB;">
+							斗地主
+						</div>
+						<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-left: 5%;margin-top:25px;margin-bottom:18px;background: #DBDBDB;">
+							斗地主
+						</div>
+						<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-left: 5%;margin-top:25px;margin-bottom:18px;background: #DBDBDB;">
+							竞技场二打一
+						</div>
+						<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-left: 5%;margin-top:25px;margin-bottom:18px;background: #DBDBDB;">
+							比赛中心
+						</div>
+					</div>-->
+				</div>
+			 </div>
+			 
+			 <!--
+             	作者：695750870@qq.com
+             	时间：2018-03-17
+             	描述：加入牌局，创建牌局在此
+             -->
+			 <div style="position: absolute;margin:0 auto;top:75%;width:100%;">
+				<div style="text-align: center;">________________<span class="mui-icon mui-icon-arrowup"></span>________________</div>
+				<div>
+					<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: left;margin: 10px;background: #DBDBDB;">
+							加入牌局
+						</div>
+						<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: right;margin: 10px;background: #DBDBDB;">
+							创建牌局
+						</div>
+				</div>
+			 </div>
+			</div>
+	        <!--<ul class="mui-table-view mui-grid-view mui-grid-9">
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="asd">
+	            		<a href="#">
+	                		<b>热门游戏</b>
+	            		</a>
+	         		</li>
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+	             		<a href="#">
+	                		<b>我的战队</b>
+	            		</a>
+	         		</li>
+	         		<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+	            		<a href="#">
+	                		<b>我的比赛</b>
+	            		</a>
+	         		</li>
+	        </ul>
+	        -->
+	        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：消息的内容都在这里
+            -->
+	        <div id="neirong2">
+	        	
+	        </div>
+	        
+	        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：购物车的内容都在这里
+            -->
+	        <div id="neirong3">
+	        		
+	        </div>
+	        
+	        <!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：和人中心的内容都在这里
+            -->
+	        <div id="neirong4">
+	        	
+	        </div>
+	    
+	    <div class="mui-off-canvas-backdrop"></div>
+	  </div> 
+	
+	<!--
+    	作者：695750870@qq.com
+    	时间：2018-03-15
+    	描述：在这里加载js可以让页面加载的更快一点，包括mui和jquery的导入以供后面使用
+    -->
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--
+    	作者：695750870@qq.com
+    	时间：2018-03-15
+    	描述：整体js逻辑写在了这里
+    -->
+    <script type="text/javascript">
+    /*在有后端的情况下，在onload或down中写入mui.ajax()进行与服务器的数据交互，对DOM内容进行相应的变更显示*/
+   /*在有后端的情况下，下拉刷新将重新上一步，进行一次数据交互，对整体DOM内容初始化变更显示*/
+	mui.init();
+	
+    /*设置界面可以滚动（srcoll初始化）和让界面中的a链接可以正常点击进入使用*/
+    mui('.mui-scroll-wrapper').scroll({
+		deceleration: 0.1, 
+		indicators:true
+	});
+    mui('body').on('tap','a',function(){document.location.href=this.href;});  
+	
+    /*初始化界面显示，包括一开始让首页显示，消息，购物车，个人中心隐藏起来，购物车的底部结算界面也隐藏*/
+    document.getElementById("neirong2").classList.add("mui-hidden");
+    document.getElementById("neirong3").classList.add("mui-hidden");
+    document.getElementById("neirong4").classList.add("mui-hidden");
+    
+    /*初始化让首页的图片自动循环滚动播放*/
+    var gallery = mui('.mui-slider');
+	gallery.slider({
+ 	 interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+	});
+	
+	/*活动信息轮播在此*/
+	setInterval(function(){
+		if($("#huodong input").attr("value")!=" 今日21点~22点，充值送双倍钻石，记得哦!"){
+			var first_char = $("#huodong input").attr("value").slice(0,1);
+			if(first_char==" "){
+				var s = $("#huodong input").attr("value").slice(2);
+				$("#huodong input").attr("value",s);
+			}else{
+				var s = $("#huodong input").attr("value").slice(1);
+				$("#huodong input").attr("value",s);
+			}		
+		}else{
+			$("#huodong input").attr("value","今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!");
+		}
+		
+	},500);
+
+	
+	/*此为底部导航按钮的点击触发事件，进行基本的界面切换*/
+    function _nav(x){
+    
+    	switch(x){
+    		case 1: /*点击底部导航按钮时将按钮换色*/
+    				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"#AAA"});
+    				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+    				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+    				document.getElementById("neirong2").classList.add("mui-hidden");
+    				document.getElementById("neirong3").classList.add("mui-hidden");
+    				document.getElementById("neirong4").classList.add("mui-hidden");
+    				document.getElementById("neirong1").classList.remove("mui-hidden");break;
+    		case 2: /*点击底部导航按钮时将按钮换色*/
+    				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"#AAA"});
+    				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+    				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+    				document.getElementById("neirong1").classList.add("mui-hidden");
+    				document.getElementById("neirong3").classList.add("mui-hidden");
+    				document.getElementById("neirong4").classList.add("mui-hidden");
+    				document.getElementById("neirong2").classList.remove("mui-hidden");break;
+    		case 3: /*点击底部导航按钮时将按钮换色*/
+    				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"#AAA"});
+    				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+    				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+    				document.getElementById("neirong1").classList.add("mui-hidden");
+    				document.getElementById("neirong2").classList.add("mui-hidden");
+    				document.getElementById("neirong4").classList.add("mui-hidden");
+    				document.getElementById("neirong3").classList.remove("mui-hidden");break;
+    		case 4: /*点击底部导航按钮时将按钮换色*/
+    				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"#AAA"});
+    				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+    				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+    				document.getElementById("neirong1").classList.add("mui-hidden");
+    				document.getElementById("neirong2").classList.add("mui-hidden");
+    				document.getElementById("neirong3").classList.add("mui-hidden");
+    				document.getElementById("neirong4").classList.remove("mui-hidden");break;
+    	}
+    }
+	/*热门游戏，我的战队，我的比赛内容切换*/
+  	function nav_scroll(x){
+  		switch(x){
+  			case 1: /*进行热门游戏。。内容的切换*/
+  					document.getElementById("scroll2").classList.add("mui-hidden");
+    				document.getElementById("scroll3").classList.add("mui-hidden");
+    				document.getElementById("scroll1").classList.remove("mui-hidden");
+    				/*热门游戏等的按钮添加底线*/
+    				$("#scroll_button").children().eq(x-1).css({"borderBottom":"3px solid #fff"});
+    				$("#scroll_button").children().eq(x-1).siblings().css({"borderBottom":"none"});break;
+  			case 2: /*进行热门游戏。。内容的切换*/
+  					document.getElementById("scroll1").classList.add("mui-hidden");
+    				document.getElementById("scroll3").classList.add("mui-hidden");
+    				document.getElementById("scroll2").classList.remove("mui-hidden");
+    				/*热门游戏等的按钮添加底线*/
+    				$("#scroll_button").children().eq(x-1).css({"borderBottom":"3px solid #fff"});
+    				$("#scroll_button").children().eq(x-1).siblings().css({"borderBottom":"none"});break;
+  			case 3: /*进行热门游戏。。内容的切换*/
+  					document.getElementById("scroll1").classList.add("mui-hidden");
+    				document.getElementById("scroll2").classList.add("mui-hidden");
+    				document.getElementById("scroll3").classList.remove("mui-hidden");
+    				/*热门游戏等的按钮添加底线*/
+    				$("#scroll_button").children().eq(x-1).css({"borderBottom":"3px solid #fff"});
+    				$("#scroll_button").children().eq(x-1).siblings().css({"borderBottom":"none"});break;
+  		}
+  	}
+    </script>
+    
+</body>
+</html>
+
+
