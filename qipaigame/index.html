@@ -5,13 +5,14 @@
     <title>Document</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/1.css"/>
 </head>
-<body  style="background: #AAAAAA;">
+<body>
 	
 	  <!-- 主页面容器 -->
 	  
 	    <!-- 主页面标题 -->
-	    <header class="mui-bar mui-bar-nav" style="height:10%;background-color: #B5B5B5" id="_title">
+	    <header class="mui-bar mui-bar-nav" style="background-color: #B5B5B5" id="_title">
 	     <!-- <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"  href="#offCanvasSide" ></a>-->
 	     <!--
          	作者：695750870@qq.com
@@ -19,26 +20,26 @@
          	描述：界面头部信息（包括昵称，ID，金币等）。
          -->
 	     <div style="width:15%;height:100%;text-align: center;float:left;">
-	     	<div style="width:90%;height:70%;border:1px solid #000000;border-radius: 5px;margin-top: 20%;background: url(http://placehold.it/40x40) no-repeat;background-size: cover;"></div>
+	     	<div style="width:90%;height:70%;border:1px solid #000000;border-radius: 5px;margin-top: 8px;background: url(http://placehold.it/40x40) no-repeat;background-size: cover;"></div>
 	     </div>
 	     <div style="width:25%;height:100%;text-align:left;margin-left:5px;float:left;">
-	     	<div style="margin-top: 10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size:13px;"><b>昵称</b></div>
+	     	<div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size:13px;"><b>昵称</b></div>
 	     	<div style="width:100%;height:40%;border: 1px solid #333;border-radius: 5px;text-align: center;background: #CAE1FF;">
-	     		<img style="float: left;" src="http://placehold.it/24x24"/>
-	     		<p style="margin-top: 5%;font-size: 15px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>999999</b></p>
+	     		<img style="float: left;" src="http://placehold.it/24x15"/>
+	     		<p style="font-size: 15px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>999999</b></p>
 	     	</div>
 	     </div>
 	     <div style="width:25%;height:100%;text-align:left;margin-left:5px;float:left;">
-	     	<div style="margin-top: 10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size:13px;"><b>ID:12345678</b></div>
+	     	<div style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size:13px;"><b>ID:12345678</b></div>
 	     	<div style="width:100%;height:40%;border: 1px solid #333;border-radius: 5px;text-align: center;background: #CAE1FF;">
-	     		<img style="float: left;" src="http://placehold.it/24x24"/>
-	     		<p style="margin-top: 5%;font-size: 15px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>999999</b></p>
+	     		<img style="float: left;" src="http://placehold.it/24x15"/>
+	     		<p style="font-size: 15px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>999999</b></p>
 	     	</div>
 	     </div>
 	     <div style="width:20%;height:100%;text-align: center;float:right;">
-	     	<div style="width:100%;height:40%;margin-top:32px;border: 1px solid #333;border-radius: 5px;text-align: center;background: #CAE1FF;">
-	     		<img style="float: left;" src="http://placehold.it/15x24"/>
-	     		<p style="margin-top: 5%;font-size: 10px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>实名认证</b></p>
+	     	<div style="width:100%;height:40%;margin-top:20px;border: 1px solid #333;border-radius: 5px;text-align: center;background: #CAE1FF;">
+	     		<img style="float: left;" src="http://placehold.it/15x15"/>
+	     		<p style="font-size: 10px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>实名认证</b></p>
 	     	</div>
 	     </div>
 	    </header>
@@ -49,7 +50,7 @@
         	时间：2018-03-15
         	描述：这里设置一个header用作上拉刷新
         -->
-        
+        <header class="mui-bar-nav"></header>
         <!--
             	作者：695750870@qq.com
             	时间：2018-03-15
@@ -71,7 +72,9 @@
 		</nav>
 		
 		
-	    <div class="mui-content" id="_container" style="background: #AAAAAA;">
+	    <!--<div class="mui-content" id="_container" style="background: #AAAAAA;">-->
+	    <div class="mui-content mui-scroll-wrapper" style="height:100%" id="_container">
+	      <div class="mui-scroll" style="height:100%;background: #AAAAAA;">
 	      
 	        <!-- 主界面具体展示内容 -->
 	        
@@ -81,13 +84,13 @@
             	描述：首页的内容都在这里
             -->
 	        <div id="neirong1">    	
-	        	<br/>
+	        	
 	        	<!--
                 	作者：695750870@qq.com
                 	时间：2018-03-15
                 	描述：首页的图片轮播
                 -->
-                <div style="opacity:0.3;position: absolute;top:10%;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" id="huodong">
+                <div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" id="huodong">
                 	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
                 	<input type="text" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: none;"/>
                 </div>
@@ -136,17 +139,17 @@
               	时间：2018-03-16
               	描述:热门游戏，我的战队，我的比赛在这
              -->
-             <div style="overflow: hidden;background: #DEDEDE;height:10%" id="scroll_button">
-             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 10px;border-bottom: 3px solid #fff;" onclick="nav_scroll(1)">热门游戏</div>
-             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 10px;" onclick="nav_scroll(2)">我的战队</div>
-             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 10px;" onclick="nav_scroll(3)">我的比赛</div>
+             <div style="overflow: hidden;background: #DEDEDE;height:45px" id="scroll_button">
+             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 15px;border-bottom: 3px solid #fff;" onclick="nav_scroll(1)">热门游戏</div>
+             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 15px;" onclick="nav_scroll(2)">我的战队</div>
+             	<div style="width:33%;height:30px;text-align: center;float: left;margin-top: 15px;" onclick="nav_scroll(3)">我的比赛</div>
              </div>
              <!--
              	作者：695750870@qq.com
              	时间：2018-03-17
              	描述：热门游戏选择在此
              -->
-             <div class="mui-scroll-wrapper" style="top:40%;width:100%;height:35%;background: #AAAAAA;">
+             <div class="mui-scroll-wrapper" style="top:190px;width:100%;height:230px;background: #AAAAAA;" id="_scroll">
 				<div class="mui-scroll">
 					<!--这里放置真实显示的DOM内容-->
 				    <div id="scroll1">
@@ -219,7 +222,7 @@
              	时间：2018-03-17
              	描述：加入牌局，创建牌局在此
              -->
-			 <div style="position: absolute;margin:0 auto;top:75%;width:100%;">
+			 <div style="position: absolute;margin:0 auto;top:430px;width:100%;" id="paiju">
 				<div style="text-align: center;">________________<span class="mui-icon mui-icon-arrowup"></span>________________</div>
 				<div>
 					<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: left;margin: 10px;background: #DBDBDB;">
@@ -278,6 +281,8 @@
 	    
 	    <div class="mui-off-canvas-backdrop"></div>
 	  </div> 
+	 </div>
+	</div>
 	
 	<!--
     	作者：695750870@qq.com
@@ -313,6 +318,12 @@
 	gallery.slider({
  	 interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
 	});
+	
+	/*div动态布局*/
+	var top_scroll = $("#scroll_button").offset().top;
+	$("#_scroll").css({"top":top_scroll+"px"});
+	var top_paiju = $("#_scroll").offset().top+190;
+	$("#paiju").css({"top":top_paiju+"px"});
 	
 	/*活动信息轮播在此*/
 	setInterval(function(){
