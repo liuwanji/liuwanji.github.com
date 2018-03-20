@@ -127,7 +127,7 @@
                 -->
                 <div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" id="huodong">
                 	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
-                	<input type="text" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: 1px solid #fff;"/>
+                	<input type="text"  readonly="readonly" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: 1px solid #fff;"/>
                 </div>
 	         <div id="slider" class="mui-slider">
 	            <div class="mui-slider-group mui-slider-loop">
@@ -236,7 +236,7 @@
 										创建牌局
 									</div>
 							</div>
-			 			</div>
+			 			</div><br/><br/><br/>
 	        		</div>
 	        		
 	        		<div id="scroll2">
@@ -340,7 +340,7 @@
 						</div>
 					</div>-->
 				</div>
-			 </div>	
+			 </div>
 	        </div>
 	        
 	        <!--
@@ -374,6 +374,10 @@
    /*在有后端的情况下，下拉刷新将重新上一步，进行一次数据交互，对整体DOM内容初始化变更显示*/
 	mui.init();
 	
+	/*锁定竖屏*/
+	mui.plusReady(function () {
+		plus.screen.lockOrientation("portrait-primary");
+	});
 	$(function(){
 		/*设置界面可以滚动（srcoll初始化）和让界面中的a链接可以正常点击进入使用*/
     mui('.mui-scroll-wrapper').scroll({
