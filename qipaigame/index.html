@@ -227,7 +227,7 @@
              				描述：加入牌局，创建牌局在此
              			-->
 			 			<div style="margin:0 auto;width:100%;" id="paiju">
-							<div style="text-align: center;">________________<span class="mui-icon mui-icon-arrowup"></span>________________</div>
+							<div style="text-align: center;width:100%">_______________<span class="mui-icon mui-icon-arrowup"></span>_______________</div>
 							<div>
 									<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: left;margin: 10px;background: #DBDBDB;">
 										加入牌局
@@ -318,6 +318,7 @@
 	         				<p style="text-align: center;padding-top: 50px;">热门比赛</p>
 	         			</div><br/>
 	        		</div>
+	        		<br/><br/>
 					<!--<div style="border:1px solid #333;overflow:hidden;text-align:center;margin: 0 auto;">
 						<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-left: 5%;margin-top:25px;margin-bottom:18px;background: #DBDBDB;">
 							武汉麻将
@@ -399,6 +400,7 @@
     	document.getElementById("scroll2").classList.add("mui-hidden");
     	document.getElementById("scroll3").classList.add("mui-hidden");
     	document.getElementById("scroll1").classList.remove("mui-hidden");
+    	mui('#_scroll').scroll().scrollTo(0,0,100);
     	$("#scroll_button").children().eq(0).css({"borderBottom":"3px solid #fff"});
     	$("#scroll_button").children().eq(0).siblings().css({"borderBottom":"none"});
     	/*div动态布局*/
@@ -477,6 +479,7 @@
   					document.getElementById("scroll2").classList.add("mui-hidden");
     				document.getElementById("scroll3").classList.add("mui-hidden");
     				document.getElementById("scroll1").classList.remove("mui-hidden");
+    				mui('#_scroll').scroll().scrollTo(0,0,100);
     				/*热门游戏等的按钮添加底线*/
     				$("#scroll_button").children().eq(x-1).css({"borderBottom":"3px solid #fff"});
     				$("#scroll_button").children().eq(x-1).siblings().css({"borderBottom":"none"});break;
@@ -484,6 +487,7 @@
   					document.getElementById("scroll1").classList.add("mui-hidden");
     				document.getElementById("scroll3").classList.add("mui-hidden");
     				document.getElementById("scroll2").classList.remove("mui-hidden");
+    				mui('#_scroll').scroll().scrollTo(0,0,100);
     				/*热门游戏等的按钮添加底线*/
     				$("#scroll_button").children().eq(x-1).css({"borderBottom":"3px solid #fff"});
     				$("#scroll_button").children().eq(x-1).siblings().css({"borderBottom":"none"});break;
@@ -491,6 +495,7 @@
   					document.getElementById("scroll1").classList.add("mui-hidden");
     				document.getElementById("scroll2").classList.add("mui-hidden");
     				document.getElementById("scroll3").classList.remove("mui-hidden");
+    				mui('#_scroll').scroll().scrollTo(0,0,100);
     				/*热门游戏等的按钮添加底线*/
     				$("#scroll_button").children().eq(x-1).css({"borderBottom":"3px solid #fff"});
     				$("#scroll_button").children().eq(x-1).siblings().css({"borderBottom":"none"});break;
