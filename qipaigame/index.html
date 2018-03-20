@@ -319,11 +319,14 @@
  	 interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
 	});
 	
-	/*div动态布局*/
+	$(function(){
+		/*div动态布局*/
 	var top_scroll = $("#scroll_button").offset().top;
 	$("#_scroll").css({"top":top_scroll+"px"});
 	var top_paiju = $("#_scroll").offset().top+190;
 	$("#paiju").css({"top":top_paiju+"px"});
+	});
+	
 	
 	/*活动信息轮播在此*/
 	setInterval(function(){
