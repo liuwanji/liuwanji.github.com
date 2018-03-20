@@ -378,11 +378,13 @@
 	mui.plusReady(function () {
 		plus.screen.lockOrientation("portrait-primary");
 	});
+	
+	/*dom加载完成后的一些初始化配置*/
 	$(function(){
 		/*设置界面可以滚动（srcoll初始化）和让界面中的a链接可以正常点击进入使用*/
     mui('.mui-scroll-wrapper').scroll({
 		deceleration: 0.1, 
-		indicators:false
+		indicators:false,
 	});
     mui('body').on('tap','a',function(){document.location.href=this.href;});  
 	
@@ -444,6 +446,8 @@
     		case 1: /*点击底部导航按钮时将按钮换色*/
     				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"#AAA"});
     				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+    				/*将其他导航页面滚动到顶端*/
+    				mui('#_container').scroll().scrollTo(0,0,0);
     				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong2").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
@@ -452,6 +456,8 @@
     		case 2: /*点击底部导航按钮时将按钮换色*/
     				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"#AAA"});
     				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+    				/*将其他导航页面滚动到顶端*/
+    				mui('#_container').scroll().scrollTo(0,0,0);
     				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
@@ -460,6 +466,8 @@
     		case 3: /*点击底部导航按钮时将按钮换色*/
     				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"#AAA"});
     				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+    				/*将其他导航页面滚动到顶端*/
+    				mui('#_container').scroll().scrollTo(0,0,0);
     				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.add("mui-hidden");
@@ -469,6 +477,8 @@
     		case 4: /*点击底部导航按钮时将按钮换色*/
     				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"#AAA"});
     				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+    				/*将其他导航页面滚动到顶端*/
+    				mui('#_container').scroll().scrollTo(0,0,0);
     				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.add("mui-hidden");
