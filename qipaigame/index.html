@@ -39,7 +39,7 @@
 	     <div style="width:20%;height:100%;text-align: center;float:right;">
 	     	<div style="width:100%;height:40%;margin-top:20px;border: 1px solid #333;border-radius: 5px;text-align: center;background: #CAE1FF;">
 	     		<img style="float: left;" src="http://placehold.it/15x15"/>
-	     		<p style="font-size: 10px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b>实名认证</b></p>
+	     		<p style="font-size: 10px;color:#000000;overflow: hidden;white-space: nowrap;text-overflow: ellipsis"><b id="right_active">实名认证</b></p>
 	     	</div>
 	     </div>
 	    </header>
@@ -58,10 +58,10 @@
             -->
 	  	<nav class="mui-bar mui-bar-tab" id="bottom_nav">
 		    <a class="mui-tab-item mui-active" style="border: 1px solid #333333;background: #AAA;" href="javascript:_nav(1);">
-		        	热卖
+		        	本地热卖
 		    </a>
 		    <a class="mui-tab-item"  style="border: 1px solid #333333;border-left: none;" href="javascript:_nav(2);">
-		        	活动
+		        	本地活动
 		    </a>
 		    <a class="mui-tab-item"  style="border: 1px solid #333333;border-left: none;" href="javascript:_nav(3);">
 		        	游戏
@@ -125,7 +125,7 @@
                 	时间：2018-03-15
                 	描述：首页的图片轮播
                 -->
-                <div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" id="huodong">
+                <div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" class="huodong">
                 	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
                 	<input type="text"  readonly="readonly" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: 1px solid #fff;"/>
                 </div>
@@ -134,35 +134,35 @@
 	            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 	            <div class="mui-slider-item mui-slider-item-duplicate">
 	              <a href="img4.html">
-	                <img src="http://placehold.it/400x150" style="height:150px">
+	                <img src="http://placehold.it/400x150">
 	              </a>
 	            </div>
 	            <!-- 第一张 -->
 	            <div class="mui-slider-item">
 	              <a href="img1.html">
-	                <img src="http://placehold.it/400x150" style="height:150px">
+	                <img src="http://placehold.it/400x150">
 	              </a>
 	            </div>
 	            <!-- 第二张 -->
 	            <div class="mui-slider-item">
 	              <a href="img2.html">
-	                <img src="http://placehold.it/400x150" style="height:150px">
+	                <img src="http://placehold.it/400x150">
 	              </a>
 	            </div>
 	            <!-- 第三张 -->
 	            <div class="mui-slider-item">
 	              <a href="img3.html">
-	                <img src="http://placehold.it/400x150" style="height:150px">
+	                <img src="http://placehold.it/400x150">
 	              </a>
 	            </div>
 	            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
 	            <div class="mui-slider-item mui-slider-item-duplicate">
 	              <a href="img1.html">
-	                <img src="http://placehold.it/400x150" style="height:150px">
+	                <img src="http://placehold.it/400x150">
 	              </a>
 	            </div>
 	            </div>
-	            <div class="mui-slider-indicator">
+	            <div class="mui-slider-indicator" style="left:40%;">
 	            	<div class="mui-indicator mui-active"></div>
 	            	<div class="mui-indicator"></div>
 	            	<div class="mui-indicator"></div>
@@ -334,8 +334,134 @@
             	时间：2018-03-15
             	描述：和人中心的内容都在这里
             -->
-	        <div id="neirong4">
-	        	
+	        <div id="neirong4" style="height:100%;background: #fff;">
+	        	 <div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" class="huodong">
+                	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
+                	<input type="text"  readonly="readonly" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: 1px solid #fff;"/>
+                </div>
+	         <div id="img_lunbo2" class="mui-slider">
+	            <div class="mui-slider-group mui-slider-loop">
+	            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+	            <div class="mui-slider-item mui-slider-item-duplicate">
+	              <a href="img4.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            <!-- 第一张 -->
+	            <div class="mui-slider-item">
+	              <a href="img1.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            <!-- 第二张 -->
+	            <div class="mui-slider-item">
+	              <a href="img2.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            <!-- 第三张 -->
+	            <div class="mui-slider-item">
+	              <a href="img3.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+	            <div class="mui-slider-item mui-slider-item-duplicate">
+	              <a href="img1.html">
+	                <img src="http://placehold.it/400x150">
+	              </a>
+	            </div>
+	            </div>
+	            <div class="mui-slider-indicator" style="left:40%;">
+	            	<div class="mui-indicator mui-active"></div>
+	            	<div class="mui-indicator"></div>
+	            	<div class="mui-indicator"></div>
+	            </div>
+	         </div>
+	         	<a href="#">
+	         		<div style="border-top: 1px solid #AAA;height:50px;color:#000">
+	         			<div style="margin-top: 15px;margin-left: 20px;float: left;">我的订单</div>
+	         			<div style="float: right;margin-top: 10px;"><span class="mui-icon mui-icon-arrowright"></span></div>
+	         		</div>
+	         	</a>
+	         	
+	         	<div style="border: 1px solid #AAA;height:70px;">
+	         		<div style="text-align: center;width:20%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-plus"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">代付款</div>
+						</a>
+	         		</div>
+	         		<div style="text-align: center;width:20%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-paperplane"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">代发货</div>
+						</a>
+	         		</div>
+	         		<div style="text-align: center;width:20%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-location"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">已发货</div>
+						</a>
+	         		</div>
+	         		<div style="text-align: center;width:20%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-compose"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">待评价</div>
+						</a>
+	         		</div>
+	         		<div style="text-align: center;width:20%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-starhalf"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">退换/售后</div>
+						</a>
+	         		</div>
+	         	</div>
+	         	
+	         	<div>
+	         		<div style="margin: 10px 20px;">
+	         			<b>我的服务</b>
+	         		</div>
+	         		<a href="#"><div style="text-align: center;width:95%;height:45px;border: 1px solid #AAA;margin: 0 auto;padding-top: 13px;margin-bottom: 5px;color:#000;">
+	         			邀请好友免费得积分
+	         		</div></a>
+	         		<a href="#"><div style="text-align: center;width:95%;height:45px;border: 1px solid #AAA;margin: 0 auto;padding-top: 13px;margin-bottom: 5px;color:#000;">
+	         			签到中心 签到得积分
+	         		</div></a>
+	         		<a href="#"><div style="text-align: center;width:95%;height:45px;border: 1px solid #AAA;margin: 0 auto;padding-top: 13px;margin-bottom: 5px;color:#000;">
+	         			申请商家活动/合作
+	         		</div></a>
+	         		<a href="#"><div style="text-align: center;width:95%;height:45px;border: 1px solid #AAA;margin: 0 auto;padding-top: 13px;margin-bottom: 5px;color:#000;">
+	         			会员管理中心
+	         		</div></a>
+	         	</div>
+	         	
+	         	<div style="height:70px;">
+	         		<div style="text-align: center;width:25%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-map"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">地址</div>
+						</a>
+	         		</div>
+	         		<div style="text-align: center;width:25%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-qq"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">客服</div>
+						</a>
+	         		</div>
+	         		<div style="text-align: center;width:25%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-help"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">帮助</div>
+						</a>
+	         		</div>
+	         		<div style="text-align: center;width:25%;margin-top: 10px;float: left;">
+	         			<a href="#">
+							<span class="mui-icon mui-icon-gear"></span>
+							<div class="mui-media-body" style="color:#000;font-size: 15px;margin-top: 5px;">设置</div>
+						</a>
+	         		</div>
+	         	</div>
 	        </div>
 	    
 	    <div class="mui-off-canvas-backdrop"></div>
@@ -386,7 +512,7 @@
 		});
 	});
 	
-	/*y点击游戏按钮后布局初始化在这*/
+	/*点击游戏按钮后布局初始化在这*/
 	function game_init(){
 		var gallery = mui('#img_lunbo');
 			gallery.slider({
@@ -394,19 +520,27 @@
 		});
 	}
 	
+	/*点击个人中心后布局初始化在这*/
+	function me_init(){
+		var gallery = mui('#img_lunbo2');
+			gallery.slider({
+ 	 		interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+	}
+	
 	/*活动信息轮播在此*/
 	setInterval(function(){
-		if($("#huodong input").attr("value")!=" 今日21点~22点，充值送双倍钻石，记得哦!"){
-			var first_char = $("#huodong input").attr("value").slice(0,1);
+		if($(".huodong input").attr("value")!=" 今日21点~22点，充值送双倍钻石，记得哦!"){
+			var first_char = $(".huodong input").attr("value").slice(0,1);
 			if(first_char==" "){
-				var s = $("#huodong input").attr("value").slice(2);
-				$("#huodong input").attr("value",s);
+				var s = $(".huodong input").attr("value").slice(2);
+				$(".huodong input").attr("value",s);
 			}else{
-				var s = $("#huodong input").attr("value").slice(1);
-				$("#huodong input").attr("value",s);
+				var s = $(".huodong input").attr("value").slice(1);
+				$(".huodong input").attr("value",s);
 			}		
 		}else{
-			$("#huodong input").attr("value","今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!");
+			$(".huodong input").attr("value","今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!");
 		}
 		
 	},500);
@@ -441,6 +575,8 @@
     				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
     				/*将其他导航页面滚动到顶端*/
     				mui('#_container').scroll().scrollTo(0,0,0);
+    				/*更改顶部右侧状态信息*/
+    				$("#right_active").text("实名认证");
     				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.add("mui-hidden");
@@ -452,11 +588,14 @@
     				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
     				/*将其他导航页面滚动到顶端*/
     				mui('#_container').scroll().scrollTo(0,0,0);
+    				/*更改顶部右侧状态信息*/
+    				$("#right_active").text("优惠码");
     				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
     				document.getElementById("neirong1").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.add("mui-hidden");
     				document.getElementById("neirong3").classList.add("mui-hidden");
-    				document.getElementById("neirong4").classList.remove("mui-hidden");break;
+    				document.getElementById("neirong4").classList.remove("mui-hidden")
+    				me_init();;break;
     	}
     }
 	/*热门游戏，我的战队，我的比赛内容切换*/
