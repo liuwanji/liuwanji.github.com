@@ -133,7 +133,7 @@
 	            <div class="mui-slider-group mui-slider-loop">
 	            <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 	            <div class="mui-slider-item mui-slider-item-duplicate">
-	              <a href="img4.html">
+	              <a href="javascript:_img1();">
 	                <img src="http://placehold.it/400x150">
 	              </a>
 	            </div>
@@ -620,6 +620,19 @@
     				mui("#slider").slider().gotoItem(2,400);
     				break;
   		}
+  	}
+  	
+  	function _img1(){
+  			mui.openWindow({
+  				url:"http://liuwanji.github.io/dafeiji",
+  				id:"img1",
+  				show:{
+      				autoShow:true,
+      				aniShow:"slide-in-right",
+      				duration:1000
+    			},
+  			});
+  		
   	}
     </script>
     
