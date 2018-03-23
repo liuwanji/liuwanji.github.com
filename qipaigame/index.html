@@ -125,9 +125,12 @@
                 	时间：2018-03-15
                 	描述：首页的图片轮播
                 -->
-                <div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" class="huodong">
+                
+                <div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;font-size: 12px;" class="huodong">
                 	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
-                	<input type="text"  readonly="readonly" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: 1px solid #fff;"/>
+                	<div id="pmp" style="width:70%;height:20px;margin-left:15%;">
+						<marquee scrollamount="3" scrolldelay="30" direction= "left" onmouseover="this.stop()" onmouseout="this.start()">今日21点~22点，充值送双倍钻石，记得哦!</marquee>
+					</div>
                 </div>
 	         <div id="img_lunbo" class="mui-slider">
 	            <div class="mui-slider-group mui-slider-loop">
@@ -335,9 +338,11 @@
             	描述：和人中心的内容都在这里
             -->
 	        <div id="neirong4" style="height:100%;background: #fff;">
-	        	 <div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" class="huodong">
+	        	<div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;font-size: 12px;" class="huodong">
                 	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
-                	<input type="text"  readonly="readonly" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: 1px solid #fff;"/>
+                	<div id="pmp" style="width:70%;height:20px;margin-left:15%;">
+						<marquee scrollamount="3" scrolldelay="30" direction= "left" onmouseover="this.stop()" onmouseout="this.start()">今日21点~22点，充值送双倍钻石，记得哦!</marquee>
+					</div>
                 </div>
 	         <div id="img_lunbo2" class="mui-slider">
 	            <div class="mui-slider-group mui-slider-loop">
@@ -544,24 +549,6 @@
  	 		interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
 		});
 	}
-	
-	/*活动信息轮播在此*/
-	setInterval(function(){
-		if($(".huodong input").attr("value")!=" 今日21点~22点，充值送双倍钻石，记得哦!"){
-			var first_char = $(".huodong input").attr("value").slice(0,1);
-			if(first_char==" "){
-				var s = $(".huodong input").attr("value").slice(2);
-				$(".huodong input").attr("value",s);
-			}else{
-				var s = $(".huodong input").attr("value").slice(1);
-				$(".huodong input").attr("value",s);
-			}		
-		}else{
-			$(".huodong input").attr("value","今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!");
-		}
-		
-	},500);
-
 	
 	/*此为底部导航按钮的点击触发事件，进行基本的界面切换*/
     function _nav(x){
