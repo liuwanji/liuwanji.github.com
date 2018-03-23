@@ -170,7 +170,7 @@
 	         </div>
 	          
 	          <div id="slider" class="mui-slider">
-				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted" id="slide_control">
 					<a class="mui-control-item" href="javascript:nav_scroll(1);">
 						热门游戏
 					</a>
@@ -183,7 +183,7 @@
 				</div>
 				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
 				<div class="mui-slider-group">
-					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="height:330px;">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="height:330px;bottom:0px;">
 						<div id="scroll1" class="mui-scroll-wrapper">
 							<div class="mui-scroll">
 								<ul class="mui-table-view mui-grid-view mui-grid-9" style="background: #AAAAAA;border: none;">
@@ -518,6 +518,23 @@
 			gallery.slider({
  	 		interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
 		});
+		
+		/*动态的改变游戏中热门游戏等的scroll的height*/
+		var slide_control_top = $("#item1mobile").offset().top;
+		var bottom_nav_top = $("#bottom_nav").offset().top;
+		var slide_height=bottom_nav_top-slide_control_top;
+		if(slide_height>10){
+			$("#item1mobile").css({
+				"height":slide_height
+			});
+			$("#item2mobile").css({
+				"height":slide_height
+			});
+			$("#item3mobile").css({
+				"height":slide_height
+			});
+		}
+		
 	}
 	
 	/*点击个人中心后布局初始化在这*/
