@@ -119,17 +119,20 @@
             	时间：2018-03-15
             	描述：购物车的内容都在这里
             -->
-	        <div id="neirong3" style="background: #AAAAAA;">
+	        <div id="neirong3" style="background: #fff;">
 	        	<!--
                 	作者：695750870@qq.com
                 	时间：2018-03-15
                 	描述：首页的图片轮播
                 -->
-                
-                <div style="opacity:0.5;position: absolute;z-index: 99;background: #fff;width:100%;font-size: 12px;" class="huodong">
+                 <!--<div style="opacity:0.3;position: absolute;z-index: 99;background: #fff;width:100%;text-align: center;font-size: 12px;" id="huodong">
                 	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
+                	<input type="text"  readonly="readonly" value="今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!" style="width:250px;height: 10px;font-size: 13px;margin-bottom: 0px;border: 1px solid #fff;"/>
+                </div>-->
+                <div style="opacity:0.5;position: absolute;z-index: 99;background: #fff;width:100%;font-size: 12px;" class="huodong">
+                	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="images/qrcode.png" width="25px" height="15px"/></div>
                 	<div id="pmp" style="width:70%;height:20px;margin-left:15%;">
-						<marquee scrollamount="3" scrolldelay="30" direction= "left" onmouseover="this.stop()" onmouseout="this.start()">今日21点~22点，充值送双倍钻石，记得哦!</marquee>
+						<marquee scrollamount="3" direction= "left" onmouseover="this.stop()" onmouseout="this.start()">今日21点~22点，充值送双倍钻石，记得哦!</marquee>
 					</div>
                 </div>
 	         <div id="img_lunbo" class="mui-slider">
@@ -187,39 +190,14 @@
 				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
 				<div class="mui-slider-group">
 					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active" style="height:330px;bottom:0px;">
-						<div id="scroll1" class="mui-scroll-wrapper">
-							<div class="mui-scroll">
-								<ul class="mui-table-view mui-grid-view mui-grid-9" style="background: #AAAAAA;border: none;">
-									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
-										<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
-											武汉麻将
-										</div>
-									</li>
-									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
-										<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
-											卡五星
-										</div>
-									</li>
-									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
-										<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
-											斗地主
-										</div>
-									</li>
-									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
-										<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
-											斗地主
-										</div>
-									</li>
-									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
-										<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 20px;float: left;margin-top:15px;background: #DBDBDB;">
-											竞技场二打一
-										</div>
-									</li>
-									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style="border: none;">
-										<div style="width:80px;height:80px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: #DBDBDB;">
-											比赛中心
-										</div>
-									</li>
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll" id="scroll1">
+								<ul class="mui-table-view mui-grid-view mui-grid-9" style="background: #fff;border: none;" id="game_ul">
+									<!--
+                                    	作者：695750870@qq.com
+                                    	时间：2018-03-24
+                                    	描述：热门游戏在此
+                                    -->
 								</ul>
 
 								<!--
@@ -227,8 +205,12 @@
              						时间：2018-03-17
              						描述：加入牌局，创建牌局在此
              					-->
-								<div style="margin:0 auto;width:100%;" id="paiju">
-									<div style="text-align: center;width:100%">_______________<span class="mui-icon mui-icon-arrowup"></span>_______________</div>
+								
+							</div>
+						</div>
+						<div style="margin:0 auto;width:100%;position: absolute;bottom:-70px;z-index: 99;background: #fff;" id="paiju">
+									
+									<div style="margin:0 auto;width:90%;"><img  id="suojin" src="images/suojin1.png"></div>
 									<div>
 										<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: left;margin: 10px;background: #DBDBDB;">
 											加入牌局
@@ -237,13 +219,11 @@
 											创建牌局
 										</div>
 									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 					<div id="item2mobile" class="mui-slider-item mui-control-content" style="height:330px;">
-						<div id="scroll2" class="mui-scroll-wrapper">
-							<div class="mui-scroll">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll"  id="scroll2">
 								<ul class="mui-table-view mui-grid-view mui-grid-9" style="background: #AAAAAA;border: none;border-bottom: 1px solid #242424;">
 									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="border: none;">
 										<a href="#">
@@ -273,23 +253,17 @@
 									</div>
 								</div>
 
-								<div style="width:100%;height:80px;background: #fff;">
-									<div style="border: 1px solid #000;width:50px;height:50px;border-radius: 8px;float: left;margin-left: 10px;margin-top: 15px;;background: url(http://placehold.it/50x50) no-repeat;background-size: cover;;"></div>
-									<div style="float:left;margin-left: 25px;margin-top: 30px;"><span>来游戏战队</span></div>
-									<div style="float: right;margin-right: 15px;margin-top: 30px;">成员<span>5</span>人</div>
-								</div><br/>
-								<div style="width:100%;height:80px;background: #fff;">
-									<div style="border: 1px solid #000;width:50px;height:50px;border-radius: 8px;float: left;margin-left: 10px;margin-top: 15px;;background: url(http://placehold.it/50x50) no-repeat;background-size: cover;;"></div>
-									<div style="float:left;margin-left: 25px;margin-top: 30px;"><span>来游戏战队</span></div>
-									<div style="float: right;margin-right: 15px;margin-top: 30px;">成员<span>5</span>人</div>
-								</div>
-								<br/>
+								<!--
+                                	作者：695750870@qq.com
+                                	时间：2018-03-24
+                                	描述：我的战队在此
+                                -->
 							</div>
 						</div>
 					</div>
 					<div id="item3mobile" class="mui-slider-item mui-control-content" style="height:330px;">
-						<div id="scroll3" class="mui-scroll-wrapper">
-							<div class="mui-scroll">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll" id="scroll3">
 								<ul class="mui-table-view mui-grid-view mui-grid-9" style="background: #AAAAAA;border: none;border-bottom: 1px solid #242424;">
 									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="border: none;">
 										<a href="#">
@@ -318,13 +292,12 @@
 										<span class="mui-icon mui-icon-arrowthindown"></span>
 									</div>
 								</div>
-
-								<div style="width:100%;height:130px;background: #fff;">
-									<p style="text-align: center;padding-top: 50px;">热门比赛</p>
-								</div><br/>
-								<div style="width:100%;height:130px;background: #fff;">
-									<p style="text-align: center;padding-top: 50px;">热门比赛</p>
-								</div><br/>
+				
+								<!--
+                                	作者：695750870@qq.com
+                                	时间：2018-03-24
+                                	描述：热门比赛在此
+                                -->
 							</div>
 						</div>
 					</div>
@@ -339,9 +312,9 @@
             -->
 	        <div id="neirong4" style="height:100%;background: #fff;">
 	        	<div style="opacity:0.5;position: absolute;z-index: 99;background: #fff;width:100%;font-size: 12px;" class="huodong">
-                	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="http://placehold.it/15x15"/></div>
+                	<div style="margin-left:20px;margin-top:2px;float: left;"><img src="images/qrcode.png" width="25px" height="15px"/></div>
                 	<div id="pmp" style="width:70%;height:20px;margin-left:15%;">
-						<marquee scrollamount="3" scrolldelay="30" direction= "left" onmouseover="this.stop()" onmouseout="this.start()">今日21点~22点，充值送双倍钻石，记得哦!</marquee>
+						<marquee scrollamount="3" direction= "left" onmouseover="this.stop()" onmouseout="this.start()">今日21点~22点，充值送双倍钻石，记得哦!</marquee>
 					</div>
                 </div>
 	         <div id="img_lunbo2" class="mui-slider">
@@ -510,12 +483,111 @@
     	document.getElementById("neirong3").classList.add("mui-hidden");
     	document.getElementById("neirong4").classList.add("mui-hidden");
     
+    	/*加入牌局，创建牌局的缩进*/
+    	$("#suojin").on("tap",function(){
+    		if($("#paiju").css("bottom")=="0px"){
+    			$("#paiju").animate({
+    				"bottom":"-70px",
+    			},"fast");
+    			$(this).prop("src","images/suojin1.png");
+    		}else{
+    			$("#paiju").animate({
+    				"bottom":"0px",
+    			},"fast");
+    			$(this).prop("src","images/suojin2.png");
+    		}
+    		return false;
+    	});
+    	
+    	/*热门游戏的点击事件监听*/
+    	$("#game_ul").on("tap","li div",function(){
+    		
+    		$(this).stop(true).animate({
+    			"width":"70px",
+    			"height":"70px",
+    		},"fast").animate({
+    			"width":"80px",
+    			"height":"80px"
+    		},"fast");
+    		$(this).css({
+    			"border":"2px solid #aaa",
+    		}).parent().siblings().children().css({
+    			"border":"none",
+    		});
+    		$("#paiju").animate({
+    			"bottom":"0px",
+    		},"fast");
+    		$("#suojin").prop("src","images/suojin2.png");
+    	})
+    	/*初始化刷新一次*/
+    	refresh();
+    	
     	/*初始化让首页的图片自动循环滚动播放*/
     	var gallery = mui('#img_lunbo');
 			gallery.slider({
  	 		interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
 		});
 	});
+	
+//	/*活动信息轮播在此*/
+//	setInterval(function(){
+//		if($("#huodong input").attr("value")!=" 今日21点~22点，充值送双倍钻石，记得哦!"){
+//			var first_char = $("#huodong input").attr("value").slice(0,1);
+//			if(first_char==" "){
+//				var s = $("#huodong input").attr("value").slice(2);
+//				$("#huodong input").attr("value",s);
+//			}else{
+//				var s = $("#huodong input").attr("value").slice(1);
+//				$("#huodong input").attr("value",s);
+//			}		
+//		}else{
+//			$("#huodong input").attr("value","今日21点~22点，充值送双倍钻石，记得哦!         今日21点~22点，充值送双倍钻石，记得哦!");
+//		}
+//		
+//	},500);
+	
+	/*热门游戏列表html格式字符串 */
+	var game_list = "<li class='mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3' style='border: none;'>"
+	+"<div style='width:80px;height:80px; border-radius: 5px;text-align: center;padding-top: 28px;float: left;margin-top:15px;background: url(%url) no-repeat;background-size: cover;'>"
+	+"%gamename"
+	+"</div>"
+	+"</li>";
+	
+	/*我的战队列表htm格式字符串*/
+	var team_list = "<div style='width:100%;height:80px;background: #AAA;'>"
+	+"<div style='border: 1px solid #000;width:50px;height:50px;border-radius: 8px;float: left;margin-left: 10px;margin-top: 15px;background: url(%team_images) no-repeat;background-size: cover;'></div>"
+	+"<div style='float:left;margin-left: 25px;margin-top: 30px;'><span>%team_name</span></div>"
+	+"<div style='float: right;margin-right: 15px;margin-top: 30px;'>成员<span>%team_num</span>人</div>"
+	+"</div><br/>";
+								
+	/*我的比赛列表html格式字符串*/
+	var match_list = "<div style='width:100%;height:130px;background: #AAA;'>"
+	+"<p style='text-align: center;padding-top: 50px;'>%match</p>"
+	+"</div><br/>";
+	
+	/*刷新内容*/
+	function refresh(){
+//		mui.ajax();
+		var s = "";
+		
+		for(var i=0;i<6;i++){
+			s += game_list.replace("%url","images/logo.png").replace("%gamename","游戏");
+		}
+		s+="<br/></br>";
+		$("#game_ul").append(s);	
+		
+		s="";
+		for(var i=0;i<3;i++){
+			s += team_list.replace("%team_images","images/yuantiao.jpg").replace("%team_name","来游戏战队").replace("%team_num","5");
+		}
+		$("#scroll2").append(s);
+		
+		s="";
+		for(var i=0;i<3;i++){
+			s += match_list.replace("%match","热门比赛");
+		}
+		$("#scroll3").append(s);
+	}
 	
 	/*点击游戏按钮后布局初始化在这*/
 	function game_init(){
@@ -525,9 +597,7 @@
 		});
 		
 		/*动态的改变游戏中热门游戏等的scroll的height*/
-		var slide_control_top = $("#item1mobile").offset().top;
-		var bottom_nav_top = $("#bottom_nav").offset().top;
-		var slide_height=bottom_nav_top-slide_control_top;
+		var slide_height=$("#bottom_nav").offset().top-$("#item1mobile").offset().top;
 		if(slide_height>10){
 			$("#item1mobile").css({
 				"height":slide_height
