@@ -51,12 +51,30 @@
         	描述：这里设置一个header用作上拉刷新
         -->
         <header class="mui-bar-nav"></header>
-        <!--
+        	<!--
             	作者：695750870@qq.com
             	时间：2018-03-15
             	描述：底部的4个导航按钮
             -->
-	  	<nav class="mui-bar mui-bar-tab" id="bottom_nav">
+            <nav class="mui-bar mui-bar-tab" id="bottom_nav">
+		   		<a class="mui-tab-item mui-active" href="javascript:_nav(1);">
+		        	<span class="mui-icon mui-icon-home"></span>
+		        	<span class="mui-tab-label">本地热卖</span>
+		    	</a>
+		    	<a class="mui-tab-item"  href="javascript:_nav(2);">
+		        	<span class="mui-icon mui-icon-pengyouquan"></span>
+		        	<span class="mui-tab-label">本地活动</span>
+		    	</a>
+		    	<a class="mui-tab-item"  href="javascript:_nav(3);">
+		        	<span class="mui-icon mui-icon-flag"></span>
+		        	<span class="mui-tab-label">游戏</span>
+		    	</a>
+		    	<a class="mui-tab-item"  href="javascript:_nav(4);">
+		        	<span class="mui-icon mui-icon-contact"></span>
+		        	<span class="mui-tab-label">个人中心</span>
+		    	</a>
+			</nav>
+	  	<!--<nav class="mui-bar mui-bar-tab" id="bottom_nav">
 		    <a class="mui-tab-item mui-active" style="border: 1px solid #333333;background: url(images/muwu.jpg) no-repeat; background-size:cover;" href="javascript:_nav(1);">
 		        	本地热卖
 		    </a>
@@ -69,7 +87,7 @@
 		    <a class="mui-tab-item"  style="border: 1px solid #333333;border-left: none;" href="javascript:_nav(4);">
 		        	个人中心
 		    </a>
-		</nav>
+		</nav>-->
 		
 		
 	    <!--<div class="mui-content" id="_container" style="background: #AAAAAA;">-->
@@ -186,12 +204,15 @@
 									
 									<div style="margin:0 auto;width:90%;"><img  id="suojin" src="images/suojin1.png"></div>
 									<div>
-										<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: left;margin: 10px;background: #DBDBDB;">
+										<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" style="width:40%;height:55px;float: left;margin:10px;" id="joingame">加入牌局</button>
+										<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" style="width:40%;height:55px;float: right;margin:10px;" id="creategame">创建牌局</button>
+										
+										<!--<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: left;margin: 10px;background: #DBDBDB;" id="joingame">
 											加入牌局
 										</div>
-										<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: right;margin: 10px;background: #DBDBDB;">
+										<div style="width:40%;height:55px;border: 1px solid #000000; border-radius: 5px;text-align: center;padding-top: 15px;float: right;margin: 10px;background: #DBDBDB;" id="creategame">
 											创建牌局
-										</div>
+										</div>-->
 									</div>
 						</div>
 					</div>
@@ -202,19 +223,19 @@
 									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="border: none;">
 										<a href="#">
 											<span class="mui-icon mui-icon-search"></span>
-											<div class="mui-media-body" style="color:#fff;">加入战队</div>
+											<div class="mui-media-body" style="color:#000;">加入战队</div>
 										</a>
 									</li>
 									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="border: none;">
 										<a href="#">
 											<span class="mui-icon mui-icon-flag"></span>
-											<div class="mui-media-body" style="color:#fff;">创建战队</div>
+											<div class="mui-media-body" style="color:#000;">创建战队</div>
 										</a>
 									</li>
 									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="border: none;">
 										<a href="#">
 											<span class="mui-icon mui-icon-starhalf"></span>
-											<div class="mui-media-body" style="color:#fff;">战队排名</div>
+											<div class="mui-media-body" style="color:#000;">战队排名</div>
 										</a>
 									</li>
 								</ul>
@@ -242,19 +263,19 @@
 									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="border: none;">
 										<a href="#">
 											<span class="mui-icon mui-icon-home"></span>
-											<div class="mui-media-body" style="color:#fff;">我的奖金</div>
+											<div class="mui-media-body" style="color:#000;">我的奖金</div>
 										</a>
 									</li>
 									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="border: none;">
 										<a href="#">
 											<span class="mui-icon mui-icon-compose"></span>
-											<div class="mui-media-body" style="color:#fff;">我的大师分</div>
+											<div class="mui-media-body" style="color:#000;">我的大师分</div>
 										</a>
 									</li>
 									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" style="border: none;">
 										<a href="#">
 											<span class="mui-icon mui-icon-navigate"></span>
-											<div class="mui-media-body" style="color:#fff;">比赛排名</div>
+											<div class="mui-media-body" style="color:#000;">比赛排名</div>
 										</a>
 									</li>
 								</ul>
@@ -443,6 +464,8 @@
 		plus.screen.lockOrientation("portrait-primary");
 	});
 	
+	
+	
 	/*dom加载完成后的一些初始化配置*/
 	$(function(){
 		/*设置界面可以滚动（srcoll初始化）和让界面中的a链接可以正常点击进入使用*/
@@ -457,6 +480,15 @@
     	document.getElementById("neirong3").classList.add("mui-hidden");
     	document.getElementById("neirong4").classList.add("mui-hidden");
     
+    	/*初始化刷新一次*/
+    	refresh();
+    	
+    	/*初始化让首页的图片自动循环滚动播放*/
+    	var gallery = mui('#img_lunbo');
+			gallery.slider({
+ 	 		interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		
     	/*加入牌局，创建牌局的缩进*/
     	$("#suojin").on("tap",function(){
     		if($("#paiju").css("bottom")=="0px"){
@@ -473,9 +505,31 @@
     		return false;
     	});
     	
+    	$("#paiju").on("swipedown",function(){
+    		if($("#paiju").css("bottom")=="0px"){
+    			$("#paiju").animate({
+    				"bottom":"-70px",
+    			},"fast");
+    			$("#suojin").prop("src","images/suojin1.png");
+    		}else{
+    			$("#paiju").animate({
+    				"bottom":"0px",
+    			},"fast");
+    			$("#suojin").prop("src","images/suojin2.png");
+    		}
+    		return false;
+    	});
+    	
+    	
+    	
     	/*热门游戏的点击事件监听*/
     	$("#game_ul").on("tap","li div",function(){
     		
+    		$(this).css({
+    			"border":"2px solid #aaa",
+    		}).parent().siblings().children().css({
+    			"border":"none",
+    		});
     		$(this).stop(true).animate({
     			"width":"70px",
     			"height":"70px",
@@ -483,24 +537,23 @@
     			"width":"80px",
     			"height":"80px"
     		},"fast");
-    		$(this).css({
-    			"border":"2px solid #aaa",
-    		}).parent().siblings().children().css({
-    			"border":"none",
-    		});
     		$("#paiju").animate({
     			"bottom":"0px",
     		},"fast");
     		$("#suojin").prop("src","images/suojin2.png");
-    	})
-    	/*初始化刷新一次*/
-    	refresh();
+    	});
     	
-    	/*初始化让首页的图片自动循环滚动播放*/
-    	var gallery = mui('#img_lunbo');
-			gallery.slider({
- 	 		interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
-		});
+    	/*加入游戏按钮事件的监听*/
+    	$("#joingame").on("tap",function(){
+
+    		return false;
+    	});
+    	
+    	/*创建游戏按钮事件的监听*/
+    	$("#creategame").on("tap",function(){
+  
+    		return false;
+    	});
 	});
 	
 //	/*活动信息轮播在此*/
@@ -593,14 +646,14 @@
  	 		interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
 		});
 	}
-	
+
 	/*此为底部导航按钮的点击触发事件，进行基本的界面切换*/
     function _nav(x){
     
     	switch(x){
     		case 1: /*点击底部导航按钮时将按钮换色*/
-    				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"url(images/muwu.jpg) no-repeat","backgroundSize":"cover"});
-    				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+//  				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"url(images/muwu.jpg) no-repeat","backgroundSize":"cover"});
+//  				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
     				/*将其他导航页面滚动到顶端*/
     				mui('#_container').scroll().scrollTo(0,0,0);
     				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
@@ -609,8 +662,8 @@
     				document.getElementById("neirong4").classList.add("mui-hidden");
     				document.getElementById("neirong1").classList.remove("mui-hidden");break;
     		case 2: /*点击底部导航按钮时将按钮换色*/
-    				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"url(images/muwu.jpg) no-repeat","backgroundSize":"cover"});
-    				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+//  				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"url(images/muwu.jpg) no-repeat","backgroundSize":"cover"});
+//  				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
     				/*将其他导航页面滚动到顶端*/
     				mui('#_container').scroll().scrollTo(0,0,0);
     				/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
@@ -619,8 +672,8 @@
     				document.getElementById("neirong4").classList.add("mui-hidden");
     				document.getElementById("neirong2").classList.remove("mui-hidden");break;
     		case 3: /*点击底部导航按钮时将按钮换色*/
-    				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"url(images/muwu.jpg) no-repeat","backgroundSize":"cover"});
-    				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+//  				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"url(images/muwu.jpg) no-repeat","backgroundSize":"cover"});
+//  				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
     				/*将其他导航页面滚动到顶端*/
     				mui('#_container').scroll().scrollTo(0,0,0);
     				/*更改顶部右侧状态信息*/
@@ -632,8 +685,8 @@
     				document.getElementById("neirong3").classList.remove("mui-hidden");
     				game_init();break;
     		case 4: /*点击底部导航按钮时将按钮换色*/
-    				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"url(images/muwu.jpg) no-repeat","backgroundSize":"cover"});
-    				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
+//  				$("#bottom_nav a:eq("+(x-1)+")").css({"background":"url(images/muwu.jpg) no-repeat","backgroundSize":"cover"});
+//  				$("#bottom_nav a:eq("+(x-1)+")").siblings().css({"background":"rgba(0,0,0,0)"});
     				/*将其他导航页面滚动到顶端*/
     				mui('#_container').scroll().scrollTo(0,0,0);
     				/*更改顶部右侧状态信息*/
