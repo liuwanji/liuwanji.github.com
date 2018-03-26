@@ -114,10 +114,10 @@
 				<!-- 主界面具体展示内容 -->
 
 				<!--
-            	作者：695750870@qq.com
-            	时间：2018-03-15
-            	描述：首页的内容都在这里
-            -->
+            		作者：695750870@qq.com
+            		时间：2018-03-15
+            		描述：首页的内容都在这里
+           		 -->
 				<div id="neirong3" style="background: #fff;">
 					<!--
                 	作者：695750870@qq.com
@@ -150,13 +150,13 @@
 							</div>
 							<!-- 第二张 -->
 							<div class="mui-slider-item">
-								<a href="img2.html">
+								<a href="img1.html">
 									<img src="images/muwu.jpg" width="400px" height="150px">
 								</a>
 							</div>
 							<!-- 第三张 -->
 							<div class="mui-slider-item">
-								<a href="img3.html">
+								<a href="img1.html">
 									<img src="images/yuantiao.jpg" width="400px" height="150px">
 								</a>
 							</div>
@@ -488,7 +488,16 @@
 					indicators: false,
 				});
 				mui('body').on('tap', 'a', function() {
-					document.location.href = this.href;
+					var _url = this.href;
+					if(_url.slice(0,11)!="javascript:"){
+						mui.openWindow({
+							url:_url,
+							id:_url,
+						});
+					}else{
+						document.location.href = this.href;	
+					}
+					
 				});
 
 				/*初始化界面显示，包括一开始让首页显示，消息，购物车，个人中心隐藏起来，购物车的底部结算界面也隐藏*/
