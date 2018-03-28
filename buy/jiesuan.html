@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">确认订单</h1>
+	</header>
+	<div class="mui-inner-wrap">
+	    	
+        <!--
+        	作者：695750870@qq.com
+        	时间：2018-03-15
+        	描述：这里设置一个header用作上拉刷新
+        -->
+    	<header class="mui-bar-nav"></header>
+    	
+    	<nav class="mui-bar mui-bar-tab" style="margin-bottom: 0px;" id="jiesuan">
+			<div style="float: right;">
+				<div style="float: left;margin-top: 15px;">合计金额： <b style="color:red;" id="sum">148.00</b>&nbsp;&nbsp;</div>
+				<button type="button" class="mui-btn mui-btn-danger" id="num">提交订单</button>
+			</div>
+		</nav>
+		
+    	<div class="mui-content mui-scroll-wrapper" id="_container">
+			<div class="mui-scroll">
+				<div id="neirong1">
+					<a href="#">
+						<div style="background:#fff;color:#000;">
+							<div style="overflow: hidden;">
+								<b style="margin: 30px;margin-bottom:10px;float: left;">收货人：<span>小刘</span></b>
+								<b style="margin:30px;margin-bottom:10px;float: right;">13554477232</b>
+							</div>
+							<div style="overflow: hidden;">
+								<div style="float: left;margin-top: 10px;"><img src="images/logo.png" width="20px"></div>
+								<div style="float: right;margin-top: 10px;"><span class="mui-icon mui-icon-arrowright"></div>
+								<div style="margin-left: 30px;margin-right: 30px;"><b>收货地址：<span>湖北省武汉市武昌区南湖街街道南湖街办事处：湖北工业大学</span></b></div>
+							</div>
+							<br/>
+						</div>
+					</a>
+					
+				<div id="dingdan">
+					
+				</div>	
+					<div style="overflow:hidden;background: #fff;">
+						<b style="float: right;margin: 20px;">共1件商品 小计：<span style="color:red" id="sum_money">￥148.00</span></b>	
+					</div>
+					
+				</div>
+     
+    		</div>
+    	</div>
+    	<div class="mui-off-canvas-backdrop"></div>
+    </div>
+    
+    <div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+    	<!-- 可选择菜单 -->
+    	<ul class="mui-table-view">
+      		<li class="mui-table-view-cell">
+        		<b>配送方式</b>
+        		<div class="mui-input-row mui-checkbox">
+ 					<label style="float: left;">checkbox示例</label>
+  					<input name="checkbox1" value="Item 1" type="checkbox" checked>
+				</div>
+      		</li>
+    	</ul>
+    <!-- 取消菜单 -->
+    	<ul class="mui-table-view">
+      		<li class="mui-table-view-cell">
+        		<a href="#sheet1"><b>取消</b></a>
+      		</li>
+    	</ul>
+	</div>
+    
+    <script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init();
+    mui('.mui-scroll-wrapper').scroll({
+		indicators:true
+	});
+	
+	
+	var _shop = "<ul class='mui-table-view' style='margin-top: 20px;'>"+
+  						   	 	"<li class='mui-table-view-cell mui-media'>"+
+  						        	"<a href='javascript:;'>"+
+  						            	"<img style='float: left;margin-right: 20px;width:70px;height:70px;' src='%img_src'>"+
+  						            	"<div class='mui-media-body' style='overflow: hidden;white-space: nowrap;text-overflow: ellipsis;'>"+
+  						              	  	"<b id='_artice'>%_artice</b>"+
+  						                	"<p class='mui-ellipsis' id='_style'>%_style</p>"+
+  						                	"<b class='mui-ellipsis' style='color:red'>￥<span id='_money'>%_money</span></b>"+
+  						            	"</div>"+
+  						        	"</a>"+
+  						    	"</li>"+
+  					"</ul>"+
+					
+					"<ul class='mui-table-view'>"+
+						
+						"<li class='mui-table-view-cell'>"+
+							"<a class='mui-navigate-right' href='javascript:actionselect();'>"+
+								"配送方式"+
+								"<p style='float: right;margin-right: 30px;'>快递￥ 20.00</p>"+
+							"</a>"+
+						"</li>"+
+						"<li class='mui-table-view-cell'>"+
+							"<a class='mui-navigate-right' href='javascript:actionselect();'>"+
+								"配送时间"+
+								"<p style='float: right;margin-right: 30px;'>23:00前付款，承诺3月28日送达</p>"+
+							"</a>"+
+						"</li>"+
+						"<li class='mui-table-view-cell'>"+
+							"<a class='mui-navigate-right' href='javascript:actionselect();'>"+
+								"运费险"+
+								"<p style='float: right;margin-right: 30px;'>未选择</p>"+
+							"</a>"+
+						"</li>"+
+						"<li class='mui-table-view-cell'>"+
+							"<a class='mui-navigate-right' href='javascript:actionselect();'>"+
+								"发票类型"+
+								"<p style='float: right;margin-right: 30px;'>未选择</p>"+
+							"</a>"+
+						"</li>"+
+						"<div class='mui-input-row mui-checkbox'>"+
+  							"<label>开具发票</label>"+
+  							"<input name='checkbox1' value='Item 1' type='checkbox' checked>"+
+						"</div>"+
+					"</ul><br/>";
+					
+	$(function(){
+		init();
+	});
+	
+	function init(){
+		var shopp = JSON.parse(window.localStorage.shopping);
+		var s = "";
+		for(var i=0;i<shopp.length;i+=4){		
+				s+=_shop.replace("%img_src",shopp[i]).replace("%_artice",shopp[i+1]).replace("%_style",shopp[i+2]).replace("%_money",shopp[i+3]);
+		}
+		$("#dingdan").html(s);
+		$("#sum_money").text(window.localStorage.sum_money);
+		$("#sum").text(window.localStorage.sum_money);
+	};
+	
+	function actionselect(){
+		mui("#sheet1").popover("toggle");
+	};
+	
+    </script>
+</body>
+</html>
