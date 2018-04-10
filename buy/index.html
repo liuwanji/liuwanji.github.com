@@ -96,7 +96,7 @@
                 -->
                 <div className="image-uploader" style="position: relative;margin: 0 auto;width:80%;">
                 	<img id="imgShow" className="imgShow" src="images/60x60.gif" alt="" style="width:100%;height:150px;"/>
-    				<input id="imgInput" className="imgInput" type="file" accept="image/*"  capture="camera" style="position: absolute;width:100%;height:150px;border: 1px solid red;top:0px;left:1px;opacity: 1;"/>
+    				<input id="imgInput" className="imgInput" type="file" accept="image/*" style="position: absolute;width:100%;height:150px;border: 1px solid red;top:0px;left:1px;opacity: 1;"/>
     				
     			</div>
 					<div id="slider" class="mui-slider">
@@ -942,17 +942,6 @@
 			}
 			
 			
- 		if (getIos()) {
-            $('#imgInput').removeAttribute("capture");
-        }
-        function getIos() {
-            var ua=navigator.userAgent.toLowerCase();
-            if (ua.match(/iPhone\sOS/i) == "iphone os") {
-                return true;
-            } else {
-                return false;
-            }
-        }
         $('#imgInput').change(function () {
    readURL(this);
 });
