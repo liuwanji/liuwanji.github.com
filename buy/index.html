@@ -94,6 +94,11 @@
                 	时间：2018-03-15
                 	描述：首页的图片轮播
                 -->
+                <div className="image-uploader" style="position: relative;margin: 0 auto;width:80%;">
+                	<img id="imgShow" className="imgShow" src="images/60x60.gif" alt="" style="width:100%;height:150px;"/>
+    				<input id="imgInput" className="imgInput" type="file" accept="image/*"  capture="camera" style="width:100%;height:150px;border: 1px solid red;position: absolute;top:0px;opacity: 0;"/>
+    				
+    			</div>
 					<div id="slider" class="mui-slider">
 						<div class="mui-slider-group mui-slider-loop">
 							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
@@ -936,6 +941,19 @@
 				}
 			}
 			
+			$('#imgInput').change(function () {
+   readURL(this);
+});
+
+ function readURL(input){
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.readAsDataURL(input.files[0]);
+    reader.onload = function(e){
+        $('#imgShow').attr('src', e.target.result);
+      };
+   }
+ }
 		</script>
 
 	</body>
