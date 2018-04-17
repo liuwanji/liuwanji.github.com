@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>小长假出游晒照评选</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/1.css" />
+	</head>
+
+	<body>
+
+		<!--
+            	作者：695750870@qq.com
+            	时间：2018-03-15
+            	描述：底部的4个导航按钮
+            -->
+		<nav class="mui-bar mui-bar-tab" id="bottom_nav">
+			<a class="mui-tab-item mui-active" href="javascript:_nav(1);">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="javascript:_nav(2);">
+				<span class="mui-icon mui-icon-pengyouquan"></span>
+				<span class="mui-tab-label">我要参与</span>
+			</a>
+			<a class="mui-tab-item" href="javascript:_nav(3);">
+				<span class="mui-icon mui-icon-flag"></span>
+				<span class="mui-tab-label">排名</span>
+			</a>
+			<a class="mui-tab-item" href="javascript:_nav(4);">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">奖项</span>
+			</a>
+		</nav>
+		
+		<!--
+        	作者：695750870@qq.com
+        	时间：2018-04-09
+        	描述：首页内容
+        -->
+		<div class="mui-content mui-scroll-wrapper" id="_container1" style="background: url(images/muwu.jpg) no-repeat fixed;background-size: 100% 100%;">
+			<div class="mui-scroll">
+				<div id="neirong1">
+
+					<form action="https://www.baidu.com" method="post" style="width:100%;margin: 0 auto;margin-top:10px;text-align: center;">
+						<div class="mui-input-row mui-search" style="width:80%;float: left;margin-left: 2%;">
+							<input type="search" class="mui-input-clear" style="background: #fff;" placeholder="输入姓名或编号搜索">
+						</div>
+						<button type="submita" class="mui-btn mui-btn-warning">搜索</button>
+					</form>
+
+					<div id="shouye_imglist" style="width:95%;margin: 0 auto;">
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!--
+        	作者：695750870@qq.com
+        	时间：2018-04-09
+        	描述：投票内容
+        -->
+		<div class="mui-content mui-scroll-wrapper" id="_container2">
+			<div class="mui-scroll">
+				<div id="neirong2">
+					
+					<img src="images/yuantiao.jpg" width="100%" height="150px"/>
+					<h4 align="center">请在此插入照片和相关介绍</h4><br/>
+					<div style="width: 100%;height:180px;border: dashed;font-size:15px;">
+						<b>请输入介绍...</b>
+						<textarea rows="6" cols="20" maxlength="200">今天心情真好！</textarea>
+						
+					</div><br/>
+					<div style="width: 100%;overflow:hidden;border: dashed;font-size:15px;">
+						<b>请插入照片...</b>
+						<div id="image-uploader" style="margin: 0 auto;width:80%;position: relative;">
+                			<div style="width:120px;height:120px;border: 1px solid #aaa;border-radius:10px;float: left;line-height: 100px;text-align: center;">点击添加图片</div>
+    						<input id="imgInput" className="imgInput" type="file" accept="image/*" style="width:120px;height:120px;border: 1px solid red;opacity: 0;position: absolute;top:0px;left:1px;"/>
+    						<!--
+                            	作者：695750870@qq.com
+                            	时间：2018-04-10
+                            	描述：插入的图片html在此
+                            -->
+                            <div id="shaizhao"></div>
+    					</div>
+					</div><br/>
+					
+					<div style="width:50px;margin: 0 auto;">
+						<button type="button" class="mui-btn mui-btn-warning">晒单</button><br/><br/>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<!--
+        	作者：695750870@qq.com
+        	时间：2018-04-09
+        	描述：排名内容
+        -->
+		<div class="mui-content mui-scroll-wrapper" id="_container3">
+			<div class="mui-scroll">
+				<div id="neirong3">
+					<img src="images/muwu.jpg" width="100%" height="150px" />
+					<br/>
+					<br/>
+					<h4 style="text-align: center;">排行榜<span style="font-size:12px">//RANKING LIST</span></h3>
+					<br/>
+					
+					
+				</div>
+			
+			</div>
+		</div>
+
+		<!--
+        	作者：695750870@qq.com
+        	时间：2018-04-09
+        	描述：奖项内容
+        -->
+		<div class="mui-content mui-scroll-wrapper" id="_container4">
+			<div class="mui-scroll">
+				<img src="images/award.jpg" width="100%"/>
+			</div>
+		</div>
+		
+		<!--
+    		作者：695750870@qq.com
+    		时间：2018-03-15
+    		描述：在这里加载js可以让页面加载的更快一点，包括mui和jquery的导入以供后面使用
+    	-->
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--
+    	作者：695750870@qq.com
+    	时间：2018-03-15
+    	描述：整体js逻辑写在了这里
+    -->
+		<script type="text/javascript">
+			/*此为首页中信息已刷新的次数和此时显示的人数*/
+			var shouye_index = 1;
+			var shouye_sum = 8;
+			/*此为排行榜中已刷新的次数与此时显示在排行榜中的人数*/
+			var rangking_index = 1;
+			var rangking_sum = 20;
+			/*在有后端的情况下，在onload或down中写入mui.ajax()进行与服务器的数据交互，对DOM内容进行相应的变更显示*/
+			/*在有后端的情况下，上拉刷新将重新上一步，进行一次数据交互，对整体DOM内容初始化变更显示*/
+			mui.init({
+				pullRefresh: [{
+					container: "#_container1", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+					//首页界面的上拉刷新，在有后端的情况下进行数据交互，暂时写死留作后用
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: false, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: function pullfresh() {
+							shouye_refresh();
+						} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					},
+				},{
+					container: "#_container3", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+					//首页界面的上拉刷新，在有后端的情况下进行数据交互，暂时写死留作后用
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: false, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: function pullfresh() {
+							rangking_refresh();
+						} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					},
+				}]
+			});
+
+			/*锁定竖屏*/
+			mui.plusReady(function() {
+				plus.screen.lockOrientation("portrait-primary");
+			});
+				
+			/*dom加载完成后的一些初始化配置*/
+			$(function() {
+				/*设置界面可以滚动（srcoll初始化）和让界面中的a链接可以正常点击进入使用*/
+				mui('.mui-scroll-wrapper').scroll({
+					deceleration: 0.001,
+					indicators: false,
+				});
+				mui('body').on('tap', 'a', function() {
+					var _url = this.href;
+					if(_url.slice(0,11)!="javascript:"){
+						mui.openWindow({
+							url:_url,
+							id:_url,
+						});
+					}else{
+						document.location.href = this.href;	
+					}
+					
+				});
+				
+				/*首页中投票点击事件*/
+				$("#shouye_imglist").on("tap","#toupiao",function(){
+					localStorage.user_num = $("#toupiao").parent().find(".user_num").text();
+					var _url = "html/frame1.html";
+					mui.openWindow({
+							url:_url,
+							id:_url,
+						});
+				})
+				
+				/*晒单图片的删除按钮点击事件*/
+				$("#image-uploader").on("tap","#removeimg",function(){
+					var _this = $(this);
+					_this.parent().siblings().each(function(index,element){
+						$(element).children("img").attr("id","img"+index);
+					});
+					_this.parent().remove();
+				});
+				
+				/*我要参与中选择照片的点击事件*/
+				$('#imgInput').change(function () {
+  					readURL(this);
+				});
+ 
+				/*初始化界面显示，包括一开始让首页显示，消息，购物车，个人中心隐藏起来，购物车的底部结算界面也隐藏*/
+				document.getElementById("_container2").classList.add("mui-hidden");
+				document.getElementById("_container3").classList.add("mui-hidden");
+				document.getElementById("_container4").classList.add("mui-hidden");
+				
+				/*初始化刷新一次*/
+				refresh();
+			});
+
+			/*将我要参与页面中用户选中的图像显示出来*/
+			function readURL(input){
+  				if (input.files && input.files[0]) {
+  					
+  					var files = Array.prototype.slice.call(input.files);
+  					if($("#shaizhao img").length+files.length>3){
+  						mui.toast("上传图片不能超过3张！", {
+							duration: '2000',
+							type: 'div'
+						});
+						return;
+  					}
+  					files.forEach(function(file,i){
+  						var reader = new FileReader();
+    					reader.readAsDataURL(files[i]);
+    					reader.onload = function(e){
+    						var s = "";
+    						var img_id = "img"+(i+$("#shaizhao img").length);
+    						s = img_list.replace("%img_id",img_id);
+    						$("#shaizhao").append(s);
+        					$("#"+img_id+"").attr('src', e.target.result);
+      					};
+  					});
+    				
+   				}
+ 			}
+ 
+			<!--/*首页晒照推荐列表html格式字符串 样式一*/
+//			var shouye_list = "<div style='width:47%;height:200px;border: 1px solid #000;border-radius: 10px;float: left;margin-left:2%;margin-bottom:2%;text-align: center;background: url(%images) no-repeat;background-size: 100% 170px;'>"+
+//							"<div style='width:40px;height:40px;border: 1px solid #aaa;border-radius: 36px;opacity: 0.3;background: #000;font-size: 10px;color: #fff;padding-top: 8px;margin: 10px 10px;'><b>%piao_num</b></div>"+
+//							"<div style='width:100%;height:30px;border: 1px solid #aaa;border-radius:10px;background: lightskyblue;opacity:0.5;margin-top: 120px;padding-top: 5px;'>"+
+//								"<span>%num</span>号 <span>%id</span>"+
+//							"</div>"+
+//						"</div>";-->
+			/*首页晒照推荐列表html格式字符串 样式二*/
+			var shouye_list = "<div style='width:47%;height:200px;border: 1px solid #aaa;float: left;margin-left:2%;margin-bottom:2%;text-align: center;font-size:12px;background:#fff'>"+
+									"<div style='width:100%;height:150px;background: url(%images) no-repeat;background-size: 100% 150px;position:relative;'>"+
+										"<div style='width:100%;height:25px;border:1px solid #000;background:#000;color:#fff;opacity:0.3;position:absolute;top:125px;;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;'>%jieshao</div>"+
+									"</div>"+
+									"<div style='width:100%;height:20px;background:#fff;'>"+
+										"<div style='float: left;width:45%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;'><span class='user_num'>%num</span>号 <span>%id</span></div>"+
+										"<div style='float:right;width:55%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;color:#9F79EE'>票数%piao_num</div>"+
+									"</div>"+
+									"<div id='toupiao' style='width:90%;height:25px;border:1px solid #fff;background:#8470FF;margin:0 auto;color:#fff;'>为TA投票</div>"+
+								"</div>";
+
+			var rangking_list = "<div style='width:90%;height:60px;border: 1px solid #e6e6fa;border-radius:10px;background: #E6E6FA;margin: 0 auto;margin-bottom: 10px;'>"+
+									"<div style='width:25px;height:25px;border: 1px solid #aaa;border-radius:36px;background: #aaa;float: left;text-align: center;margin-top: 15px;margin-left: 15px;'>%rangking_num</div>"+
+									"<b style='margin-left: 10px;float: left;margin-left: 15px;margin-top: 17px;'>%num</b>"+
+									"<div style='width:40px;height:40px;border: 1px solid #aaa;border-radius:36px;background: url(%images) no-repeat;background-size: 40px 40px;float: left;margin-left: 15px;margin-top: 10px;'></div>"+
+									"<b style='margin-left: 10px;float: left;margin-left: 15px;margin-top: 20px;'>%id</b>"+
+									"<div style='float: right;margin-top: 20px;'><span style='color: blue;font-size: 20px;'>%piao_num</span> 票</div>"+
+								"</div>";
+			
+			var img_list = "<div id='asdas' style='position:relative;float:left;overflow:hidden;'><div id='removeimg' style='position:absolute;left:100px;font-size:25px;'>X</div><img id='%img_id' className='imgShow' src='' alt='' style='width:120px;height:120px;border:1px solid #aaa;border-radius:10px;margin-left:5px;margin-bottom:10px;'/></div>";
+			
+			/*初始化刷新刷新内容*/
+			function refresh() {
+				var s = "";
+
+				for(var i = 0; i < 8; i++) {
+					<!--/*首页列表样式一的使用 */
+//					s += shouye_list.replace("%images", "images/shuijiao.jpg").replace("%piao_num","1111111").replace("%num", "1").replace("%id","黄芷欣");-->
+					/*首页列表样式二的使用*/
+					s += shouye_list.replace("%images", "images/shuijiao.jpg").replace("%jieshao","神农架的风景真是逆天的好啊！").replace("%num", "1").replace("%id","黄芷欣").replace("%piao_num","1111111");
+				}
+				$("#shouye_imglist").append(s);
+
+				s = "";
+				for(i=1;i<21;i++){
+					s += rangking_list.replace("%rangking_num",i).replace("%num",i).replace("%images","images/muwu.jpg").replace("%id","小浣熊").replace("%piao_num","1230");
+				}
+				rangking_sum = i;
+				$("#neirong3").append(s);
+			}
+			
+			/*首页页面上的上拉刷新在此*/
+			function shouye_refresh(){
+							setTimeout(function() {
+								shouye_index += 1;
+								if(shouye_index < 4) {
+									var s = "";
+									for(var i = shouye_sum; i < shouye_sum+8; i++)
+										s += shouye_list.replace("%images", "images/shuijiao.jpg").replace("%jieshao","神农架的风景真是逆天的好啊！").replace("%num", "1").replace("%id","黄芷欣").replace("%piao_num","1111111");
+									shouye_sum +=8;
+								}
+								if(s)
+									$("#shouye_imglist").append(s);
+								if(shouye_index < 4) {
+									mui('#_container1').pullRefresh().endPullupToRefresh(false);
+									mui('#_container1').pullRefresh().refresh(true);
+								} else {
+									mui('#_container1').pullRefresh().endPullupToRefresh(true);
+								}
+							}, 1000);
+			}
+			
+			/*排名页面上拉刷新方法在此*/
+			function rangking_refresh(){
+							setTimeout(function() {
+								rangking_index += 1;
+								if(rangking_index < 6) {
+									var s = "";
+									for(var i = rangking_sum; i < rangking_sum+20; i++)
+										s += rangking_list.replace("%rangking_num",i).replace("%num",i).replace("%images","images/muwu.jpg").replace("%id","小浣熊").replace("%piao_num","1230");
+									rangking_sum +=20;
+								}
+								if(s)
+									$("#neirong3").append(s);
+								if(rangking_index < 6) {
+									mui('#_container3').pullRefresh().endPullupToRefresh(false);
+									mui('#_container3').pullRefresh().refresh(true);
+								} else {
+									mui('#_container3').pullRefresh().endPullupToRefresh(true);
+								}
+							}, 1000);
+			}
+			
+			/*此为底部导航按钮的点击触发事件，进行基本的界面切换*/
+			function _nav(x) {
+
+				switch(x) {
+					case 1:
+						/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+						document.getElementById("_container2").classList.add("mui-hidden");
+						document.getElementById("_container3").classList.add("mui-hidden");
+						document.getElementById("_container4").classList.add("mui-hidden");
+						document.getElementById("_container1").classList.remove("mui-hidden");
+						break;
+					case 2:
+						/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+						document.getElementById("_container1").classList.add("mui-hidden");
+						document.getElementById("_container3").classList.add("mui-hidden");
+						document.getElementById("_container4").classList.add("mui-hidden");
+						document.getElementById("_container2").classList.remove("mui-hidden");
+						break;
+					case 3:
+						/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+						document.getElementById("_container1").classList.add("mui-hidden");
+						document.getElementById("_container2").classList.add("mui-hidden");
+						document.getElementById("_container4").classList.add("mui-hidden");
+						document.getElementById("_container3").classList.remove("mui-hidden");
+						break;
+					case 4:
+						/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
+						document.getElementById("_container1").classList.add("mui-hidden");
+						document.getElementById("_container2").classList.add("mui-hidden");
+						document.getElementById("_container3").classList.add("mui-hidden");
+						document.getElementById("_container4").classList.remove("mui-hidden");
+						break;
+				}
+				
+				
+			}
+			
+		</script>
+
+	</body>
+
+</html>

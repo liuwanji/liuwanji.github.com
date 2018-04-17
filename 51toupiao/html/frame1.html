@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">投票页面</h1>
+	</header>
+	
+	<div class="mui-content mui-scroll-wrapper" id="_container">
+				<div class="mui-scroll">
+					<div id="neirong1">
+						
+						<div style="width:100%;height:80px;">
+    						<div id="user_img" style='width:50px;height:50px;border: 1px solid #aaa;border-radius:36px;float: left;margin-left: 15px;margin-top: 15px;'></div>
+    						<div style="width:150px;height:50px;float: left;margin-top: 20px;margin-left: 10px;">
+    							<div id="user_id"></div>
+    							<div style="font-size: 12px;">
+    								<div style="float: left;">票数：<span id="user_piaoshu"></span></div>
+    								<div style="float: right;"> 排名：<span id="user_rangking"></span></div>
+    							</div>
+    							
+    						</div>
+						</div>	
+
+						<img src="../images/yuantiao.jpg" width="100%" height="150px"/>	
+						
+						<div id="wenzhang" style="width:90%;margin: 0 auto;text-indent: 25px;">
+							<h3 style="text-indent: 0px;">|出游日记</h3>
+							<p>
+								这个春节里最开心的事是跟爸爸妈妈到云南旅游。旅途中发生很多有趣的事，令我们非常难忘。 　　
+							</p>
+							<p>
+								第一天，我们来到了翠湖公园，成群的海鸥在湖面栖息着，又有百十只海鸥在天空中翱翔，为游客展现出一道绚丽的风景线，令人心旷神怡
+								，水天一色的景色也别有一番风味。 　　我与l同学在湖边慢慢地走了一会儿，鼻子贪婪地呼吸着清新的空气，眼睛也在迅速地捕捉湖边每一丝美丽痕迹。
+								一股盎然的兴致在心中萌发。于是，我们俩去海鸥售食处买了一些面包，准备马上喂给那些可爱的海鸥。到了湖边，我立刻抓起一个面包，揪了一块，
+								使劲地扔给了远方的海鸥。可是，那块面包好像不听话似的，飘到了一块离我很近的却没有海鸥栖息的湖泊中。湖里的海鸥有些看见了这块面包，
+								却不停地冲我眨着眼睛，然后回过头去，懒散地游向了另一个方向，好像那块面包是不明飞行物似的。我又扔了三四块，这回用的力气也更大，
+								可怎么也仍不到海鸥那边。我有些着急，回头看了看l同学，他嘴角挂着一丝自信的笑容，眼睛正目不转睛地盯着海鸥，手里也在不停地揪着面包，
+								然后轻轻地揉成了一个小团，最后瞄准目标，将手自然地往外一抛，面包就像被施了魔法，飘到了海鸥群里，又被一只眼疾手快的海鸥迅速吞了下去，
+								这种场面特别有趣，我也情不自禁地鼓起了掌。我心里想：这么好玩又1省力的方法，我还是学一学吧。于是，我笑嘻嘻地对l同学说：“你能教我一下你是怎么扔的吗？”
+								l同学耍起酷来，对我说：“你不是一直在看吗？自己学呗！”
+							</p>
+							<img src="../images/cbd.jpg" width="100%" height="150px"/>
+							<p>
+								他一耍起酷来，就特别可爱，把我逗得哈哈大笑。他也有些沉不住气了，对我说：“笑什么笑？”
+								我就没趣地走开了。学着他的动作，别扭地揪下一个面包块，又困难地揉成了一个难看的面包球，深深地吸了一口气，仍然使劲地将它向远方一抛，
+								这回面包飞到了海鸥群中，海鸥们急忙抢起了这块面包。有的飞起来，试图啄一点面包渣，有的在底下不停地拿翅膀狠狠地扇自己的同伴，
+								还有一些刚尝到些又钻进去与其它海鸥争抢。自己仍在那里享受着温暖的阳光春节趣事固然很多，而事中的人生哲理固然也多，
+								让我们享受人生，享受春节的每一天吧
+							</p>
+							
+							<br/><br/>
+							<div id="toupiao" style='width:70px;height:70px;border: 1px solid #aaa;border-radius:36px;background: url(../images/toupiao.jpg) no-repeat;background-size: 70px 70px;margin: 0 auto;'></div>
+							<br/><br/>
+						</div>
+						
+					</div>
+				</div>
+	</div>
+    
+    	
+    <script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+    	<script src="../js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    mui.init();
+    mui('.mui-scroll-wrapper').scroll({
+		indicators:true
+	});
+   
+   	$(function(){
+   		refresh();
+   		var toupiao_buttom = document.getElementById("toupiao");
+   		$("#toupiao").on("touchstart",function(){
+   			$(this).stop(true).animate({
+   				width:"50px",
+   				height:"50px",
+   			},"fast");
+   		});
+   		
+   		$("#toupiao").on("touchend",function(){
+   			$(this).stop(true).animate({
+   				width:"70px",
+   				height:"70px",
+   			},"fast");
+   			
+
+   			if(localStorage.toupiaoSuccess=="true"){
+   				mui.toast("您已投票，请勿重新投票！", {
+					duration: '2000',
+					type: 'div'
+				});
+   			}else{
+   				mui.toast("投票成功！", {
+					duration: '2000',
+					type: 'div'
+				});
+				localStorage.toupiaoSuccess = "true";
+   			
+   			}
+   			
+   		});
+   	});
+   /*初始化刷新方法在此*/
+    function refresh(){
+    	$("#user_img").css({
+    		background:"url(../images/logo.png) no-repeat",
+    		backgroundSize:"100% 100%",
+    	});
+    	$("#user_id").text("黄芷欣");
+    	$("#user_piaoshu").text("1111111");
+    	$("#user_rangking").text("25");
+    }
+    </script>
+</body>
+</html>
