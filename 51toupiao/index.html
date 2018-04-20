@@ -8,7 +8,36 @@
 		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/1.css" />
 	</head>
-
+	<style>
+		#_container1 input::-webkit-input-placeholder{
+            color:#fff;
+        }
+        #_container1 input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            color:#fff;
+        }
+        #_container1 input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            color:#fff;
+        }
+        #_container1 input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+            color:#fff;
+        }
+        .daojishi{
+        	width:90%;
+        	height:35px;
+        	margin: 0 auto;
+        	
+        	background: #958c4c;
+        	opacity: 0.7;
+        	border: 1px solid #958c4c;
+        	border-radius: 5px;
+        	padding:7px;
+        	padding-left: 20px;
+        	font-weight: bold;
+        	font-size: 15px;
+        	color:#fff;
+        }
+  
+	</style>
 	<body>
 
 		<!--
@@ -23,38 +52,103 @@
 			</a>
 			<a class="mui-tab-item" href="javascript:_nav(2);">
 				<span class="mui-icon mui-icon-pengyouquan"></span>
-				<span class="mui-tab-label">我要参与</span>
+				<span class="mui-tab-label">排行榜</span>
 			</a>
 			<a class="mui-tab-item" href="javascript:_nav(3);">
 				<span class="mui-icon mui-icon-flag"></span>
-				<span class="mui-tab-label">排名</span>
+				<span class="mui-tab-label">活动说明</span>
 			</a>
 			<a class="mui-tab-item" href="javascript:_nav(4);">
 				<span class="mui-icon mui-icon-contact"></span>
-				<span class="mui-tab-label">奖项</span>
+				<span class="mui-tab-label">关注我们</span>
 			</a>
 		</nav>
+		
+		
+        <!--
+                            作者：695750870@qq.com
+                            时间：2018-04-19
+                            述：投票悬浮按钮
+        -->
+		<div id="baoming" style="width:50px;height:70px;position: absolute;z-index:1000;top:40%;background:url(images/baoming.png) no-repeat;background-size:100% 100%;"></div>
 		
 		<!--
         	作者：695750870@qq.com
         	时间：2018-04-09
         	描述：首页内容
         -->
-		<div class="mui-content mui-scroll-wrapper" id="_container1" style="background: url(images/muwu.jpg) no-repeat fixed;background-size: 100% 100%;">
+		<div class="mui-content mui-scroll-wrapper" id="_container1">
 			<div class="mui-scroll">
-				<div id="neirong1">
-
-					<form action="https://www.baidu.com" method="post" style="width:100%;margin: 0 auto;margin-top:10px;text-align: center;">
-						<div class="mui-input-row mui-search" style="width:80%;float: left;margin-left: 2%;">
-							<input type="search" class="mui-input-clear" style="background: #fff;" placeholder="输入姓名或编号搜索">
+				
+				<div id="neirong1" style="background:rgb(239,224,121) url(images/shouye_bg.jpg) no-repeat;background-size:100%;overflow: hidden;">
+					
+					<div class="daojishi" style="margin-top:102%;">
+						投票时间倒计时：<span>10天10小时10分钟</span>
+					</div>
+					
+					<div style="width:90%;height:100px;margin: 0 auto;text-align:center;color:cornflowerblue;font-size: 18px;">
+						<div style="float: left;margin-top: 30px;margin-left:15%;">
+							<div>报名人数</div>
+							<div id="baoming_sum">263</div>
 						</div>
-						<button type="submita" class="mui-btn mui-btn-warning">搜索</button>
+						<div style="position: absolute;background: url(images/fengexian.png);width:2px;height:60px;left: 50%;margin-top: 20px;"></div>
+						<div style="float: right;margin-top: 30px;margin-right:15%;">
+							<div>累计投票</div>
+							<div id="toupiao_sum">159</div>
+						</div>
+					</div>
+					
+					<form action="https://www.baidu.com" method="post" style="width:100%;margin: 0 auto;text-align: center;">
+						<div style="width:90%;margin: 0 auto;">
+							<input results="s" type="search" style="background: #958c4c;opacity: 0.7;height:35px;" placeholder="请输入编号或名称">
+						</div>
+						<!--<button type="submita" class="mui-btn mui-btn-warning">搜索</button>-->
 					</form>
 
-					<div id="shouye_imglist" style="width:95%;margin: 0 auto;">
-
+					<div id="shouye_imglist" style="width:95%;margin: 0 auto;overflow:hidden;background: url(images/white_bottom.png) no-repeat;background-size: 100% 100%;">
+						<!--
+                        	作者：695750870@qq.com
+                        	时间：2018-04-19
+                        	描述：最新参赛和人气排行选项卡标签页
+                        -->
+						<div style="position:relative;width:100%;height:40px;border-bottom: 1px solid #e6e6e6;">
+							<div id="cansai" style="float:left;margin-top:10px;margin-left:10%;width:100px;height:20px;background: url(images/new_chansai_selected.png) no-repeat center/100% 100%;"></div>
+							<div id="paihang" style="float:right;margin-top:10px;margin-right:10%;width:100px;height:20px;background: url(images/people_paihang.png) no-repeat center/100% 100%;"></div>
+							<div id="huatiao1" style="position: absolute;width:100px;height:1px;top:39px;left:10%;background: url(images/selected_bottom.png) no-repeat center/100% 100%;"></div>
+							<div id="huatiao2" style="display:none;position: absolute;width:100px;height:1px;top:39px;right:10%;background: url(images/selected_bottom.png) no-repeat center/100% 100%;"></div>
+						</div>
+						
+						<!--
+                        	作者：695750870@qq.com
+                        	时间：2018-04-19
+                        	描述：最新参赛的内容
+                        -->
+                        <div id="zuixincansai" style="width:100%;overflow: hidden;">
+                        	<div style="position:relative;float:left;margin-top:10px;margin-left:10px;margin-bottom:20px;width:45%;text-align: center;">
+                        		<div class="people_num" style="width:100%;height:30px;background: #6babfe;font-size:18px;color:#fff;line-height: 30px;">1号</div>
+                        		<div class="people_img" style="width:100%;height:25vh;background: url(images/shuijiao.jpg) no-repeat center/100% 100%;"></div>
+                        		<div class="people_name">Turbo</div>
+                        		<div class="people_piaoshu" style="font-size: 18px;color:coral;">159票</div>
+                        		<div class="toupiao" style="width:100%;height:30px;background: url(images/toupiao.png) no-repeat center/100% 100%;"></div>
+                        	</div>
+                        </div>
+                        
+                        <!--
+                        	作者：695750870@qq.com
+                        	时间：2018-04-19
+                        	描述：人气排行的内容
+                        -->
+                        <div id="renqipaihang" style="">
+                        	
+                        </div>
 					</div>
-
+					
+				   <!--
+                        	作者：695750870@qq.com
+                        	时间：2018-04-19
+                        	描述：底部没有更多了
+                    -->
+                    <div style="text-align: center;margin: 15px;">没有更多了</div>
 				</div>
 			</div>
 		</div>
@@ -64,11 +158,11 @@
         	时间：2018-04-09
         	描述：投票内容
         -->
-		<div class="mui-content mui-scroll-wrapper" id="_container2">
+		<div class="mui-content mui-scroll-wrapper" id="_container2" style="background:url(images/paihang_bottom.jpg) no-repeat fixed;background-size:100% 1000px;overflow: hidden;">
 			<div class="mui-scroll">
 				<div id="neirong2">
 					
-					<img src="images/yuantiao.jpg" width="100%" height="150px"/>
+					<!--<img src="images/yuantiao.jpg" width="100%" height="150px"/>
 					<h4 align="center">请在此插入照片和相关介绍</h4><br/>
 					<div style="width: 100%;height:180px;border: dashed;font-size:15px;">
 						<b>请输入介绍...</b>
@@ -85,14 +179,33 @@
                             	时间：2018-04-10
                             	描述：插入的图片html在此
                             -->
-                            <div id="shaizhao"></div>
+                            <!--<div id="shaizhao"></div>
     					</div>
-					</div><br/>
+					</div><br/>-->
 					
-					<div style="width:50px;margin: 0 auto;">
+					<!--<div style="width:50px;margin: 0 auto;">
 						<button type="button" class="mui-btn mui-btn-warning">晒单</button><br/><br/>
+					</div>-->
+					
+					<div class="daojishi" style="margin-top: 20px;">
+						投票时间倒计时：<span>10天10小时10分钟</span>
 					</div>
 					
+					<div style="position:absolute;top:72px;left:20vw;width:60vw;height:60px;margin:0 auto;background: url(images/1.png) no-repeat center/100% 100%;"></div>
+					<div style="position:absolute;top:77px;left:37vw;width:25%;height:25px;margin:0 auto;background: url(images/paiming_string.png) no-repeat center/100% 100%;"></div>
+					
+					<div style="width:95%;height:150px;overflow:hidden;margin:0 auto;margin-top:50px;background: #fff;">
+						<div style="width:100%;height:40px;margin-top:30px;background: #eee;text-align: center;font-size: 15px;line-height: 40px;">
+							<div style="float: left;width:30%;height:40px;">排行</div>
+							<div style="float: left;width:40%;height:40px;">参赛选手</div>
+							<div style="float: left;width:30%;height:40px;">票数</div>
+							<div style="position: absolute;background: url(images/fengexian.png);width:2px;height:30px;left: 30%;margin-top: 5px;"></div>
+							<div style="position: absolute;background: url(images/fengexian.png);width:2px;height:30px;left: 70%;margin-top: 5px;"></div>
+						</div>
+						
+					</div>
+					
+					<div style="text-align: center;margin: 15px;">暂无数据</div>
 				</div>
 			</div>
 		</div>
@@ -102,15 +215,33 @@
         	时间：2018-04-09
         	描述：排名内容
         -->
-		<div class="mui-content mui-scroll-wrapper" id="_container3">
+		<div class="mui-content mui-scroll-wrapper" id="_container3" style="background:url(images/paihang_bottom.jpg) no-repeat fixed;background-size:100% 1000px;overflow: hidden;">
 			<div class="mui-scroll">
 				<div id="neirong3">
-					<img src="images/muwu.jpg" width="100%" height="150px" />
+					<!--<img src="images/muwu.jpg" width="100%" height="150px" />
 					<br/>
 					<br/>
 					<h4 style="text-align: center;">排行榜<span style="font-size:12px">//RANKING LIST</span></h3>
-					<br/>
+					<br/>-->
 					
+					<div style="width:95%;height:600px;background: #fff;margin: 0 auto;margin-top: 20px;">
+						<div style="width:100%;height:40px;margin-top:30px;background: #eee;text-align: left;font-size: 15px;font-weight:bold;line-height: 40px;padding-left: 10px;">
+							活动简介
+						</div>
+						<div style="width:100%;height:150px;"></div>
+						<div style="width:100%;height:40px;background: #eee;text-align: left;font-size: 15px;font-weight:bold;line-height: 40px;padding-left: 10px;">
+							报名时间
+						</div>
+						<div style="width:100%;height:50px;"></div>
+						<div style="width:100%;height:40px;background: #eee;text-align: left;font-size: 15px;font-weight:bold;line-height: 40px;padding-left: 10px;">
+							报名须知
+						</div>
+						<div style="width:100%;height:100px;"></div>
+						<div style="width:100%;height:40px;background: #eee;text-align: left;font-size: 15px;font-weight:bold;line-height: 40px;padding-left: 10px;">
+							投票时间
+						</div>
+						<div style="width:100%;height:80px;"></div>
+					</div>
 					
 				</div>
 			
@@ -129,12 +260,60 @@
 		</div>
 		
 		<!--
+        	作者：695750870@qq.com
+        	时间：2018-04-09
+        	描述：报名页面
+        -->
+		<div class="mui-content mui-scroll-wrapper" id="_container5" style="display: none;background:url(images/paihang_bottom.jpg) no-repeat fixed;background-size:100% 1000px;overflow: hidden;">
+			<div class="mui-scroll">
+				<div id="toupiao_close" style="float:right;margin-right:2%;width:40px;height:40px;background:url(images/x.png) no-repeat center/100% 100%;"></div>
+				<div style="width:95%;overflow:hidden;background: #fff;margin: 0 auto;padding-top: 10px;">
+						<div style="width:95%;height:40px;margin:0 auto;background: #eee;text-align: left;font-size: 15px;font-weight:bold;line-height: 40px;padding-left: 10px;border: 1px solid #eee;border-radius: 8px;">
+							填写参赛时间
+						</div>
+						<form style="width:95%;text-align: center;margin: 0 auto;margin-top: 10px;">
+							<input type="text" placeholder="请输入参赛名称" style="border:1px solid #eee;border-radius: 8px;" />
+						</form>
+						<div  style="width:95%;margin: 0 auto;">
+							<textarea rows="3" cols="10" maxlength="200" placeholder="请输入个人介绍,拉票宣言等" style="border: 1px solid #eee;border-radius: 8px;"></textarea>
+						</div>
+						
+						<div id="image-uploader" style="margin: 0 auto;width:95%;overflow:hidden;position: relative;">
+                			<div id="shaizhao"></div>
+                			<div style="position:relative;width:60px;height:60px;float: left;background:url(images/add_img.png) no-repeat center/100% 100%;">
+                				<input id="imgInput" className="imgInput" type="file" accept="image/*" style="width:60px;height:60px;border: 1px solid red;opacity: 0;position: absolute;top:0px;left:1px;"/>
+                			</div>
+    					</div>
+    					<div style="width:95%;margin: 0 auto;font-size: 15px;color: #aaa;">最多可上传4张，每张图片大小不超过3M</div>
+						
+						<div style="width:95%;height:40px;margin:0 auto;background: #eee;text-align: left;font-size: 15px;font-weight:bold;line-height: 40px;padding-left: 10px;border: 1px solid #eee;border-radius: 8px;">
+							填写联系信息
+						</div>
+						<form style="width:95%;height:50px;text-align: center;margin: 0 auto;margin-top: 5px;">
+							<input type="text" placeholder="请输入姓名" style="border:1px solid #eee;border-radius: 8px;" />
+						</form>
+						<form style="width:95%;height:50px;text-align: center;margin: 0 auto;">
+							<input type="text" placeholder="请输入联系电话" style="border:1px solid #eee;border-radius: 8px;" />
+						</form>
+						
+						<div  style="width:95%;margin: 0 auto;">
+							<textarea rows="3" cols="10" maxlength="200" placeholder="请输入详细地址" style="border: 1px solid #eee;border-radius: 8px;"></textarea>
+						</div>
+						
+						<div id="ok_tijiao" style="width:150px;height:40px;margin:0 auto;margin-bottom:10px;background:url(images/ok_tijiao.png) no-repeat center/100% 100%"></div>
+				</div>
+			</div>
+		</div>
+		
+		
     		作者：695750870@qq.com
     		时间：2018-03-15
     		描述：在这里加载js可以让页面加载的更快一点，包括mui和jquery的导入以供后面使用
-    	-->
+    	
 		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		
 		<!--
     	作者：695750870@qq.com
     	时间：2018-03-15
@@ -153,27 +332,27 @@
 				pullRefresh: [{
 					container: "#_container1", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
 					//首页界面的上拉刷新，在有后端的情况下进行数据交互，暂时写死留作后用
-					up: {
-						height: 50, //可选.默认50.触发上拉加载拖动距离
-						auto: false, //可选,默认false.自动上拉加载一次
-						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
-						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
-						callback: function pullfresh() {
-							shouye_refresh();
-						} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
-					},
+//					up: {
+//						height: 50, //可选.默认50.触发上拉加载拖动距离
+//						auto: false, //可选,默认false.自动上拉加载一次
+//						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+//						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+//						callback: function pullfresh() {
+//							shouye_refresh();
+//						} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+//					},
 				},{
 					container: "#_container3", //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
 					//首页界面的上拉刷新，在有后端的情况下进行数据交互，暂时写死留作后用
-					up: {
-						height: 50, //可选.默认50.触发上拉加载拖动距离
-						auto: false, //可选,默认false.自动上拉加载一次
-						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
-						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
-						callback: function pullfresh() {
-							rangking_refresh();
-						} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
-					},
+//					up: {
+//						height: 50, //可选.默认50.触发上拉加载拖动距离
+//						auto: false, //可选,默认false.自动上拉加载一次
+//						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+//						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+//						callback: function pullfresh() {
+//							rangking_refresh();
+//						} //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+//					},
 				}]
 			});
 
@@ -181,6 +360,37 @@
 			mui.plusReady(function() {
 				plus.screen.lockOrientation("portrait-primary");
 			});
+				
+				var picker = new mui.PopPicker({
+    layer: 2
+});
+    picker.setData([{
+        value: '110000',
+        text: '北京市',
+        children: [{
+                value: "110101",
+                text: "东城区"
+        }]
+    }, {
+        value: '120000',
+        text: '天津市',
+        children: [{
+	        value: "120101",
+            text: "和平区"
+        }, {
+            value: "120102",
+            text: "河东区"
+        }, {
+            value: "120104",
+            text: "南开区"
+        }
+        ]
+    }])
+picker.pickers[0].setSelectedIndex(1);
+picker.pickers[1].setSelectedIndex(1);
+picker.show(function(SelectedItem) {
+	console.log(SelectedItem);
+})
 				
 			/*dom加载完成后的一些初始化配置*/
 			$(function() {
@@ -200,6 +410,38 @@
 						document.location.href = this.href;	
 					}
 					
+				});
+				
+				/*最新参赛和人气排行的点击事件*/
+				$("#cansai").on("tap",function(){
+					$("#cansai").css({background: "url(images/new_chansai_selected.png) no-repeat center/100% 100%",});
+					$("#paihang").css({background: "url(images/people_paihang.png) no-repeat center/100% 100%",});
+					$("#huatiao1").show();
+					$("#huatiao2").hide();
+					return false;
+				});
+				$("#paihang").on("tap",function(){
+					$("#cansai").css({background: "url(images/new_chansai.png) no-repeat center/100% 100%",});
+					$("#paihang").css({background: "url(images/people_paihang_selected.png) no-repeat center/100% 100%",});
+					$("#huatiao2").show();
+					$("#huatiao1").hide();
+					return false;
+				});
+				
+				/*首页中报名按钮的点击事件*/
+				$("#baoming").on("tap",function(){
+					$("#_container5").show();
+					$("#baoming").hide();
+					$("#bottom_nav").hide();
+					return false;
+				});
+				
+				/*投票页面中关闭按钮的点击事件*/
+				$("#toupiao_close").on("tap",function(){
+					$("#_container5").hide();
+					$("#baoming").show();
+					$("#bottom_nav").show();
+					return false;
 				});
 				
 				/*首页中投票点击事件*/
@@ -240,13 +482,6 @@
   				if (input.files && input.files[0]) {
   					
   					var files = Array.prototype.slice.call(input.files);
-  					if($("#shaizhao img").length+files.length>3){
-  						mui.toast("上传图片不能超过3张！", {
-							duration: '2000',
-							type: 'div'
-						});
-						return;
-  					}
   					files.forEach(function(file,i){
   						var reader = new FileReader();
     					reader.readAsDataURL(files[i]);
@@ -258,7 +493,11 @@
         					$("#"+img_id+"").attr('src', e.target.result);
       					};
   					});
-    				
+  					
+    				if($("#shaizhao img").length+files.length==4){
+  						$("#imgInput").parent().hide();
+						return;
+  					}
    				}
  			}
  
@@ -289,26 +528,26 @@
 									"<div style='float: right;margin-top: 20px;'><span style='color: blue;font-size: 20px;'>%piao_num</span> 票</div>"+
 								"</div>";
 			
-			var img_list = "<div id='asdas' style='position:relative;float:left;overflow:hidden;'><div id='removeimg' style='position:absolute;left:100px;font-size:25px;'>X</div><img id='%img_id' className='imgShow' src='' alt='' style='width:120px;height:120px;border:1px solid #aaa;border-radius:10px;margin-left:5px;margin-bottom:10px;'/></div>";
+			var img_list = "<div style='position:relative;float:left;overflow:hidden;'><div id='removeimg' style='position:absolute;left:10px;font-size:25px;'>X</div><img id='%img_id' className='imgShow' src='' alt='' style='width:60px;height:60px;margin-left:5px;margin-bottom:10px;'/></div>";
 			
 			/*初始化刷新刷新内容*/
 			function refresh() {
 				var s = "";
 
-				for(var i = 0; i < 8; i++) {
-					<!--/*首页列表样式一的使用 */
-//					s += shouye_list.replace("%images", "images/shuijiao.jpg").replace("%piao_num","1111111").replace("%num", "1").replace("%id","黄芷欣");-->
-					/*首页列表样式二的使用*/
-					s += shouye_list.replace("%images", "images/shuijiao.jpg").replace("%jieshao","神农架的风景真是逆天的好啊！").replace("%num", "1").replace("%id","黄芷欣").replace("%piao_num","1111111");
-				}
-				$("#shouye_imglist").append(s);
+//				for(var i = 0; i < 8; i++) {
+//					<!--/*首页列表样式一的使用 */
+////					s += shouye_list.replace("%images", "images/shuijiao.jpg").replace("%piao_num","1111111").replace("%num", "1").replace("%id","黄芷欣");-->
+//					/*首页列表样式二的使用*/
+//					s += shouye_list.replace("%images", "images/shuijiao.jpg").replace("%jieshao","神农架的风景真是逆天的好啊！").replace("%num", "1").replace("%id","黄芷欣").replace("%piao_num","1111111");
+//				}
+//				$("#shouye_imglist").append(s);
 
-				s = "";
-				for(i=1;i<21;i++){
-					s += rangking_list.replace("%rangking_num",i).replace("%num",i).replace("%images","images/muwu.jpg").replace("%id","小浣熊").replace("%piao_num","1230");
-				}
-				rangking_sum = i;
-				$("#neirong3").append(s);
+//				s = "";
+//				for(i=1;i<21;i++){
+//					s += rangking_list.replace("%rangking_num",i).replace("%num",i).replace("%images","images/muwu.jpg").replace("%id","小浣熊").replace("%piao_num","1230");
+//				}
+//				rangking_sum = i;
+//				$("#neirong3").append(s);
 			}
 			
 			/*首页页面上的上拉刷新在此*/
@@ -363,6 +602,7 @@
 						document.getElementById("_container3").classList.add("mui-hidden");
 						document.getElementById("_container4").classList.add("mui-hidden");
 						document.getElementById("_container1").classList.remove("mui-hidden");
+						$("#baoming").show();
 						break;
 					case 2:
 						/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
@@ -370,6 +610,7 @@
 						document.getElementById("_container3").classList.add("mui-hidden");
 						document.getElementById("_container4").classList.add("mui-hidden");
 						document.getElementById("_container2").classList.remove("mui-hidden");
+						$("#baoming").hide();
 						break;
 					case 3:
 						/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
@@ -377,6 +618,7 @@
 						document.getElementById("_container2").classList.add("mui-hidden");
 						document.getElementById("_container4").classList.add("mui-hidden");
 						document.getElementById("_container3").classList.remove("mui-hidden");
+						$("#baoming").hide();
 						break;
 					case 4:
 						/*将除了首页以外的其他导航界面隐藏（购物车的结算界面）*/
@@ -384,6 +626,7 @@
 						document.getElementById("_container2").classList.add("mui-hidden");
 						document.getElementById("_container3").classList.add("mui-hidden");
 						document.getElementById("_container4").classList.remove("mui-hidden");
+						$("#baoming").hide();
 						break;
 				}
 				

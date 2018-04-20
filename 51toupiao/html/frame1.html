@@ -91,16 +91,21 @@
    			
 
    			if(localStorage.toupiaoSuccess=="true"){
-   				mui.toast("您已投票，请勿重新投票！", {
+   				setTimeout(function(){
+   					mui.toast("您已投票，请勿重新投票！", {
 					duration: '2000',
 					type: 'div'
 				});
+   				},1000);
+   				
    			}else{
-   				mui.toast("投票成功！", {
+   				setTimeout(function(){
+   					mui.toast("投票成功！", {
 					duration: '2000',
 					type: 'div'
 				});
 				localStorage.toupiaoSuccess = "true";
+   				},1000);
    			
    			}
    			
