@@ -1,4 +1,4 @@
-function ajax_public(url,callback) {
+﻿function ajax_public(url,callback) {
 	$("#loading").show();
 	setTimeout(function(){
 		$("#loading").hide();
