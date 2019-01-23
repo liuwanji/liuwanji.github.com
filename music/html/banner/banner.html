@@ -1,0 +1,447 @@
+<link rel="stylesheet" type="text/css" href="../banner/banner.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div></div>
+			<div>广告管理</div>
+			<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+			<div id='create_Banner'>新建广告</div>
+		</div>
+		
+		<div>
+			
+			<div id='classes_search'>
+				
+				<div>
+					<div>
+						校区名称
+					</div>
+					<div>
+						<input type='text' id='classess_input1' />
+						<!--<img src="../../public/img/search.png" id='classess_sousuo' onclick="chaxun(1)"/>-->
+					</div>
+				</div>
+				
+				<div>
+					<div>结束时间</div>
+					<div>
+						<input id='datetime1'  type='text'/>
+						<img src="../../public/img/riqi.png"/ id='dateFocus1'>
+					</div>
+				</div>
+				
+				<div>
+					<div>用户类型</div>
+					<div>
+						<select id='classess_select2'>
+							<option value="999">全部</option>
+							<option value="0">全部用户</option>
+							<option value="1">注册用户</option>
+							<option value="2">校区用户</option>
+						</select>
+					</div>
+				</div>
+				
+				<div>
+					<div>广告状态</div>
+					<div>
+						<select id='classess_select3'>
+							<option value="0">全部</option>
+							<option value="1">开启</option>
+							<option value="2">关闭</option>
+						</select>
+					</div>
+				</div>
+				<div class='sousuo' onclick="chaxun(1)">查询</div>
+				<div id='_clear'>清空</div>
+				
+			</div>
+			
+			<div id='classes_bottom'>
+				<div>当前结果: 共<span id='countNum'>0</span>个广告,其中禁用<span id='open'>0</span>个</div>
+				<div>
+					<div class='TableBox'>
+						<table id='classes_table'>
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>广告主题</th>
+									<th>图片</th>
+									<th>
+										开始时间
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(1,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(1,2)"/>
+										</div>
+									</th>
+									<th>
+										结束时间
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(2,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(2,2)"/>
+										</div>
+									</th>
+									<th>跳转类型</th>
+									<th>
+										排序
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(3,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(3,2)"/>
+										</div>
+									</th>
+									<th>用户类型</th>
+									<th>推送校区</th>
+									<th>状态</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id='bannerBody'>
+								<!--<tr>
+									<td>1</td>
+									<td>抢课程1111元神卷</td>
+									<td><img src="../../public/img/bg_sign.png" class='bannerImg'/></td>
+									<td>2018-11-11 00:00:00</td>
+									<td>2018-11-12 00:00:00</td>
+									<td>网页</td>
+									<td>10</td>
+									<td>全部</td>
+									<td>
+										<div class='chakan'>查看</div>
+									</td>
+									<td>
+										<div class='qiyong'>
+											<div class='qiyong_zhi'>启用</div>
+											<div class='qiyong_yuan'></div>
+										</div>
+										<div class='guanbi' style='display: none;'>
+											<div class='guanbi_zhi'>关闭</div>
+											<div class='guanbi_yuan'></div>
+										</div>
+										<div class='guoqi' style='display: none;'>
+											过期
+										</div>
+									</td>
+									<td class='banner_bianji'>编辑</td>
+								</tr>-->
+							</tbody>
+						</table>
+					</div>
+					<div id='table_ctr'>
+						<div>
+							<div>
+								共<span id='all_num'>0</span>个账号,每页显示:
+								<select id='curr_num'>
+									<option value='10'>10个</option>
+									<option value='20'>20个</option>
+									<option value='30'>30个</option>
+									<option value='50'>50个</option>
+									<option value='100'>100个</option>
+								</select>
+							</div>
+							<div id='fenye'>
+								<div id='fenye_last_max'>&laquo;</div>
+								<div id='fenye_last'>&lt;</div>
+								<div id='fenye_num'>
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+									<div>4</div>
+									<div>5</div>
+								</div>
+								<div id='fenye_next'>&gt;</div>
+								<div id='fenye_next_max'>&raquo;</div>
+							</div>
+							<input type="number" id='curr_input'/>
+							<div id='table_ok'>确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='xzgg' class='alert'>
+		<div id='xzggShadow' class='alertShadow'></div>
+		<div id='xzggMain' class='alertMain'>
+			<div>
+				<div id='bannerTitle'>新增广告</div>
+				<img id='close_xzgg' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='guanggao1'>
+					<div id='guanggaobianhao'>
+						<div>编号</div>
+						<div id='bianhao'>0</div>
+					</div>
+					<div>
+						<div><span style='color:red;margin-right: 10px;'>*</span>推荐用户类型</div>
+						<select id='userType'>
+							<option value="0">全部用户</option>
+							<option value="1">注册用户</option>
+							<option value="2">校区用户</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class='guanggao2'>
+					<div>
+						<span style='color:red;margin-right: 10px;'>*</span>活动时间
+					</div>
+					<div>
+						<div>
+							<input id='start_time'  type='text' placeholder="请选择日期"/>
+							<span>至</span>
+							<img src="../../public/img/riqi.png"/ id='startfocus'>
+						</div>
+						<div>
+							<input id='end_time'  type='text' placeholder="请选择日期"/>
+							<img src="../../public/img/riqi.png" id='endfocus'/>
+						</div>
+					</div>
+				</div>
+				
+				<div class='guanggao3'>
+					<div>
+						<div>广告主题</div>
+						<input type='text' id='ggzt'/>
+					</div>
+					<div>
+						<div><span style='color:red;margin-right: 10px;'>*</span>排序</div>
+						<input type='number' id='paixu'/>
+					</div>
+				</div>
+				
+				<div class='guanggao4'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>图片地址</div>
+					<input type="text" id='imgaddr'/>
+				</div>
+				
+				<div class='guanggao4'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>跳转类型</div>
+					<select id='tztype'>
+						<option value="0">无操作</option>
+						<option value="1">打开网页</option>
+						<option value="2">打开歌曲</option>
+						<option value="3">打开课时</option>
+					</select>
+				</div>
+				
+				<div class='guanggao4'>
+					<div>跳转地址</div>
+					<input type="text" id='tzdz'/>
+				</div>
+				
+				<div class='guanggao4'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>推送校区类型</div>
+					<select id='xqtype'>
+						<option value="1">全部校区</option>
+						<option value="2">选中校区</option>
+					</select>
+				</div>
+				
+				<div class='guanggao6' id='tsxq'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>推送校区</div>
+					<div id='xzxq'>+选择校区</div>
+					<div id='xuanze' style='display: none;'>
+						<div id='xuanzeInput' class='string_hidden'></div>
+						<div id='xuanzeAdd'>+</div>
+					</div>
+				</div>
+				
+				<div class='guanggao4'>
+					<div>参数1</div>
+					<input type="text" id='canshu1'/>
+				</div>
+				
+				<div class='guanggao4'>
+					<div>参数2</div>
+					<input type="text" id='canshu2'/>
+				</div>
+				
+				<div class='guanggao4'>
+					<div>备注</div>
+					<input type="text" id='Remarks'/>
+				</div>
+				
+				<div class='guanggao5'>
+					<div>开启状态</div>
+					<div id='kaiqistatus'>
+						<div class='danxuan'>
+							<div class='danxuanSelect'></div>
+							<div>开启</div>
+						</div>
+						<div class='danxuan' style='margin-left: 20px;'>
+							<div></div>
+							<div>关闭</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class='alertBottom'>
+				<div id='bannerOk' class='_ok' onclick="createBanner()">确定</div>
+				<div id='bannerNo' class='_no'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='selectxq' class='alert'>
+		<div id='selectxqShadow' class='alertShadow'></div>
+		<div id='selectxqMain' class='alertMain'>
+			<div>
+				<div>选择校区</div>
+				<img id='close_selectxq' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='selectxqTop'>
+					<div>校区状态</div>
+					<div class='selectxqDanxuan' id='selectxqDx'>
+						<div class='danxuan' style='margin-right: 15px;'>
+							<div class='danxuanSelect'></div>
+							<div>全部</div>
+						</div>
+						<div class='danxuan'>
+							<div></div>
+							<div>正常</div>
+						</div>
+					</div>
+					<div class='sousuoImg' style='margin-left: 20px;'>
+						<div>
+							校区名称
+						</div>
+						<div>
+							<input type='text' id='selectxqName1' />
+							<img src="../../public/img/search.png" onclick="campusList1(0)"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class='xzxqtable'>
+					<table class='jibenBiaoge'>
+						<thead>
+							<tr>
+								<th>
+									<div class='duoxuan allselectcampus'><img src="../../public/img/login_tip.png" /></div>
+								</th>
+								<th>序号</th>
+								<th>姓名</th>
+								<th>手机号</th>
+								<th>状态</th>
+							</tr>
+						</thead>
+						<tbody id='xzxqBody1'>
+							<!--<tr>
+								<td>
+									<div class='duoxuan'><img src="../../public/img/login_tip.png" /></div>
+								</td>
+								<td>1</td>
+								<td>
+									CANON HALL成人钢琴俱乐部(王家湾店)
+								</td>
+								<td>
+									138001380000
+								</td>
+								<td>
+									<div class='xzxqStatus1'>正常</div>
+								</td>
+							</tr>-->
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div class='alertBottom'>
+				<div class='xqbottom'>
+					<div>已选择 <span style='color:#2F80ED;font-size: 16px;' id='yxzcampus'>0</span> 个校区</div>
+					<div>
+						<div id='selectxqOk' class='_ok' style='margin-right: 20px;' onclick="selectedCampus()">确认选择</div>
+						<div id='selectxqNo' class='_no' style='margin-right: 20px;'>取消</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+	<div id='xqlb' class='alert'>
+		<div id='xqlbShadow' class='alertShadow'></div>
+		<div id='xqlbMain' class='alertMain'>
+			<div>
+				<div>选择校区</div>
+				<img id='close_xqlb' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div id='bannerid' style='display: none;'></div>
+				<div class='selectxqTop'>
+					<div>校区状态</div>
+					<div class='selectxqDanxuan' id='xqlbDx'>
+						<div class='danxuan' style='margin-right: 15px;'>
+							<div class='danxuanSelect'></div>
+							<div>全部</div>
+						</div>
+						<div class='danxuan'>
+							<div></div>
+							<div>正常</div>
+						</div>
+					</div>
+					<div class='sousuoImg' style='margin-left: 20px;'>
+						<div>
+							校区名称
+						</div>
+						<div>
+							<input type='text' id='selectxqName2' />
+							<img src="../../public/img/search.png" onclick="campusList2()"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class='xzxqtable'>
+					<table class='jibenBiaoge'>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>姓名</th>
+								<th>手机号</th>
+								<th>状态</th>
+							</tr>
+						</thead>
+						<tbody id='xzxqBody2'>
+							<!--<tr>
+								<td>1</td>
+								<td>
+									CANON HALL成人钢琴俱乐部(王家湾店)
+								</td>
+								<td>
+									138001380000
+								</td>
+								<td>
+									<div class='xzxqStatus1'>正常</div>
+								</td>
+							</tr>-->
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div class='alertBottom'>
+				<div class='xqbottom'>
+					<div>已选择 <span style='color:#2F80ED;font-size: 16px;' id='yxzxqlist'>0</span> 个校区</div>
+					<div>
+						<div id='xqlbOk' class='_ok' style='margin-right: 20px;'>确认</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+<script type="text/javascript" src="../banner/banner.js"></script>

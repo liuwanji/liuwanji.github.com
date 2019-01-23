@@ -1,0 +1,551 @@
+<link rel="stylesheet" type="text/css" href="../course/course.css" />
+
+<div id='classes_main'>
+	<div>
+		<div></div>
+		<div>课程管理</div>
+		<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+		<!--<div>新建课程</div>-->
+	</div>
+
+	<div>
+
+		<div id='classes_search'>
+
+			<div>
+				<div>
+					<div>班级名称</div>
+				</div>
+				<div>
+					<input type='text' id='classess_input1' />
+					<!--<img src="../../public/img/search.png" id='classess_sousuo' onclick="chaxun(1)"/>-->
+				</div>
+			</div>
+			<div>
+				<div>课程状态</div>
+				<div>
+					<select id='classess_select2'>
+						<option value="999">全部</option>
+						<option value="0">未开始</option>
+						<option value="1">已完成</option>
+						<option value="2">停课</option>
+						<option value="3">时间异常</option>
+						<option value="4">已过期</option>
+					</select>
+				</div>
+			</div>
+			<div>
+				<div>上课日期</div>
+				<div>
+					<input id='datetime1' type='text' />
+					<img src="../../public/img/riqi.png" id='dateFocus1' />
+					<span>至</span>
+				</div>
+				<div>
+					<input id='datetime2' type='text' />
+					<img src="../../public/img/riqi.png" id='dateFocus2' />
+				</div>
+			</div>
+			<div class='sousuo' onclick="chaxun(1)">查询</div>
+			<div id='_clear'>清空</div>
+
+		</div>
+
+		<div id='classes_bottom'>
+			<div>当前结果: 共<span id='countNum'>0</span>个课程</div>
+			<div>
+				<div class='TableBox'>
+					<table id='classes_table'>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>
+									上课日期
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(1,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(1,2)" />
+									</div>
+								</th>
+								<th>
+									上课时间
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(2,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(2,2)" />
+									</div>
+								</th>
+								<th>班级名称</th>
+								<th>任课老师</th>
+								<th>教材名称</th>
+								<th>课程进度</th>
+								<th>学生数</th>
+								<th>教室</th>
+								<th>代课老师</th>
+								<th>课程状态</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id='kechengBody'>
+							<!--<tr>
+								<td>1</td>
+								<td>2018/11/2</td>
+								<td>18:00-19:00</td>
+								<td>201801电子鼓初级入门一班</td>
+								<td>沈育新</td>
+								<td>声态工坊爵士鼓初级教程</td>
+								<td>1/20</td>
+								<td>6</td>
+								<td>一号教室</td>
+								<td>
+									<div class='laoshi'></div>
+									<div class='xuanze'>选择老师</div>
+								</td>
+								<td>正在上课</td>
+								<td class='tobianji'>编辑</td>
+							</tr>-->
+						</tbody>
+					</table>
+				</div>
+				<div id='table_ctr'>
+					<div>
+						<div>
+							共<span id='all_num'>0</span>个课程,每页显示:
+							<select id='curr_num'>
+								<option value='10'>10个</option>
+								<option value='20'>20个</option>
+								<option value='30'>30个</option>
+							</select>
+						</div>
+						<div id='fenye'>
+							<div id='fenye_last_max'>&laquo;</div>
+							<div id='fenye_last'>&lt;</div>
+							<div id='fenye_num'>
+								<div>1</div>
+								<div>2</div>
+								<div>3</div>
+								<div>4</div>
+								<div>5</div>
+							</div>
+							<div id='fenye_next'>&gt;</div>
+							<div id='fenye_next_max'>&raquo;</div>
+						</div>
+						<input type="number" id='curr_input' />
+						<div id='table_ok'>确定</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='changeStudent'>
+	<div id='xgxyShadow'></div>
+	<div id='xgxyMain'>
+
+		<div>
+			<div>编辑课程信息</div>
+			<img id='close_xgxy' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div id="course_id" style='display: none;'></div>
+			<div class='kechengInput1'>
+				<div class='kechengInput' style='margin-right: 10px;'>
+					<div>班级名称</div>
+					<input type='text' id='bjmc' disabled="disabled"/>
+				</div>
+				<div class='kechengInput'>
+					<div>教材名称</div>
+					<input type='text' id='jcmc' disabled="disabled"/>
+				</div>
+			</div>
+			<div class='kechengInput1'>
+				<div class='kechengInput' style='margin-right: 10px;'>
+					<div>课程进度</div>
+					<input type='text' id='kcjd' disabled="disabled"/>
+				</div>
+				<div class='kechengInput'>
+					<div><span style='color:red;'>* </span>课程名称</div>
+					<input type='text' id='kcmc' />
+				</div>
+			</div>
+			<div class='kechengInput1'>
+				<div class='kechengInput2'>
+					<div>课程歌曲</div>
+					<div id='tjgq'>+添加曲目歌曲</div>
+					<div  style="display: none" id='kcgq'>
+						<div id='musicid' style='display: none;'></div>
+						<div id='jiaocaiMusic'>
+							<img src="../../public/img/music1.png">
+							<div style="margin-right: 10px;float: left;max-width: 250px;" id='musicName'>Falling Crazy in Love - Jessica</div>
+							<img src="../../public/img/time.png">
+							<span style="margin-right: 10px;" id='musicTime'>120秒</span>
+							<img src="../../public/img/BPMicon.png" style='margin-top: 9px;'>
+							<span style="margin-right: 10px;" id='musicBpm'>999</span>
+							<img src="../../public/img/nandu.png" style='margin-top: 9px;'>
+							<span style="margin-right: 10px;" id='musicNandu'>难度10</span>
+						</div>
+						<img id='qiehuan' src="../../public/img/tihuan.png" />
+					</div>
+				</div>
+			</div>
+			<div class="kechengInput1">
+				<div class='kechengInput3'>
+					<div class='kczd'>课程重点</div>
+					<div style='overflow: hidden;float: left;position: relative;'>
+						<textarea id='kczd' cols="10" rows="10" placeholder="教授如何入门军鼓的理论知识!"></textarea>
+						<div class='textareNum'><span>0</span>/<span>30</span></div>
+					</div>
+					<div class='jiaoan'>
+						<div>教案</div>
+						<div id='jiaoanurl'>
+							<div id='jiaoanurlnum'>0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="kechengInput1">
+				<div class='kechengInput'>
+					<div><span style='color:red;'>* </span>日期</div>
+					<input type='text' id='riqi' />
+				</div>
+				<div class='kechengInput'>
+					<div style='width: 60px;'><span style='color:red;'>* </span>时间</div>
+					<input type="time" id='shijian1'/>
+					<!--<select type='date' id='shijian1'>
+						<option value="08:00">08:00</option>
+						<option value="09:00">09:00</option>
+						<option value="10:00">10:00</option>
+						<option value="11:00">11:00</option>
+						<option value="12:00">12:00</option>
+						<option value="13:00">13:00</option>
+						<option value="14:00">14:00</option>
+						<option value="15:00">15:00</option>
+						<option value="16:00">16:00</option>
+						<option value="17:00">17:00</option>
+						<option value="18:00">18:00</option>
+						<option value="19:00">19:00</option>
+						<option value="20:00">20:00</option>
+					</select>-->
+					<div style='width: 30px;text-align: center;'>-</div>
+					<input type="time" id='shijian2'/>
+					<!--<select type='date' id='shijian2'>
+						<option value="08:00">08:00</option>
+						<option value="09:00">09:00</option>
+						<option value="10:00">10:00</option>
+						<option value="11:00">11:00</option>
+						<option value="12:00">12:00</option>
+						<option value="13:00">13:00</option>
+						<option value="14:00">14:00</option>
+						<option value="15:00">15:00</option>
+						<option value="16:00">16:00</option>
+						<option value="17:00">17:00</option>
+						<option value="18:00">18:00</option>
+						<option value="19:00">19:00</option>
+						<option value="20:00">20:00</option>
+					</select>-->
+				</div>
+			</div>
+			<div class='kechengInput1'>
+				<div class='kechengInput' style='margin-right: 10px;'>
+					<div><span style='color:red;'>* </span>任课老师</div>
+					<select id='rkls'>
+					</select>
+				</div>
+				<div class='kechengInput'>
+					<div><span style='color:red;'>* </span>教室</div>
+					<select id='jiaoshi'>
+					</select>
+				</div>
+			</div>
+			<div class='kechengInput1'>
+				<div class='kechengInput4'>
+					<div>
+						<div>学员</div>
+						<div style='color:#3267FE;'>(<span id='xueyuan'>9</span>人)</div>
+					</div>
+					<div>
+						<div id='chengyuan'>
+							<!--<div class='xueyuanImg'>
+								<div>
+									<div class='removeXueyuan'>-</div>
+								</div>
+								<div>宋义诊</div>
+							</div>-->
+						</div>
+						<div id='addXueyuan'>
+							<div>+</div>
+							<div>添加学员</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='addBottom'>
+			<div id='xgxyOk' onclick="editCourse()">保存</div>
+			<div id='xgxyNo'>取消</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='xzls'>
+	<div id='xzlsShadow'></div>
+	<div id='xzlsMain'>
+
+		<div>
+			<div>选择老师</div>
+			<img id='close_xzls' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div class='xzlssearch'>
+				<div>老师状态</div>
+				<div class='xzlssearch1'>
+					<div>
+						<img style='display: inline;' src="../../public/img/login_tip.png" />
+					</div>
+					<div>全部</div>
+				</div>
+				<div class='xzlssearch1'>
+					<div>
+						<img src="../../public/img/login_tip.png" />
+					</div>
+					<div>空闲</div>
+				</div>
+				<div class='xzlssearch2'>
+					<div>老师姓名</div>
+					<input id='lsxm' type='text' />
+					<img id='xzlssousuo' src="../../public/img/search.png" onclick="teacherSelect(2)"/>
+				</div>
+			</div>
+			<div class='xzlstable'>
+				<table class='jibenBiaoge'>
+					<thead>
+						<tr>
+							<th></th>
+							<th>序号</th>
+							<th>姓名</th>
+							<th>手机号</th>
+							<th>状态</th>
+						</tr>
+					</thead>
+					<tbody id='xzlsBody'>
+						<tr>
+							<td>
+								<div class='xzlsSelect'><img src="../../public/img/login_tip.png" /></div>
+							</td>
+							<td>1</td>
+							<td>
+								<div class='xzlsName'>
+									<div></div>
+									<div>
+										<div>张晓明</div>
+									</div>
+								</div>
+							</td>
+							<td>
+								138001380000
+							</td>
+							<td>
+								<div class='xzlsStatus1'>空闲</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class='xzlsBottom'>
+			<div id='xzlsOk' onclick="teaOkselect()">确认选择</div>
+			<div id='xzlsNo'>取消</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='xzxyTc'>
+	<div id='xzxyShadow'></div>
+	<div id='xzxyMain'>
+
+		<div>
+			<div>选择学员</div>
+			<img id='close_xzxy' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div class='xzxysearch'>
+				<div>学员状态</div>
+				<div class='xzxysearch1'>
+					<div>
+						<img style='display: inline;' src="../../public/img/login_tip.png" />
+					</div>
+					<div>全部</div>
+				</div>
+				<div class='xzxysearch1'>
+					<div>
+						<img src="../../public/img/login_tip.png" />
+					</div>
+					<div>已分班</div>
+				</div>
+				<div class='xzxysearch1'>
+					<div>
+						<img src="../../public/img/login_tip.png" />
+					</div>
+					<div>未分班</div>
+				</div>
+				<div class='xzxysearch2'>
+					<input id='xyzt' type='text' />
+					<img id='xzxysousuo' src="../../public/img/search.png" onclick="stuSelect(2)"/>
+				</div>
+			</div>
+			<div class='xzxytable'>
+				<table class='jibenBiaoge'>
+					<thead>
+						<tr>
+							<th></th>
+							<th>序号</th>
+							<th>姓名</th>
+							<th>手机号</th>
+							<th>注册时间
+								<div class='shunxu'>
+									<img src="../../public/img/shengxu.png" />
+									<img src="../../public/img/jiangxu.png" />
+								</div>
+							</th>
+							<th>状态</th>
+						</tr>
+					</thead>
+					<tbody id='xzxybody'>
+						<!--<tr>
+							<td>
+								<div class='xzxySelect'><img src="../../public/img/login_tip.png" /></div>
+							</td>
+							<td>1</td>
+							<td>
+								<div class='xzxyName'>
+									<div></div>
+									<div>
+										<div>张晓明</div>
+										<div>4岁</div>
+									</div>
+								</div>
+							</td>
+							<td>
+								138001380000
+							</td>
+							<td>2019-09-30</td>
+							<td>
+								<div class='xzxyStatus1'>已分班</div>
+							</td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class='xzxyBottom'>
+			<div>已选择了<span id='yxzStudent'>0</span>个学生</div>
+			<div>
+				<div id='xzxsOk' onclick="selectStudent()">确认选择</div>
+				<div id='xzxsNo'>取消</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='xzgq'>
+	<div id='xzgqShadow'></div>
+	<div id='xzgqMain'>
+
+		<div>
+			<div>选择歌曲</div>
+			<img id='close_tjjc' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div id='xzgqSearch'>
+
+				<div class='xzgqInput1'>
+					<div>曲库选择</div>
+					<select id='qkxz'>
+						<option value="0">全部</option>
+						<option value="1">校区</option>
+						<option value="2">系统</option>
+					</select>
+				</div>
+				<div class='xzgqInput1'>
+					<div>歌曲类型</div>
+					<select id='gqlx'>
+						<option value="0">全部</option>
+						<option value="1">初级</option>
+						<option value="2">中级</option>
+						<option value="3">高级</option>
+					</select>
+				</div>
+				<div class='xzgqInput1'>
+					<div>歌曲难度</div>
+					<input id='gqnd' type='number'/>
+				</div>
+				<div class='xzgqInput1'>
+					<div>歌曲风格</div>
+					<select id='gqfg'>
+						<option value="0">全部</option>
+						<option value="流行">流行</option>
+						<option value="摇滚">摇滚</option>
+						<option value="芬克">芬克</option>
+						<option value="嘻哈">嘻哈</option>
+						<option value="拉丁">拉丁</option>
+						<option value="爵士">爵士</option>
+						<option value="电子">电子</option>
+						<option value="儿童">儿童</option>
+					</select>
+				</div>
+				<div class='xzgqInput1' style='margin-right: 0px;'>
+					<div>歌曲名称</div>
+					<div>
+						<input type="text" id='gqmc'/>
+						<img src="../../public/img/search.png" onclick="selectmusic(2)"/>
+					</div>
+				</div>
+
+			</div>
+
+			<div style="margin: 20px;">
+				<table class='jibenBiaoge'>
+					<thead>
+						<tr>
+							<th></th>
+							<th>序号</th>
+							<th>封面</th>
+							<th>歌曲名称</th>
+							<th>类型</th>
+							<th>歌曲时长</th>
+							<th>BPM
+								<div class='shunxu'>
+									<img src="../../public/img/shengxu.png" />
+									<img src="../../public/img/jiangxu.png" />
+								</div>
+							</th>
+							<th>风格</th>
+							<th>难度</th>
+						</tr>
+					</thead>
+					<tbody id='musicBody'>
+						
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<div class='addBottom'>
+			<div id='xzgqOk' onclick="musicOkSelect()">确认选择</div>
+			<div id='xzgqNo'>取消</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../course/course.js"></script>

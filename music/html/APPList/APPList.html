@@ -1,0 +1,116 @@
+<link rel="stylesheet" type="text/css" href="../APPList/APPList.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div></div>
+			<div>APK关联包管理</div>
+			<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+			<div id='create_apk'>新建关联</div>
+		</div>
+		
+		<div>
+			
+			<div id='classes_bottom'>
+				<div>
+					<div class='TableBox' style='top:30px;'>
+						<table id='classes_table'>
+							<thead>
+								<tr>
+									<th>autoID</th>
+									<th>AppId</th>
+									<th>应用名</th>
+									<th>关联的包</th>
+									<th>备注</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id='applistBody'>
+								<!--<tr>
+									<td>10161</td>
+									<td>wa3sd1a3sd1a31sda1s3d1as3d</td>
+									<td>这个动物不正经(测试版)</td>
+									<td>这个动物不正经(测试版)</td>
+									<td>
+										1.支持设置个人页面背景图,个性化你的主页
+										2.新增备注名功能,找好友更快捷.
+									</td>
+									<td class='apk_bianji'>编辑</td>
+								</tr>-->
+							</tbody>
+						</table>
+					</div>
+					<div id='table_ctr'>
+						<div>
+							<div>
+								共<span id='all_num'>0</span>个账号,每页显示:
+								<select id='curr_num'>
+									<option value='10'>10个</option>
+									<option value='20'>20个</option>
+									<option value='30'>30个</option>
+									<option value='50'>50个</option>
+									<option value='100'>100个</option>
+								</select>
+							</div>
+							<div id='fenye'>
+								<div id='fenye_last_max'>&laquo;</div>
+								<div id='fenye_last'>&lt;</div>
+								<div id='fenye_num'>
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+									<div>4</div>
+									<div>5</div>
+								</div>
+								<div id='fenye_next'>&gt;</div>
+								<div id='fenye_next_max'>&raquo;</div>
+							</div>
+							<input type="number" id='curr_input'/>
+							<div id='table_ok'>确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='apklist' class='alert'>
+		<div id='apklistShadow' class='alertShadow'></div>
+		<div id='apklistMain' class='alertMain'>
+			<div>
+				<div id='apklistTitle'>新建</div>
+				<img id='close_apklist' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				
+				<div class='input1'>
+					<div>Appid</div>
+					<input type='number' id='appid'/>
+				</div>
+				<div class='input1'>
+					<div>应用名</div>
+					<input type='text' id='apkname'/>
+				</div>
+				<div class='input1'>
+					<div>对应Apkid</div>
+					<textarea rows="5" cols="5"  id='apkid' placeholder="数组,每个数据间以','区分;"></textarea>
+				</div>
+				<div class='input1'>
+					<div>备注</div>
+					<textarea rows="5" cols="5"  id='remarks' placeholder="字符串"></textarea>
+				</div>
+				
+			</div>
+			
+			<div class='alertBottom'>
+				<div id='apklistOk' class='_ok' onclick="createAPK()">提交</div>
+				<div id='apklistNo' class='_no'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+
+<script type="text/javascript" src="../APPList/APPList.js"></script>

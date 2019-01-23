@@ -1,0 +1,139 @@
+<link rel="stylesheet" type="text/css" href="../whiteManage/whiteManage.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div></div>
+			<div>白名单管理</div>
+			<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+			<div id='create_Banner'>新建白名单</div>
+		</div>
+		
+		<div>
+			
+			<div id='classes_search'>
+				
+				<div>
+					<div>APPID</div>
+					<div>
+						<select id='classess_select2'>
+							<option value="0">全部</option>
+						</select>
+					</div>
+				</div>
+				
+				<div>
+					<div>类型</div>
+					<div>
+						<select id='classess_select3'>
+							<option value="0">全部</option>
+							<option value="1">设备号</option>
+							<option value="2">UID</option>
+						</select>
+					</div>
+				</div>
+				<div class='sousuo' onclick="chaxun(1)">查询</div>
+				<div id='_clear'>清空</div>
+				
+			</div>
+			
+			<div id='classes_bottom'>
+				<div>当前结果: 共<span id='countNum'>0</span>个数据</div>
+				<div>
+					<div class='TableBox'>
+						<table id='classes_table'>
+							<thead>
+								<tr>
+									<th>应用ID</th>
+									<th>类型</th>
+									<th>白名单数据</th>
+									<th>服务器IP</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id='bmdBody'>
+								<tr>
+									<td>10161</td>
+									<td>设备号</td>
+									<td>IOS</td>
+									<td>123.123.123.123</td>
+									<td class='bmd_bianji'>编辑</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id='table_ctr'>
+						<div>
+							<div>
+								共<span id='all_num'>0</span>个账号,每页显示:
+								<select id='curr_num'>
+									<option value='10'>10个</option>
+									<option value='20'>20个</option>
+									<option value='30'>30个</option>
+									<option value='50'>50个</option>
+									<option value='100'>100个</option>
+								</select>
+							</div>
+							<div id='fenye'>
+								<div id='fenye_last_max'>&laquo;</div>
+								<div id='fenye_last'>&lt;</div>
+								<div id='fenye_num'>
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+									<div>4</div>
+									<div>5</div>
+								</div>
+								<div id='fenye_next'>&gt;</div>
+								<div id='fenye_next_max'>&raquo;</div>
+							</div>
+							<input type="number" id='curr_input'/>
+							<div id='table_ok'>确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='bmd' class='alert'>
+		<div id='bmdShadow' class='alertShadow'></div>
+		<div id='bmdMain' class='alertMain'>
+			<div>
+				<div id='bmdTitle'>新建白名单</div>
+				<img id='close_bmd' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='input1'>
+					<div>应用ID</div>
+					<select id='appid'>
+							
+					</select>
+				</div>
+				<div class='input1'>
+					<div>类型</div>
+					<select id='duantype'>
+							<option value="1">设备号</option>
+					</select>
+				</div>
+				<div class='input1'>
+					<div>白名单数据</div>
+					<textarea rows="5" cols="5"  id='list'></textarea>
+				</div>
+				<div style='color:#2F80ED;margin-left: 110px;text-align: left;margin-top: 5px;cursor: pointer;'><img src="../../public/img/whitehelp.png" style="margin: -4px 5px 0px 0px;"/>请用英文逗号 ( , ) 隔开</div>
+				<div class='input1'>
+					<div>服务器IP</div>
+					<input type='text' id='ip'/>
+				</div>
+			</div>
+			
+			<div class='alertBottom'>
+				<div id='bmdOk' class='_ok' onclick="createBanner()">提交</div>
+				<div id='bmdNo' class='_no'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+<script type="text/javascript" src="../whiteManage/whiteManage.js"></script>

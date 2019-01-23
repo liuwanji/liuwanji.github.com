@@ -1,0 +1,323 @@
+
+#course_main{
+	position: absolute;
+	width:auto;
+	height:auto;
+	top:30px;left:30px;
+	right:30px;
+	bottom: 30px;
+	overflow: hidden;
+	/*overflow-y: auto;*/
+}
+#course_left{
+	width:33%;
+	float: left;
+}
+#course_right{
+	width:62%;
+	height: 100%;
+	float: right;
+	background: #fff;
+	position: relative;
+}
+/*学生信息css*/
+#student_new,#school_new{
+	overflow: hidden;
+	margin-bottom: 30px;
+	background: #fff;
+}
+#student_new>div:nth-child(1),
+#school_new>div:nth-child(1){
+	font-size: 25px;
+	line-height: 60px;
+	text-align: center;
+	border-bottom: 1px solid #f3f5fa;
+}
+#student_new>div:nth-child(2),
+#school_new>div:nth-child(2){
+	overflow: hidden;
+	position: relative;
+}
+._student{
+	float: left;
+	width:50%;
+	padding: 25px 0px;
+	text-align: center;
+}
+._student>div:nth-child(1){
+	font-size: 30px;
+	letter-spacing:-2px;
+	line-height: 50px;
+	font-weight: 600;
+	word-spacing: 1px;
+}
+._student>div:nth-child(2){
+	color:#aaa;
+	line-height: 25px;
+	font-size: 15px;
+}
+.border_top{
+	position: absolute;
+	width:1px;
+	height: 80%;
+	left:50%;
+	top:10%;
+	border-left:1px solid #f3f5fa;
+}
+.border_left{
+	position: absolute;
+	height:1px;
+	width: 80%;
+	top:50%;
+	left:10%;
+	border-top:1px solid #f3f5fa;
+}
+#_sum,#_today{
+	color:#58ba44;
+}
+#_leave{
+	color:#f6bf44;
+}
+#_expire{
+	color:#ff603d;
+}
+/*今日课程的css*/
+#today_course{
+	overflow: hidden;
+	line-height: 60px;
+	padding: 0px 30px;
+	position: relative;
+	border-bottom: 1px solid #f3f5fa;
+	 -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
+      -webkit-user-select:none; /*webkit浏览器*/   
+      -khtml-user-select:none; /*早期浏览器*/   
+      -moz-user-select:none;/*火狐*/   
+      -ms-user-select:none; /*IE10*/   
+      user-select:none;   
+}
+#today_course>div:nth-child(1){
+	float: left;
+	color:#8c8c8c;
+	font-size: 16px;
+	cursor: pointer;
+}
+#today_course>div:nth-child(1)>img{
+	width:15px;
+	height:20px;
+	float: left;
+	margin:20px 10px 20px 0px;
+}
+#today_course>div:nth-child(2){
+	position: absolute;
+	left:110px;
+	right: 110px;
+	width:auto;
+	text-align: center;
+	font-size: 25px;
+}
+#today_course>div:nth-child(3){
+	float: right;
+	color:#8c8c8c;
+	font-size: 16px;
+	cursor: pointer;
+}
+#today_course>div:nth-child(3)>img{
+	width:15px;
+	height:20px;
+	float: right;
+	margin:20px 0px 20px 10px;
+}
+/*课程状态*/
+#couser_status{
+	overflow: hidden;
+	line-height: 30px;
+}
+#couser_status>div{
+	float: right;
+	font-size: 10px;
+}
+#couser_status>div>div:nth-child(1){
+	float: left;
+	width:10px;
+	height:10px;
+	border-radius: 10px;
+	background: red;
+	margin: 10px 5px;
+}
+#couser_status>div>div:nth-child(2){
+	float: left;
+	margin-right: 10px;
+}
+#couser_status>div:nth-child(1)>div:nth-child(1){
+	background: red;
+}
+#couser_status>div:nth-child(2)>div:nth-child(1){
+	background: #9a9a9a;
+}
+#couser_status>div:nth-child(3)>div:nth-child(1){
+	background: #00af5f;
+}
+#couser_status>div:nth-child(4)>div:nth-child(1){
+	background: #2963de;
+}
+/*课程样式css*/
+#course_box{
+	position: absolute;
+	top:90px;
+	bottom: 0px;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	overflow-y: auto;
+}
+#_time{
+	float: left;
+	width: 15%;
+	margin-top: 5px;
+}
+.time_box,.time_box1{
+	overflow: hidden;
+}
+.time_box>div:nth-child(1),
+.time_box1>div:nth-child(1){
+	float: left;
+	width:55px;
+	height:25px;
+	line-height: 25px;
+	margin-left: 20px;
+	padding-right: 5px;
+	text-align: center;
+	font-size: 15px;
+	color:#fff;
+	background: url(../../public/img/time_tag.png) no-repeat center/100% 100%;
+}
+.time_box>div:nth-child(2),
+.time_box1>div:nth-child(2){
+	float: left;
+	width:20px;
+	height: 158px;
+	margin-left: 10px;
+}
+.time_box1>div:nth-child(2)>div:nth-child(1){
+	width: 1px;
+	height:100%;
+	border-left: 2px solid #eee;
+	margin: 0 auto;
+}
+.time_box>div:nth-child(2)>div:nth-child(1){
+	width:18px;
+	height: 18px;
+	border-radius: 18px;
+	border: 4px solid #eee;
+	margin: 0 auto;
+}
+.time_box>div:nth-child(2)>div:nth-child(2){
+	width: 1px;
+	height:100%;
+	border-left: 2px solid #eee;
+	margin: 0 auto;
+}
+#course_date{
+	/*width:83%;
+	height: 100%;
+	float: right;
+	margin: 5px 5px 10px 0px;
+	position: relative;*/
+	position: absolute;
+	left:120px;right:10px;top:5px;bottom:0px;
+	width: auto;height:auto;
+}
+._course{
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px #e6e6e6;
+	border-radius: 3px;	
+	margin-bottom: 15px;
+}
+._course>div:nth-child(1){
+	line-height: 40px;
+	height: 40px;
+	color:#2963de;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 600;
+}
+._course>div:nth-child(2),
+._course>div:nth-child(3),
+._course>div:nth-child(4){
+	line-height: 30px;
+	overflow: hidden;
+	padding: 5px 10px;
+	position: relative;
+}
+._course>div:nth-child(4){
+	margin: 5px 0px;
+}
+._course>div:nth-child(2)>div>img,
+._course>div:nth-child(3)>img,
+._course>div:nth-child(4)>img{
+	float: left;
+	margin-right:10px;
+	width:15px;
+	height:15px;
+}
+._course>div:nth-child(4)>img{
+	width:15px;
+	height:auto;
+	margin-top: 5px;
+}
+._course>div:nth-child(2)>div,
+._course>div:nth-child(3)>div,
+._course>div:nth-child(4)>div{
+	width:25%;
+	line-height:15px;
+	float: left;
+	font-size: 15px;
+}
+
+._course>div:nth-child(3)>div{
+	position: absolute;
+	width:auto;
+	left:35px;
+	right: 0px;
+}
+._course>div:nth-child(4)>div{
+	line-height:30px;
+	width:96%;
+	height: 33px;
+	overflow: hidden;
+}
+._course>div:nth-child(4)>div>div:nth-child(1){
+	float: left;
+	margin-right: 10px;
+}
+.student_img{
+	position: relative;
+	float: left;
+	width:30px;
+	height:30px;
+	border-radius: 30px;
+	margin-right: 15px;
+	margin-bottom: 3px;
+}
+.img_status{
+	position: absolute;
+	width:13px;
+	height: 13px;
+	border-radius: 13px;
+	right: -3px;
+	bottom: -3px;
+}
+
+.status1{
+	background: #2b61e3;
+}
+.status2{
+	background: #00ae5e;
+}
+.status3{
+	background: #999;
+}
+.status4{
+	background: #ee4b7f;
+}

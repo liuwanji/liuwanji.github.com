@@ -1,0 +1,186 @@
+/*schedule主界面的css*/
+#schedule_main{
+	position: absolute;
+	width:auto;
+	height:auto;
+	top:30px;left:30px;
+	right:30px;
+	bottom: 30px;
+	overflow: hidden;
+	border: 1px solid #eee;
+	box-shadow: 0px 0px 5px #eee;
+}
+.schedule_top{
+	padding: 0px 20px;
+	overflow: hidden;
+	background: #fff;
+	border-bottom: 1px solid #f3f5fa;
+	position: relative;
+}
+.schedule_top>div:nth-child(1){
+	float: left;
+	width:120px;
+	height: 32px;
+	margin: 35px 0px 35px 0px;
+	line-height: 30px;
+	border:1px solid #347ffa;
+	border-radius: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+.schedule_top>div:nth-child(1)>div:nth-child(1){
+	float: left;
+	width:50%;
+	background: #347ffa;
+	color:#fff;
+	border-bottom-left-radius: 30px;
+	border-top-left-radius: 30px;
+}
+.schedule_top>div:nth-child(1)>div:nth-child(2){
+	float: left;
+	width:50%;
+	color:blue;
+	border-bottom-right-radius: 30px;
+	border-top-right-radius: 30px;
+}
+.schedule_top>div:nth-child(2){
+	position: absolute;
+	left: 140px;
+	right: 140px;
+	top: 0px;
+	bottom: 0px;
+	width: auto;
+	height: auto;
+	text-align: center;
+}
+._top,._top1{
+	width:210px;
+	margin: 0 auto;
+	text-align: center;
+	cursor: pointer;
+}
+._top1{
+	display: none;
+}
+#_left,#_left1{
+	float: left;
+	width:15px;
+	height: 20px;
+	margin: 42px 0px 0px 0px;
+	
+}
+._top>div:nth-child(2),
+._top1>div:nth-child(2){
+	width:180px;
+	float: left;
+}
+._top>div:nth-child(2)>div:nth-child(1),
+._top1>div:nth-child(2)>div:nth-child(1){
+	line-height: 30px;
+	margin-top: 23px;
+	font-size: 23px;
+	font-weight: 600;
+}
+._top>div:nth-child(2)>div:nth-child(2),
+._top1>div:nth-child(2)>div:nth-child(2){
+	line-height: 24px;
+	margin-bottom: 23px;
+	font-size: 17px;
+}
+#_right,#_right1{
+	float: right;
+	width:15px;
+	height: 20px;
+	margin: 42px 0px 0px 0px;
+}
+#_close{
+	width:20px;
+	height: 20px;
+	font-size: 25px;
+	text-align: center;
+	float: right;
+	margin: 40px 0px 40px 0px;
+	cursor: pointer;
+}
+/*底部*/
+#schedule_main>div:nth-child(2){
+	position: absolute;
+	left: 0px;right: 0px;top:104px;bottom: 0px;
+	width: auto;
+	height: auto;
+	background: #fff;
+	padding: 20px;
+	overflow-y: auto;
+}
+#course_day,#calendar_table{
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+#course_day td,#course_day th,
+#calendar_table td,#calendar_table th{
+	border: 1px solid #eee;
+	padding: 10px 5px;
+}
+#course_day thead tr:nth-child(1),
+#calendar_table tr:nth-child(1){
+	background: #f7fafa;
+}
+#course_week{
+	display: none;
+}
+/*课程css*/
+._draw{
+	overflow: hidden;
+	font-size: 10px;
+}
+._today{
+	float: right;
+	width:20px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 20px;
+	background: #347ffa;
+	color:#fff;
+}
+._aside{
+	float: right;
+	width:20px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 20px;
+}
+.kecheng{
+	overflow: hidden;
+	display: flex;
+	justify-content: flex-start;
+}
+.kecheng>div:nth-child(1){
+	width:7px;
+	height: 7px;
+	margin: 7px 6px 6px 0px;
+	background: #347ffa;
+	float: left;
+}
+.kecheng>div:nth-child(2){
+	text-align: left;
+	font-size: 15px;
+}
+td, th {
+    padding:0px;
+	vertical-align:top;
+}
+#course_day tr td:nth-child(1){
+	vertical-align: middle;
+}
+.yuan{
+	display: flex;
+	justify-content: flex-start;
+}
+.yuan>div:nth-child(1){
+	width: 7px;
+    height: 7px;
+    border-radius: 7px;
+    margin: 7px 6px 6px 0px;
+    background: #347ffa;
+}

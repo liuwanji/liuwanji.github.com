@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>首页</title>
+		<meta name="viewport" charset="utf-8" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<link href="../../public/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<div id='loading'></div>
+		<div id='_top'>
+			<img id='musicIndexImg' onclick="logo()" style="height: 40px;width: 40px;" src="../../public/img/campusLogo.jpg"/>
+			<span id='musicIndexName'>声态学院管理中心</span>
+			<div>
+				<!--<div id='search_box'>
+					<input id='_search' type='text'/>
+					<img src="../../public/img/search.png"/>
+				</div>-->
+				<div id='schedule'>
+					<div>
+						<img src="../../public/img/rili.png"/>
+					</div>
+				</div>
+				<div id='user_box'>
+					<img id='_user' src="../../public/img/user.png"/>
+					<div id='_name'>
+						<div>姓名</div>
+						<div>权限</div>
+					</div>
+					<!--<img id='_end' src="../../public/img/end.png"/>-->
+					<img class='user_direction' src="../../public/img/direction.png"/>
+					<div id='user_box_up'>
+						<div id='changePassword'>
+							<img class='user_box_up_img1' src="../../public/img/user_password.png"/>
+							<img class='user_box_up_img2' style='display: none;' src="../../public/img/user_password11.png"/>
+							<span>修改密码</span>
+						</div>
+						<div id='changePhone' style='display: none;'>
+							<img class='user_box_up_img1' src="../../public/img/user_phone.png"/>
+							<img class='user_box_up_img2' style='display: none;' src="../../public/img/user_phone11.png"/>
+							<span>更换手机号</span>
+						</div>
+						<div onclick="changeUser()">
+							<img class='user_box_up_img1' src="../../public/img/user_end.png"/>
+							<img class='user_box_up_img2' style='display: none;' src="../../public/img/user_end11.png"/>
+							<span>退出</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id='bottom'>
+			<div id='_aside'>
+				<div id='shouye' onclick="_nav(this)">
+					<img class='statu1' src="../../public/img/kecheng.png"/>
+					<img class='statu2' src="../../public/img/kecheng11.png"/>
+					<span>信息总览</span>
+				</div>
+				<div id='workManage' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/work.png"/>
+					<img class='statu2' src="../../public/img/work11.png"/>
+					<span>考勤管理</span>
+				</div>
+				<div id='student' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/xueyuan.png"/>
+					<img class='statu2' src="../../public/img/xueyuan11.png"/>
+					<span>学员管理</span>
+				</div>
+				<div id='teacher' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/laoshi.png"/>
+					<img class='statu2' src="../../public/img/laoshi11.png"/>
+					<span>老师管理</span>
+				</div>
+				<div id='manageClass' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/room.png"/>
+					<img class='statu2' src="../../public/img/room11.png"/>
+					<span>教室管理</span>
+				</div>
+				<div id='classes' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/banji.png"/>
+					<img class='statu2' src="../../public/img/banji11.png"/>
+					<span>班级管理</span>
+				</div>
+				<div id='course' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/kecheng.png"/>
+					<img class='statu2' src="../../public/img/kecheng11.png"/>
+					<span>课程管理</span>
+				</div>
+				
+				
+				<div id='jiaocai' onclick="_nav_select(this)">
+					<img class='statu1'  src="../../public/img/jiaocai.png"/>
+					<img class='statu2' src="../../public/img/jiaocai11.png"/>
+					<span>教材管理</span>
+					<img class='direction' src="../../public/img/direction.png"/>
+				</div>
+				<div id='textbookLib' onclick="_nav(this)" style='text-indent: 25px;height: 0px;'>
+					<span>教材库</span>
+				</div>
+				<div id='skillLib' onclick="_nav(this)" style='text-indent: 25px;height: 0px;'>
+					<span>技巧库</span>
+				</div>
+				<div id='spectrumLib' onclick="_nav(this)" style='text-indent: 25px;height: 0px;'>
+					<span>谱例库</span>
+				</div>
+				
+				
+				<div id='music' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/music.png"/>
+					<img class='statu2' src="../../public/img/music11.png"/>
+					<span>曲库管理</span>
+				</div>
+				<div id='banner' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/banner.png"/>
+					<img class='statu2' src="../../public/img/banner11.png"/>
+					<span>广告管理</span>
+				</div>
+				<div id='campus' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/xiaoqu.png"/>
+					<img class='statu2' src="../../public/img/xiaoqu11.png"/>
+					<span>校区信息</span>
+				</div>
+				<!--<div id='news' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/news.png"/>
+					<img class='statu2' src="../../public/img/news11.png"/>
+					<span>消息中心</span>
+					<div id='new_number'>99+</div>
+				</div>-->
+				
+				
+				<!--<div id='system' onclick="_nav_select(this)">
+					<img class='statu1'  src="../../public/img/system.png"/>
+					<img class='statu2' src="../../public/img/system11.png"/>
+					<span>系统设置</span>
+					<img class='direction' src="../../public/img/direction.png"/>
+				</div>-->
+				<div id='manageAcc' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/account.png"/>
+					<img class='statu2' src="../../public/img/account11.png"/>
+					<span>账号管理</span>
+				</div>
+				
+				<div id='manager' onclick="_nav_select(this)">
+					<img class='statu1'  src="../../public/img/system.png"/>
+					<img class='statu2' src="../../public/img/system11.png"/>
+					<span>管理员&nbsp;&nbsp;&nbsp;</span>
+					<img class='direction' src="../../public/img/direction.png"/>
+				</div>
+				<div id='campusAppli' onclick="_nav(this)" style='text-indent: 25px;height: 0px;'>
+					<span>校区申请</span>
+				</div>
+				
+				
+				<div id='up' onclick="_nav_select(this)">
+					<img class='statu1'  src="../../public/img/upIcon.png"/>
+					<img class='statu2' src="../../public/img/upIcon11.png"/>
+					<span>更新管理</span>
+					<img class='direction' src="../../public/img/direction.png"/>
+				</div>
+				<div id='upManage' onclick="_nav(this)" style='text-indent: 25px;height: 0px;'>
+					<span>游戏包管理</span>
+				</div>
+				<div id='whiteManage' onclick="_nav(this)" style='text-indent: 25px;height: 0px;'>
+					<span>白名单管理</span>
+				</div>
+				<div id='APKList' onclick="_nav(this)" style='text-indent: 25px;height: 0px;'>
+					<span>APK列表</span>
+				</div>
+				<div id='APPList' onclick="_nav(this)" style='text-indent: 25px;height: 0px;'>
+					<span>APP列表</span>
+				</div>
+				
+				<!--<div id='editpassword' onclick="_nav(this)">
+					<img class='statu1'  src="../../public/img/password.png"/>
+					<img class='statu2' src="../../public/img/password11.png"/>
+					<span>修改密码</span>
+				</div>-->
+				
+			</div>
+			
+			<div id='include_moban'></div>
+		</div>
+		
+		<!--主页中一些弹窗如修改密码等样式-->
+		<div id='PublicIndex'></div>
+		
+		
+		<script type='text/javascript' src="../../public/js/jquery-3.0.0.min.js"></script>
+		<script src="../../public/js/bootstrap.min.js"></script>
+		<script src="../../public/laydate/laydate.js"></script>
+		<script type='text/javascript' src="../../public/js/ajax.js"></script>
+		<script type='text/javascript' src="../../public/js/md5.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+
+</html>

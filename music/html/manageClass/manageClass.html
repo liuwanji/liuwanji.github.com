@@ -1,0 +1,182 @@
+<link rel="stylesheet" type="text/css" href="../manageClass/manageClass.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div></div>
+			<div>教室管理</div>
+			<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+			<div id='create_jiaoshi'>新建教室</div>
+		</div>
+		
+		<div>
+			
+			<div id='classes_bottom'>
+				<div>
+					<div class='TableBox' style='top: 20px;'>
+						<table id='classes_table'>
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>教室名称</th>
+									<th>教室地址</th>
+									<th>容纳人数<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(1,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(1,2)"/>
+										</div>
+									</th>
+									<th>使用班级数
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(2,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(2,2)"/>
+										</div>
+									</th>
+									<th>
+										使用学生数
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(3,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(3,2)"/>
+										</div>
+									</th>
+									<th>
+										最近课程时间
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(4,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(4,2)"/>
+										</div>
+									</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id='roomBody'>
+								<!--<tr>
+									<td>1</td>
+									<td>电子鼓一号教室</td>
+									<td>电子鼓一号教室</td>
+									<td>6</td>
+									<td>2</td>
+									<td>30</td>
+									<td>2018-10-21 12:00~13:00</td>
+									<td class='toBianji'>编辑</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>电子鼓一号教室</td>
+									<td>电子鼓一号教室</td>
+									<td>6</td>
+									<td>2</td>
+									<td>30</td>
+									<td>2018-10-21 12:00~13:00</td>
+									<td class='toBianji'>编辑</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>电子鼓一号教室</td>
+									<td>电子鼓一号教室</td>
+									<td>6</td>
+									<td>2</td>
+									<td>30</td>
+									<td>2018-10-21 12:00~13:00</td>
+									<td class='toBianji'>编辑</td>
+								</tr>-->
+							</tbody>
+						</table>
+					</div>
+					<div id='table_ctr'>
+						<div>
+							<div>
+								共<span id='all_num'>10</span>个教室,每页显示:
+								<select id='curr_num'>
+									<option value='10'>10个</option>
+									<option value='20'>20个</option>
+									<option value='30'>30个</option>
+								</select>
+							</div>
+							<div id='fenye'>
+								<div id='fenye_last_max'>&laquo;</div>
+								<div id='fenye_last'>&lt;</div>
+								<div id='fenye_num'>
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+									<div>4</div>
+									<div>5</div>
+								</div>
+								<div id='fenye_next'>&gt;</div>
+								<div id='fenye_next_max'>&raquo;</div>
+							</div>
+							<input type="number" id='curr_input'/>
+							<div id='table_ok'>确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='addClasses'>
+		<div id='adShadow'></div>
+		<div id='addMain'>
+			<div>
+				<div>新增教室</div>
+				<img id='close_jiaoshi' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='jiaoshiInput'>
+					<div>教室名称</div>
+					<input type='text' name="classroom" id="classroom" maxlength="15"/>
+				</div>
+				<div class='jiaoshiInput'>
+					<div>可容纳人数</div>
+					<input type='number' name="include" id="include"/>
+				</div>
+
+				<div class='jiaoshiInput'>
+					<div>教室地址</div>
+					<input type='text' name="caddr" id="caddr" maxlength="15"/>
+				</div>
+			</div>
+			
+			<div class='addBottom'>
+				<div id='create_classes' onclick="createClassroom()">创建教室</div>
+				<div id='no_classes'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='editClasses'>
+		<div id='editShadow'></div>
+		<div id='editMain'>
+			<div>
+				<div>编辑教室</div>
+				<img id='close_edit' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div id='roomid' style='display: none;'></div>
+				<div class='jiaoshiInput'>
+					<div>教室名称</div>
+					<input type='text' name="classroom" id="classroom1" maxlength="15"/>
+				</div>
+				<div class='jiaoshiInput'>
+					<div>可容纳人数</div>
+					<input type='number' name="include" id="include1"/>
+				</div>
+
+				<div class='jiaoshiInput'>
+					<div>教室地址</div>
+					<input type='text' name="caddr" id="caddr1" maxlength="15"/>
+				</div>
+			</div>
+			
+			<div class='addBottom'>
+				<div id='edit_classes' onclick="editClassroom()">保存</div>
+				<div id='no_classes1'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+<script type="text/javascript" src="../manageClass/manageClass.js"></script>

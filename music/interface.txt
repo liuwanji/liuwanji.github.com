@@ -1,0 +1,654 @@
+请求必须参数：
+  sign:签名串
+  time:请求时间戳
+  from:请求来源  后台为1，pc为2，app为3
+  uid:用户id(可以写个uid=0)
+  type: 用户类型 1-管理员，2-校区教务 10-教师 20-学员 30-游客   (这个看是服务器自己取还是前台存cookie)
+
+规则： 将除token以外所有参数按以键名照a-z顺序排序，排序后的键值拼接，在最后拼接token,将拼接好的长字符串进行MD5加密，生成sign签名，然后再以&方式组装所有参数，生成接口url;
+（token 作为会话协议，在第一次会话生成，并保存在web本地，有效时间为30分钟）
+
+目录：
+    1：登录接口;
+    2-1：机构/校区注册
+    2-2：机构/校区列表（下拉）
+	2-3：机构/校区审核
+    3-1：班级创建
+    3-2：班级编辑
+    3-3：班级列表
+    4-1：老师创建
+    4-2：老师编辑   
+    4-3：老师高级设置 ？？
+    4-4：老师列表(详情)
+    5-1：学员创建   ？？
+	5-2：学员编辑   ？？
+	5-3：学员列表
+	6-1：教室创建
+	6-2：教室编辑
+	6-3：教室列表
+	7-1：创建教材
+	7-2：教材列表
+	7-3：编辑教材
+	9：首页数据
+	10：日程(课程)
+	11：课程列表
+
+1、登录接口：
+
+	地址：http://106.15.53.15:8082/
+	account/login?from=1&time=5222&sign=4444411&uid=0&acc=dddd&pw=xcvzcv
+	request       
+			from = 1,		//请求来源，后台为1，pc为2，app为3
+			time = 5222,	//请求时间
+			acc = "dddd",	//账号名
+			pw = "xcvzcv",	//账号密码
+			token = "MAJLKKQdfsadKQKQKQ26613",		//用户token
+
+	response：
+		{
+			"status": 0,
+			"data": {
+				uid = 1,		//用户id
+				username = "田老湿",		//用户名称
+				token = "adfad",//用户token
+				type = 1,		//用户类型 1-管理员，2-校区教务 10-教师 20-学员 30-游客
+			},
+			"msg": "成功"
+		}
+	   --== 失败返回
+		{
+			"status": 1,
+			"data": {
+				null
+			},
+			"msg": "失败"
+		}
+		
+1-2、获取手机登录验证码：
+	server/interface?params&sign=xxxx
+	地址：https://106.15.53.15:8090/
+	account/getverifycode?from=1&time=5222&tel=189xxxxxxxx
+	request       
+			from = 1,		//请求来源，后台为1，pc为2，app为3
+			time = 5222,	//请求时间
+			tel = 189xxxxxxxx,//手机号
+
+	response：
+		{
+			"status": 0,
+			"data": {
+				null
+			},
+			"msg": "成功"
+		}
+	   --== 失败返回
+		{
+			"status": -1,
+			"data": {
+				null
+			},
+			"msg": "失败"
+		}
+		
+1-2、通过手机验证码登录：
+	地址：https://106.15.53.15:8090/account/loginbyverifycode?from=1&time=5222&tel=189xxxxxxxx&verifycode=xxxxxx
+	request       
+			from = 1,		//请求来源，后台为1，pc为2，app为3
+			time = 5222,	//请求时间
+			tel = 189xxxxxxxx,//手机号
+			verifycode = xxxxxxxx,//验证码
+
+	response：
+		{
+			"status": 0,
+			"data": {
+				uid = 1,		//用户id
+				username = "田老湿",		//用户名称
+				token = "adfad",//用户token
+				type = 1,		//用户类型 1-管理员，2-校区教务 10-教师 20-学员 30-游客
+			},
+			"msg": "成功"
+		}
+	   --== 失败返回
+		{
+			"status": -1,
+			"data": {
+				null
+			},
+			"msg": "失败"
+		}		
+		
+
+2-1、校区注册接口
+
+	地址：http://106.15.53.15:8090/organization/add?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1 
+	request       
+				"logo": "url/logo.png",                   -- 校区Logo (具体上传方式\存储路劲 待确定)
+				"license": "/license.png",                -- 校区营业执照
+				"schName": "少林音乐学院",		          -- 校区名称
+				"mobiel": "刘老板",		                  -- 校区紧急联系人
+				"manager": 1539458221,		              --  紧急联系人电话
+				"sign": md5("1539458221刘老板/license.pngurl/logo.png少林音乐学院adfad")
+
+	response：
+		    {
+				"status": 0,
+				"msg": "成功"
+			}	
+
+
+2-2、校区列表请求接口 (uid=校区管理员 如:37)
+	地址：http://106.15.53.15:8090/organization/select?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1 
+	request
+	      //"sch":1   -- 区分请求类型
+	response：
+			{
+				"status": 0,
+				"data":{
+						{"schid": 9527,"schName": "光谷校区"},			-- schName-校区名 schid-校区编号
+						{"schid": 9527,"schName": "范悦校区"},
+						.....					 
+						}
+				"msg": "成功"
+			}
+			
+2-3、校区审核请求接口　(uid=管理员 如:27)
+	地址：http://106.15.53.15:8090/organization/approve?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1 
+	request
+	      "schid":10   -- 校区id
+	response：
+			{
+				"status": 0,
+				"data":{
+				}
+				"msg": "成功"
+			}
+			 --== 失败返回
+			{
+				"status": 1,
+				"data": {
+					null
+				},
+				"msg": "失败"
+			}
+
+3-1、班级创建接口
+	地址：http://106.15.53.15:8090/class/add?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1 
+	request
+	      "textbook":"12,24,35",       		-- 教材编号 多个教材用英文逗号隔开
+	      "cycle_time":1       		        -- 1-每周 2-每月
+	      "class_time":{
+			      		{"weekday":2,"time":8*3600+20*60},  周二 08：20   		--- 周频率
+			      		{"weekday":5,"time":xxx}
+			      		...
+
+						{"day":2,"time":8*3600+20*60},  2号 08：20    			 --- 月频率
+			      		{"day":5,"time":xxx}
+
+				      }
+
+	      "btime":1564845155,       		-- 开班时间
+	      "etime":1564845155,       	    -- 截止时间
+	      "class_name":"火箭班"    	        -- 班级名称
+	      "class_type":1    	                -- 1~3 初中高
+	      "teacherid":95555   	            -- 主课老师uid
+	      "students":{
+	      				{"stuid":9527},　学生id
+	      				{"stuid":9528},
+	      				......
+	      			}
+		   "classroom":4253,							-- 教室ID
+		   "schid":10   								-- 校区id
+
+	response：
+			{
+				"status": 0,
+				"data":{
+				  "claasid":9527
+				}
+				"msg": "成功"
+			}
+
+			
+3-22/？？？、班级编辑接口？？ 确认下发送数据
+
+	地址：http://106.15.53.15:8090/class/modify?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1
+	request      
+				"classid": 555								--班级ID
+				"reg_teachid": 11112,                      -- 老师uid
+				"loginpc": "156548421",                   -- 老师PC端登录账号 ----？？？此账号是手机号还是其它
+				"birth": '1949-10-01',		              -- 老师生日        ----？？？与服务器对下数据类型
+				"job_type": 1,		                      -- 岗位 1-老师 2-教务 3-管理员  ------ ？？？与服务器对下数据
+				"tel": 1539458221,		                  --  联系人电话
+				"wechat": "lailailai",		              --  微信账号
+				"email": "1539458221@126.com",		      --  邮箱
+				"status": 1,		                      --  账号状态  ------ ？？？与服务器对下数据
+				"des" : "他会七十二变"                     --  教师简洁
+
+				//"schid":10   								-- 校区id
+
+	response：
+		    {
+				"status": 0,
+				"msg": "成功"
+			}
+
+3-3、？？？、班级列表接口
+
+	地址：http://106.15.53.15:8090/class/select?time=当前时间戳&from=0&uid=0&sign=xxoo&type=1 
+	    request       
+				"class_name": "xxxx",             --  班级名  like
+				"class_type": 3,		                 --  1-初级班 2-中级班 3-高级班
+				"btime ": 1536458221,		     --  开课日期
+				"etime ": 1539458221,		     --  结课日期
+				//"schid":10   					-- 校区id
+				<--== 分页查询条件待完善 ==-->
+	     response：
+		    {
+				"status": 0,
+				"data": {
+					  {
+					  	"classid": 555								--班级ID
+					  	"class_name":"电子鼓二班",
+					  	"textbook":"音乐学院全国通用",
+					  	"class_type" : 2,                         -- 1-初级班 2-中级班 3-高级班
+					    "btime" : 1566488214,               -- 此课程开始时间
+					    "etime" : 1566488214,				-- 此课程结束时间
+					    "rate" :"75%",                      -- 课程进度百分比
+					    "teacher" :"伟爷",                   -- 任课老师
+					    "stuNum" :20,                       -- 班级人数
+					    "statue" :2,                        -- 1-未开班 2-正常 3-已结业
+					    "courseTime" :{
+					                  {"weekDay":3,"ctime":1548421245}  <前台拼接成：每周三9：00>
+					                  ,{"weekDay":4,"ctime":1574421245}  
+					                  ,....
+					                  }
+					  },
+				},
+				"msg": "成功"
+			}
+
+
+4-1、老师创建接口
+
+	地址：http://106.15.53.15:8090/teacher/add?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1 
+
+	request    
+				"teachname": "赵丽颖",                      -- 老师姓名
+				"logincc": "156548421",                   -- 老师PC端登录账号 ----？？？此账号是手机号还是其它
+				"birth": '19491001',		              -- 老师生日        ----？？？与服务器对下数据类型
+				"job_type": 1,		                      -- 岗位 1-老师 2-教务 3-管理员  ------ ？？？与服务器对下数据
+				"tel": 1539458221,		                  --  联系人电话
+				"wechat": "lailailai",		              --  微信账号
+				"email": "1539458221@126.com",		      --  邮箱
+				"status": 1,		                      --  账号状态  ------ ？？？与服务器对下数据
+				"des" : "他会七十二变"                     --  教师简洁
+				//"schid":10   								-- 校区id
+	response：
+		    {
+				"status": 0,
+				"msg": "成功"
+			}
+
+
+4-2、老师编辑接口
+
+	地址：http://106.15.53.15:8090/teacher/modify?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1
+	request     
+				"teachname": "赵丽颖",                      -- 老师姓名
+				"loginpc": "156548421",                   -- 老师PC端登录账号 ----？？？此账号是手机号还是其它
+				"birth": '1949-10-01',		              -- 老师生日        ----？？？与服务器对下数据类型
+				"jobtype": 1,		                      -- 岗位 1-老师 2-教务 3-管理员  ------ ？？？与服务器对下数据
+				"tel": 1539458221,		                  --  联系人电话
+				"wechat": "lailailai",		              --  微信账号
+				"email": "1539458221@126.com",		      --  邮箱
+				"status": 1,		                      --  账号状态  ------ ？？？与服务器对下数据
+				"des" : "他会七十二变"                     --  教师简洁
+				//"schid":10   								-- 校区id
+				"tuid":40   								-- 老师id
+	response：
+		    {
+				"status": 0,
+				"msg": "成功"
+			}
+
+4-3、老师编辑高级设置
+
+
+4-4、老师详情列表接口
+
+	地址：http://106.15.53.15:8090/teacher/select?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1 
+	    request       
+				"teachname": "赵丽颖",              --  老师姓名  为空查所有
+				"status": 3,		             --  1-正常 2-请假 3-离职 
+				//"schid":10   						-- 校区id
+				<--== 分页查询条件待完善 ==-->
+	     response：
+		    {
+				"status": 0,
+				"data": {
+					  {
+					  	"tid":3306,                        -- 老师编号
+					  	"teacher":"赵丽颖",                 -- 老师姓名
+					  	"mobile" : 18562124584,            -- 手机号
+					  	"work_time": "一年两个月",           -- 教龄
+					    "stu_num" : 20,                      -- 当前学生数
+					    "class_num" :3,				        -- 班级数
+					    "tech_moth" :64,                     -- 本月累计已上课时
+					    "tech_all" :128,                     -- 历史累计已上课时
+					    "lasttime" :156454845,              -- 最后上课时间
+					    "nexttime" :1574454845,             -- 下次上课时间
+					    "attendance" :"90%",                -- 出勤率
+					    "status" :4,                       -- 1-正常 2-请假 3-离职 
+					  },
+					  {
+					  ......
+					  }
+				},
+				"msg": "成功"
+			}
+
+
+5-1、学员创建
+
+地址：http://106.15.53.15:8090/student/add?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1
+     request    
+				"tel": 1562645424,		          --  电话
+				"stu_name": "小小伟",              --  学生姓名
+				"head":"url",		              --  头像
+				"sex": 1,		                  --  性别 1-女 2-男
+				"birth":'1957-05-12',		      --  生日
+				"age": 18,		                  --  年龄		
+				"addr": "保利",		              --  家庭住址
+				"wechat":"lyxwefs",		          --  微信号 
+				"fname":"伟爷"				      --  监护人姓名
+				"ftel":"188666666"				  --  监护人电话	
+				"relation":1				      --  与监护人关系 1-父亲 2-母亲 3-爷爷 4-奶奶
+	response
+			{
+
+			}			
+
+
+5-2、学员编辑接口
+
+地址：http://106.15.53.15:8090/student/modify?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1
+    request    
+     			"stuid" 9527     		         -- 学生编号
+				"stu_name": "小小伟",              --  学生姓名
+				"birth": 3,		                  --  生日
+				"age": 18,		                  --  年龄
+				"sex": 1,		                  --  性别
+				"tel": 1562645424,		          --  电话
+				"wechat":"lyxwefs",		          --  微信号 
+				"email":"lyx@lyx.com",		      --  邮箱
+				"head":"url",		              --  头像
+				//"schid":10   						-- 校区id
+				"xuid":10   							-- 玩家uid
+
+	response
+			{
+
+			}			
+
+
+
+5-3、学员列表接口
+
+		地址：http://106.15.53.15:8090/student/select?sign=xxoo&time=当前时间戳&from=0&uid=0&type=1 
+		    request       
+					"stu_name": "伟仔",               --  学员姓名
+					"status": 3,		             --  1-正常 2-停课 3-已结业 4-未开班 0-全部
+					"etime": 1539458221,		     --  结课日期 0-所有
+					//"schid":10   						-- 校区id
+					<--== 分页查询条件待完善 ==-->
+		     response：
+			    {
+					"status": 0,
+					"data": {
+						  {
+						  	"stuName":"伟仔",                   -- 学员姓名
+						  	"birth": 1562484888,                -- 学员生日
+						  	"mobile" : 18562124584,             -- 手机号
+						    "linkman" : {"name"："伟爷","phone":18666666666,"relation":"爷爷"},     -- 联系人
+						    "teacher" : "赵丽颖",				-- 所属老师
+						    "reg" :1554844541,                  -- 注册时间
+						    "etime" :1554844541,                -- 结课日期
+						    "residue" :"25%",                   -- 剩余课程百分比
+						    "total" :50,                        -- 总课时
+						    "attendance" :"90%",                -- 出勤率
+						    "status" :50,                       -- 1-正常 2-停课 3-已结业 4-未开班
+						  },
+						  {
+						  ......
+						  }
+					},
+					"msg": "成功"
+				}
+
+6-1、创建教室
+
+	http://106.15.53.15:8090/classroom/add?time=当前时间戳&from=0&uid=12&sign=xxoo&type=1  
+
+		request   
+				//"schid": 9527,                   --  校区ID 
+				"classRoom": "电子鼓3班",         --  教室名称 
+				"classAddr": "保利时代",          --  教室地址
+		response：
+			    {
+					"status": 0,
+					"msg": "成功"
+				}	
+
+
+6-2、编辑教室
+
+	http://106.15.53.15:8090/classroom/modify?time=当前时间戳&from=0&uid=12&sign=xxoo&type=1  
+
+		request       
+				//"schid": 9527,                   --  校区ID 
+				"classroom": "电子鼓3班",         --  教室名称 
+				"class_addr": "保利时代",          --  教室地址
+				"jsid": 9527,                   --  教室ID 
+
+		response：
+			    {
+					"status": 0,
+					"msg": "成功"
+				}
+
+6-3、教室列表
+
+	http://106.15.53.15:8090/classroom/select?time=当前时间戳&from=0&uid=12&sign=xxoo&type=1  
+
+		request       				 
+			"class":1   --区分请求		??
+			//"schid": 9527,                   --  校区ID 
+		response：
+			    {
+					"classid": 454, 		      -- 教室ID
+					"classroom": "电子鼓5班"	      -- 教室名称
+				}
+
+
+7-1、创建课程
+	http://106.15.53.15:8090/classroom/select?time=当前时间戳&from=0&uid=12&sign=xxoo&type=1  
+		request   
+				"textbook":'电子鼓起源',            --  教师名称
+				
+		response：
+			    {
+					"status": 0,
+					"msg": "成功"
+				}
+
+7-2、课程列表
+7-3、课程编辑
+
+
+8-1、创建教材
+
+	http://106.15.53.15:8090/classroom/add?time=当前时间戳&from=0&uid=12&sign=xxoo&type=1  
+
+		request   
+				"textbook":'电子鼓起源',            --  教师名称
+				"course_num": "课程数",             --  课程数 
+				"tbook_type": 1,                   --  教材类型 1~3 初中高
+				"cover": 'url',                    --  教材封面
+				"cover": 125,                      --  课程ID
+				"type": 1,                         --  1-生成教材  2-放草稿箱
+		response：
+			    {
+					"status": 0,
+					"msg": "成功"
+				}
+
+
+
+9、首页数据接口
+
+	http://106.15.53.15:8090/time=当前时间戳&from=0&uid=12&sign=xxoo&type=1  coursetime=0
+	request       
+				"coursetime": 0,                 --  0-当天课表 15941121-去掉时分秒的时间戳 （当coursetime !=0时，只请求对对应时间的课表，学生、校区的信息不变）
+		-- 根据uid所属于权限，返回对应校区的数据 （本校区/所有校区）
+
+	response：（coursetime ==0时的返回）
+		{
+			"status": 0,
+			"data": {
+				"stuInfo": {                     --== 学生信息
+						"stu_all"  : 102,         -- 本校区/所有校区学生数
+						"on_class" : 35,          -- 本校区/所有校区 今日上课学生数
+						"lostClass" : 12,        -- 本校区/所有校区 今日请假/矿课学生数
+						"expire"  : 15,          -- 本校区/所有校区 课程即将到期学生数（刘威说剩余课程<=4时）
+				},
+				"schInfo": {                     --== 校区信息
+						"tea_num"  : 102,         -- 本校区/所有校区 老师数
+						"course" : 35,           -- 本校区/所有校区 教材总数
+						"classAll" : 12,         -- 本校区/所有校区 当前班级数
+						"musAll"  : 15,          -- 曲库总数
+				},
+				"course": {                      --== 今日课表(desc)（本校区/所有校区）
+						 {
+							'class_name': 电子鼓一班,  -- 上课班级名
+							'course' : 电子鼓介绍,    -- 课程名 
+							'classRoom': 一号教室,    -- 上课教室
+							'teacher': 田老师,        -- 任课老师
+							'btime' : 1536458221,    -- 课程开始时间
+							'etime' : 1537458221,    -- 课程结束时间
+							'courseNum' : 7,         -- 今日课程节数
+							'textbookAll' : 15,      -- 本课程总节数
+							'studInfo' : {           -- 本节课所有应上课学生头像、到课状况
+										{'img':'url/head.png';'status': 1;},   <-- 1-请假 2-已签到 3-未签到 4-旷课 -->
+										{'img':'url/body.png';'status': 3;},
+										{'img':'url/foot.png';'status': 2;},
+									},       
+							
+						},         
+						{
+						......
+						}     
+						
+				},
+
+			},
+			"msg": "成功"
+		}
+		response：（coursetime ！=0时的返回）
+			{
+			"status": 0,
+			"data": {
+						{
+							'class_name': 电子鼓一班,  -- 上课班级名
+							'course' : 电子鼓介绍,   -- 课程名 
+							'classroom': 一号教室,   -- 上课教室
+							'teacher': 田老师,       -- 任课老师
+							'btime' : 1536458221,   -- 课程开始时间
+							'etime' : 1537458221,   -- 课程结束时间
+							'course_num' : 7,        -- 今日课程节数
+							'textbook_all' : 15,     -- 本课程总节数
+							'studInfo' : {          -- 本节课所有应上课学生头像、到课状况
+										{'img':'url/head.png';'status': 1;},   <-- 1-请假 2-已签到 3-未签到 4-旷课 -->
+										{'img':'url/body.png';'status': 3;},
+										{'img':'url/foot.png';'status': 2;},
+									},       
+									
+							},         
+							{
+							......
+							}     
+		
+			},
+			"msg": "成功"
+		}
+
+10、日程接口（课表）	
+
+地址：http://106.15.53.15:8090/time=当前时间戳&from=0&uid=0&sign=xxoo&type=1  day=7&fromtime=156484215
+    request 
+		"day": 7,                        --  7-周课表  28/29/30/31-月课表
+		"fromtime": 1548421515,          --  本周一时间戳/本月1号时间戳  （去掉时分秒的时间戳）
+    response：
+	    {
+			"status": 0, 
+			"data": {
+				  1:{
+				  		{"fromtime":1562188715,"class_name": "电子鼓二班","course": "电子鼓从入门以放弃"},
+				  		{....},     <fromtime-课程开始时间点，className-班级名 ，course-课程名>
+				     	{....};
+				 	 },
+				  2:{....},
+				  3:{....},
+				  .....
+				  7:{....}
+				  (8,9,10...31)
+			},
+			"msg": "成功"
+		}
+
+	
+
+
+11、课程列表接口
+
+地址：http://106.15.53.15:8090/sign=xxoo&time=当前时间戳&from=0&uid=0&type=1 
+    request       
+			"className": "电子鼓三班",                 --  班级名称
+			"status": 3,		                      --  1-正常 2-准备上课
+			"btime": 1539458221,		              --  开课日期
+			"etime": 1539458221,		              --  结课日期
+			<--== 分页查询条件待完善 ==-->
+     response：
+	    {
+			"status": 0,
+			"data": {
+				  {
+				  	"course_date":15645841,                   -- 上课日期 2018-10-30
+				  	"course_time": 1562484888,                -- 上课时间 9：00
+				  	"class_name" : "电子鼓三班",               -- 班级名
+				    "teacher": "赵丽颖"                      -- 任课老师
+				    "textbook" : "贝多芬协奏曲",				 --  教材名
+				    "rate" :"7/15",                          --  进度 （已上课时/总课时）
+				    "class_num" :30,                          -- 学生数
+				    "classroom" :3,                          -- 教室
+				    "supply" :"广元",                        -- 代课老师
+				    "status": 3,		                      --  1-正常 2-准备上课
+				  },
+				  {
+				  ......
+				  }
+			},
+			"msg": "成功"
+		}
+
+
+
+
+
+
+
+
+
+
+
+

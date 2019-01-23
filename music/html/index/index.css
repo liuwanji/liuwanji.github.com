@@ -1,0 +1,275 @@
+.string_hidden{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+body{
+	margin: 0 auto;
+	background:#f5f8fa !important;
+	min-width: 1500px;
+	font-size: 14px !important;
+}
+table th{
+	text-align: center;
+}
+#loading{
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	z-index: 10000000;
+}
+/*顶部css*/
+#_top{
+	height:80px;
+	overflow: hidden;
+	padding: 0px 40px;
+	background:#fff;
+	border-bottom: 1px solid #eee;
+	box-shadow: 0px 1px 1px #eee;
+}
+#_top>img:nth-child(1){
+	width:140px;
+	height:40px;
+	margin: 20px 0px 0px 0px;
+	float: left;
+	cursor: pointer;
+}
+#_top>div{
+	float: right;
+}
+#search_box{
+	float: left;
+	width:200px;
+	height:30px;
+	margin: 25px 25px 0px 0px;
+	background: #ebebeb;
+	border-radius: 15px;
+	overflow: hidden;
+}
+#_search{
+	float: left;
+	width:150px;
+	height: 20px;
+	border: none;
+	background: #ebebeb;
+	padding: 0px;
+	margin: 5px 10px;
+	border-right: 1px solid #aaa;
+	outline:none;
+}
+#search_box>img{
+	margin-top: 7px;
+	cursor: pointer;
+}
+#schedule{
+	float: left;
+	width:70px;
+	height:78px;
+	margin: 0px 25px 0px 0px;
+	text-align: center;
+	transition: all 0.5s;
+}
+#schedule>div{
+	height:30px;
+	margin: 25px 0px 25px 0px;
+	border-left: 1px solid #f3f5fa;
+	border-right: 1px solid #f3f5fa;
+}
+#schedule>div>img{
+	width:20px;
+	height: 20px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+#user_box{
+	position: relative;
+	float: left;
+	height:40px;
+	margin: 20px 0px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.user_direction{
+	float: left;
+	margin: 20px 0px 0px 10px;
+	transform: rotate(0deg);
+	transition: all 0.5s;
+}
+#user_box_up{
+	z-index: 300;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0px 0px 2px #2F80ED;
+	padding: 0px 10px;
+	position: fixed;
+	display: none;
+	opacity: 0;
+	top: 85px;
+	right: 40px;
+}
+#user_box_up>div{
+	margin: 10px 0px;
+	display: flex;
+	align-items:center;
+}
+#user_box_up>div>img{
+	margin-right: 10px;
+}
+#_user{
+	float: left;
+	cursor: pointer;
+	width:30px;
+	height: 30px;
+	border-radius: 30px;
+	margin: 5px 5px 0px 0px;
+}
+#_name{
+	float: left;
+	height:100%;
+	line-height: 30px;
+	margin: 0px 0px 0px 5px;
+	cursor: pointer;
+	font-size: 13px;
+}
+#_name>div:nth-child(1){
+	line-height: 23px;
+}
+#_name>div:nth-child(2){
+	line-height: 17px;
+	font-size: 12px;
+	color:#2963de;
+}
+#_end{
+	float: left;
+	margin-top:11px;
+	cursor: pointer;
+}
+#musicIndexName{
+	line-height: 80px;
+	font-size: 18px;
+	font-weight: 600;
+	margin-left: 15px;
+}
+/*底部css*/
+#bottom{
+	width:100%;
+	height:auto;
+	position: absolute;
+	top:81px;bottom: 0px;left: 0px;right: 0px;
+}
+/*侧边导航栏css*/
+#_aside{
+	float: left;
+	width:180px;
+	height:100%;
+	text-align: center;
+	background: #fff;
+	overflow: auto;
+	padding-top: 30px;
+}
+#_aside>div{
+	display: none;
+	line-height: 50px;
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.5s;
+	-webkit-user-select: none;
+ 	user-select: none;
+}
+.statu1,.statu2{
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.statu2{
+	display: none;
+}
+#_aside>div:hover{
+	background: #eee !important;
+}
+#news,#system,#manager,#jiaocai,#up{
+	position: relative;
+}
+#new_number{
+	line-height:15px;
+	position: absolute;
+	top: 17px;
+	right:20px;
+	padding: 2px;
+	font-size: 10px;
+	color:#fff;
+	background: #ff603d;
+	border-radius: 5px;
+}
+.direction{
+	position: absolute;
+	top: 23px;
+	right:25px;
+	transform: rotate(-90deg);
+	transition: all 0.5s;
+
+}
+/*中心切换内容css*/
+#include_moban{
+	position: absolute;
+	width: auto;
+	height:auto;
+	top: 0px;bottom: 0px;left: 180px;right: 0px;
+	min-width: 1320px;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 5px;  
+    height: 5px;  
+    background-color: #F5F5F5;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 10px;  
+    background-color: #FFF;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #AAA;  
+}  
+
+
+/*全局重新定义select的样式*/
+select{
+	/*很关键：将默认的select选择框样式清除*/
+          appearance:none;
+          -moz-appearance:none;
+          -webkit-appearance:none;
+        
+          /*在选择框的最右侧中间显示小箭头图片*/
+          background: url("../../public/img/xiala.png") no-repeat scroll right center transparent;
+        
+        
+          /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+          padding-right: 17px;
+          border: 1px solid #ccc;
+}
+select::-ms-expand { display: none; }
+
+
+/*layui时间选择ui*/
+.laydate-btns-confirm{
+	color:#fff;
+	background-color: #2F80ED !important;
+}
+.laydate-btns-confirm:hover{
+	background-color: #fff !important;
+}
+

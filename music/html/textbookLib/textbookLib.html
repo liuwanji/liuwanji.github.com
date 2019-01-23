@@ -1,0 +1,765 @@
+<link rel="stylesheet" type="text/css" href="../textbookLib/textbookLib.css" />
+
+<div id='classes_main'>
+	<div>
+		<div></div>
+		<div>教材管理</div>
+		<!--<div><img src="../../public/img/back.png" /><span>返回</span></div>-->
+		<div id='drgq'>新增教材</div>
+	</div>
+
+	<div>
+
+		<div class='jiaocaiNav'>
+			<div></div>
+			<div>
+				<div id='sck' class="_select1">教材库</div>
+				<div id='cgx'>草稿箱</div>
+			</div>
+		</div>
+		<div class='shucaiku'>
+			<!--<div class='classes_search_left'>
+				<div class='_select2' onclick="saixuan(1,this)">全部教材(<span>46</span>)</div>
+				<div onclick="saixuan(2,this)">使用中(<span>15</span>)</div>
+				<div onclick="saixuan(3,this)">学校教材(<span>20</span>)</div>
+				<div onclick="saixuan(4,this)">系统教材(<span>5</span>)</div>
+			</div>-->
+			<div id='classes_search'>
+				<div>
+					<div>教材名称</div>
+					<div>
+						<input type='text' id='teacher_input1' />
+						<!--<img src="../../public/img/search.png" id='teacher_sousuo' onclick="chaxun(1)"/>-->
+					</div>
+				</div>
+				<div>
+					<div>类型</div>
+					<div>
+						<select id='teacher_select1'>
+							<option value="0">全部</option>
+							<option value="1">初级</option>
+							<option value="2">中级</option>
+							<option value="3">高级</option>
+						</select>
+					</div>
+				</div>
+				<div class='sousuo' onclick="chaxun(1)">查询</div>
+				<div id='_clear'>清空</div>
+			</div>
+		</div>
+
+		<div id='classes_bottom'>
+			<div id='jieguo'>当前结果: 共<span id='jieguoNum'>0</span>个教材符合搜索</div>
+			<div class='jiaocaiTable'>
+				<div class='jibenTableBox'>				
+					<table class='jibenBiaoge' style='margin-top: 0px;'>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>类型</th>
+								<th>归属</th>
+								<th>教材封面</th>
+								<th>教材名称</th>
+								<th>作者</th>
+								<th>课时</th>
+								<th>使用班级</th>
+								<th>创建时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id='jiaocaiBody'>
+							<!--<tr>
+								<td>1</td>
+								<td>初级</td>
+								<td>学校教材</td>
+								<td><img class='fengmiantu' src="http://106.15.53.15:8093/lesson/cover/3.jpg" /></td>
+								<td>声态工坊爵士鼓初级教程</td>
+								<td>田老师</td>
+								<td>15</td>
+								<td>201801电子鼓初级入门一班 <br>201802电子鼓初级入门二班</td>
+								<td>2018-10-26 14:26:30</td>
+								<td>编辑</td>
+							</tr>-->
+						</tbody>
+	
+					</table>
+				</div>
+				<div id='table_ctr'>
+					<div>
+						<div>
+							共<span id='all_num'>0</span>个教材,每页显示:
+							<select id='curr_num'>
+								<option value='5'>5个</option>
+								<option value='10'>10个</option>
+								<option value='20'>20个</option>
+							</select>
+						</div>
+						<div id='fenye'>
+							<div id='fenye_last_max'>&laquo;</div>
+							<div id='fenye_last'>&lt;</div>
+							<div id='fenye_num'>
+								<div>1</div>
+								<div>2</div>
+								<div>3</div>
+								<div>4</div>
+								<div>5</div>
+							</div>
+							<div id='fenye_next'>&gt;</div>
+							<div id='fenye_next_max'>&raquo;</div>
+						</div>
+						<input type="number" id='curr_input' />
+						<div id='table_ok'>确定</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+
+	</div>
+</div>
+
+<div id='addJiaocai'>
+	<div id='jiaocaiShadow'></div>
+	<div id='jiaocaiMain'>
+
+		<div>
+			<div id='tjjcTipName'>添加教材</div>
+			<img id='close_jiaocai' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div class='jiaocaiInput'>
+				<div>
+					<div>
+						<div class='inputLable'><span style='color:red;'>* </span>教材名称</div>
+						<input type="text" name="textbook" id="textbook1" style='height: 32px;'/>
+					</div>
+					<div>
+						<div class='inputLable'>课程数</div>
+						<input type='text' name="course_num" id='kcs'  style='height: 32px;' disabled="disabled" value="0"/>
+						<div class='inputLable'>教材类型</div>
+						<select id='jclx' name="tbook_type">
+							<option value="1">初级</option>
+							<option value="2">中级</option>
+							<option value="3">高级</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div class='inputLable' style='margin-left: 10px;'>上传教材封面</div>
+					<img id='studentImg' src="../../public/img/logoMoren1.jpg" />
+					<div class='scsm' style='position: relative;'>
+						<div id='shangchuan'>上传</div>
+						<div style='color:#999;font-size: 13px;'>建议上传240*240大小图片</div>
+						<input id="imgInput" className="imgInput" type="file" accept="image/*" />
+					</div>
+				</div>
+			</div>
+
+			<div style='margin: 20px;'>
+				<div id='tbid' style='display: none;'></div>
+				<div id='textbookremove' style='display: none;'></div>
+				<table class='jibenBiaoge'>
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>课程名</th>
+							<!--<th>曲目</th>-->
+							<th>教案</th>
+							<th>重点</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id='addjiaocaiBody'>
+						<!--<tr class='addjiaocaiTr'>
+							<td>1</td>
+							<td style='display:none;' class='course_id'>1</td>
+							<td>军鼓基本功军鼓基本功基本功</td>
+							<td>
+								<div>Falling Crazy in Love - Jessica</div>
+								<div class='tdQumu'>
+									<img src="../../public/img/shijian.png" /><span>120秒</span>
+									<img src="../../public/img/BPMicon.png" /><span>999</span>
+									<img src="../../public/img/nandu.png" /><span>难度10</span>
+								</div>
+							</td>
+							<td><img src="../../public/img/gantanhao.png" /></td>
+							<td><img src="../../public/img/duihao.png" /></td>
+							<td>
+								<div style='overflow: hidden;'>
+									<div class='bianji'>编辑</div>
+									<div class='shanchu'>删除</div>
+									<div class='charu'>插入</div>
+								</div>
+							</td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+
+			<div class='tjBottom'>
+				<div id='tianjia'>添加</div>
+			</div>
+		</div>
+
+		<div class='addBottom'>
+			<div id='scjc'>生成教材</div>
+			<div id='jrcgx' onclick="creatTb(2)">放入草稿箱</div>
+			<div id='fangqi'>放弃</div>
+			<div id='guanbi'>关闭</div>
+			<div id='copyCourse' onclick="copyCourse()">复制至草稿箱</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='tjkc'>
+	<div id='tjkcShadow'></div>
+	<div id='tjkcMain'>
+		<div>
+			<div id='courseTopTitle'>添加课程</div>
+			<img id='close_tjkc' src="../../public/img/close.png" />
+		</div>
+		<div>
+			<div id='course_id' style='display: none;'></div>
+			<div class='tjkcInput1'>
+				<div>课程编号</div>
+				<input id='kcbh' name="course_id" type="number" disabled="disabled"/>
+				<div>课程名称</div>
+				<div>
+					<input id='kcmc' name="course_name" type="text" maxlength="10"/>
+					<div id='kcmcNum'><span>0</span>/<span>10</span></div>
+				</div>
+			</div>
+			<div class='tjkcInput2'>
+				<div>课程重点</div>
+				<div>
+					<input id='kczd'  type="text" />
+					<div id='kczdNum'><span>0</span>/30</div>
+				</div>
+			</div>
+			<!--<div class='tjkcInput2'>
+				<div>课程歌曲</div>
+				<div>
+					<div id='tjgq'>+添加曲目歌曲</div>
+					<div style='display: none;' class='kcgq'>
+						<div id='musicid' style='display: none;'></div>
+						<div id='jiaocaiMusic'>
+							<img src="../../public/img/music1.png">
+							<div style="margin-right: 10px;float: left;" id='musicName'>Falling Crazy in Love - Jessica</div>
+							<img src="../../public/img/time.png">
+							<span style="margin-right: 10px;" id='musicTime'>120秒</span>
+							<img src="../../public/img/BPMicon.png" style='margin-top: 9px;'>
+							<span style="margin-right: 10px;" id='musicBpm'>999</span>
+							<img src="../../public/img/nandu.png" style='margin-top: 9px;'>
+							<span style="margin-right: 10px;" id='musicNandu'>难度10</span>
+						</div>
+						<img class='qiehuan' src="../../public/img/tihuan.png" />
+					</div>
+					<div class='musicShadow'></div>
+				</div>
+			</div>-->
+			
+			<!--<div class='kechengMain'>
+				<div>课时谱例</div>
+				<div>
+					<div id='jiaoanBox'>
+						
+					</div>
+					<div class='addjiaoan'>+</div>
+				</div>
+			</div>-->
+			
+			<div class='bjym'>
+				<div>
+					<div>编辑页面</div>
+					<form id='daorufrom'>
+						<div class='daoru'>导入</div>
+						<input class='daoru1' type="file" onchange="jsReadFiles(this.files)"/>
+					</form>
+				</div>
+				<div>
+					<div id='yemabox'>
+						<div class='yema yemaSelect'>
+							<div>第<span class='num'>1</span>页</div>
+							<!--<img class='closeyema' src="../../public/img/close.png"/>-->
+						</div>
+					</div>
+					<div id='addyema'>+</div>
+				</div>
+				
+				<div id='yemaCtrBox'>
+					<div class='yemaCtr'>
+						<!--<textarea rows="20" cols="20" class='textNeirong'></textarea>-->
+						<div class='yemainputBox'>
+							<div class='yemainput'>
+								<div>页面标题</div>
+								<div style='width:250px;'>
+									<input class='page_title' type="text" maxlength="30"/>
+									<div><span style='color:red;'>* </span>30个字以内</div>
+								</div>
+							</div>
+							<div class='yemainput' style='float: right;'>
+								<div>页面标签</div>
+								<div>
+									<input class='order_page' type="text" maxlength="6"/>
+									<div><span style='color:red;'>* </span>6个字以内</div>
+								</div>
+							</div>
+						</div>
+						<div class='fujian1'>
+							<div>附件类型</div>
+							<div>
+								<select class='fujianType'>
+									<option value="1">图片</option>
+									<option value="2">视频</option>
+									<option value="3">谱例</option>
+									<option value="4">歌曲</option>
+									<option value="5">休闲游戏</option>
+									<option value="6">教学游戏</option>
+									<option value="7">回课</option>
+									<option value="8">作业</option>
+								</select>
+							</div>
+							<div class='imgvideo'>
+									<div>附件地址</div>
+									<div>
+										<input type="text" class='fujiandizi'/>
+										<img class='addclose' src="../../public/img/close.png"/>
+									</div>
+									<div class='yulan'>预览</div>
+							</div>
+							<div class='puli' style='display: none;'>
+								<div>谱例选择</div>
+								<div>
+									<div class='puliselectname string_hidden'></div>
+									<img class='qiehuanpuli' src="../../public/img/tihuan.png"/>
+									<div class='plist' style='display: none;'></div>
+									<div class='plist_url' style='display: none;'></div>
+								</div>
+							</div>
+							<div class='music_select'>
+								<div>歌曲选择</div>
+								<div class='music_select_add'>+添加曲目歌曲</div>
+								<div class='music_select_exist' style='display: none;'>
+									<div class='music_select_id' style='display: none;'></div>
+									<div class='music_select_url' style='display: none;'></div>
+									<div class='music_select_body'>
+										<img src="../../public/img/music1.png">
+										<div style="margin-right: 10px;float: left;" class='musicName'>Falling Crazy in Love - Jessica</div>
+										<img src="../../public/img/time.png">
+										<span style="margin-right: 10px;" class='musicTime'>120秒</span>
+										<img src="../../public/img/BPMicon.png" style='margin-top: 9px;'>
+										<span style="margin-right: 10px;" class='musicBpm'>999</span>
+										<img src="../../public/img/nandu.png" style='margin-top: 9px;'>
+										<span style="margin-right: 10px;" class='musicNandu'>难度10</span>
+									</div>
+									<img class='music_select_qiehuan' src="../../public/img/tihuan.png" />
+								</div>
+							</div>
+							<div class='game_type'>
+								<div>游戏类型</div>
+								<div>
+									<select class='game_type_select'>
+										<option value="1">歌曲</option>
+										<option value="2">小工具</option>
+									</select>
+								</div>
+							</div>
+							<div class='game_select'>
+								<div>游戏选择</div>
+								<select class='game_select_select'>
+									<option value="" style="display: none;" selected="selected">请选择游戏</option>
+								</select>
+								<div class='game_select_yulan'>预览</div>
+							</div>
+						</div>
+						
+						<div class='fujian3'>
+							<div>
+								<div>封面地址</div>
+								<div>
+									<input type="text" class='fengmianurl'/>
+									<img class='addclose1' src="../../public/img/close.png"/>
+								</div>
+							</div>
+						</div>
+						<div class='music_img'>
+							<div>
+								<div>图片地址</div>
+								<div>
+										<input type="text" class='music_img_input' placeholder="请输入图片地址"/>
+								</div>
+								<div class='music_img_yulan'>预览</div>
+							</div>
+						</div>
+						<div class='game_music'>
+							<div>
+								<div>歌曲选择</div>
+								<div class='game_music_add'>+添加曲目歌曲</div>
+								<div class='game_music_exist' style='display: none;'>
+									<div class='game_music_id' style='display: none;'></div>
+									<div class='game_music_url' style='display: none;'></div>
+									<div class='game_music_body'>
+										<img src="../../public/img/music1.png">
+										<div style="margin-right: 10px;float: left;" class='musicName'>Falling Crazy in Love - Jessica</div>
+										<img src="../../public/img/time.png" style='display: none;'>
+										<span style="margin-right: 10px;display: none;" class='musicTime'>120秒</span>
+										<img src="../../public/img/BPMicon.png" style='margin-top: 9px;'>
+										<span style="margin-right: 10px;" class='musicBpm'>999</span>
+										<img src="../../public/img/nandu.png" style='margin-top: 9px;display: none;'>
+										<span style="margin-right: 10px;display: none;" class='musicNandu'>难度10</span>
+									</div>
+									<img class='game_music_qiehuan' src="../../public/img/tihuan.png" />
+								</div>
+							</div>
+							<div>
+								<div>游戏选择</div>
+								<select class='game_music_select'>
+									<option value="" style="display: none;" selected="selected">请选择游戏</option>
+								</select>
+								<div class='game_music_yulan'>预览</div>
+							</div>
+						</div>
+						<div class='game_gongju'>
+							<div>
+								<div>工具类型</div>
+								<select class='game_gongju_select1'>
+									<option value="1" selected="selected">节拍器</option>
+								</select>
+							</div>
+							<div>
+								<div>游戏选择</div>
+								<select class='game_gongju_select2'>
+									<option value="" style="display: none;" selected="selected">请选择游戏</option>
+								</select>
+								<div class='game_gongju_yulan'>预览</div>
+							</div>
+						</div>
+						
+						
+						<div class='yemianHelp'>
+							<div>
+								<div>PG助手</div>
+								<div class='qiyong' style='display: none;'>
+									<div class='qiyong_zhi'>启用</div>
+									<div class='qiyong_yuan'></div>
+								</div>
+								<div class='guanbi'>
+									<div class='guanbi_zhi'>关闭</div>
+									<div class='guanbi_yuan'></div>
+								</div>
+							</div>
+							<div>
+								<div>音频地址</div>
+								<div>
+									<input type='text' class='music_url' disabled="disabled">
+								</div>
+							</div>
+						</div>
+						<div class='fujian2'>
+							<img class='fujian2Img' src=""/>
+							<img class='pg_style' src="../../public/img/pg.png">
+							<video class='fujian2Video' src="movie.ogg" controls="controls">您的浏览器不支持video标签</video>
+							<div class='huike_box' style='display: none;'>
+								<div>课程回顾将根据上节作业自动生成</div>
+								<div>请您点击右上角 "<div class='jiahao'>+</div>" 继续添加本节课内容。</div>
+							</div>
+							<div class='zhuoye_box' style='display: none;'>
+								<div class='zhuoye1'>
+									<div></div>
+									<div>选择作业</div>
+								</div>
+								<div class='zhuoye_scroll'>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		<div class='bianjiBottom'>
+			<div id='tjkcOk' onclick="addCourse()">提交</div>
+			<div id='guanbicourse'>关闭</div>
+		</div>
+	</div>
+</div>
+
+<div id='ckxq'>
+	<div id='ckxqShadow'></div>
+	<div id='ckxqMain'>
+		<div>
+			<div>查看教材详情</div>
+			<img id='close_ckxq' src="../../public/img/close.png" />
+		</div>
+		<div>
+
+			<div class='ckxqTop'>
+				<div></div>
+				<div>
+					<div>《生态工坊爵士鼓初级教程》</div>
+					<div>作者:赫尔南德斯.洛佩兹</div>
+					<div>创建日期: <span class='jcxq'>2001-7-17</span>课程数量: <span>34</span></div>
+					<div>难度等级: <span class='jcxq'>初级</span>歌曲数量: <span>43</span></div>
+				</div>
+			</div>
+
+			<div style='margin: 20px;'>
+				<table class='jibenBiaoge'>
+					<thead>
+						<tr>
+							<th>课程数量</th>
+							<th>课程名称</th>
+							<th>重点内容</th>
+							<th>教案</th>
+							<th>曲目</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>第一节课</td>
+							<td>军鼓教学入门第一节</td>
+							<td>教授如何入门军鼓的理论知识教授如何入门军鼓</td>
+							<td><img src="../../public/img/gqyl.png" style='cursor: pointer;' /></td>
+							<td>
+								<div>Falling Crazy in Love - Jessica</div>
+								<div class='tdQumu'>
+									<img src="../../public/img/shijian.png" /><span>120秒</span>
+									<img src="../../public/img/BPMicon.png" /><span>999</span>
+									<img src="../../public/img/nandu.png" /><span>难度10</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>第二节课</td>
+							<td>军鼓教学入门第一节</td>
+							<td>教授如何入门军鼓的理论知识教授如何入门军鼓</td>
+							<td><img src="../../public/img/gqyl.png" style='cursor: pointer;' /></td>
+							<td>
+								<div>Falling Crazy in Love - Jessica</div>
+								<div class='tdQumu'>
+									<img src="../../public/img/shijian.png" /><span>120秒</span>
+									<img src="../../public/img/BPMicon.png" /><span>999</span>
+									<img src="../../public/img/nandu.png" /><span>难度10</span>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<div class='bianjiBottom'>
+		</div>
+	</div>
+</div>
+
+<div id='xzgq'>
+	<div id='xzgqShadow'></div>
+	<div id='xzgqMain'>
+
+		<div>
+			<div>选择歌曲</div>
+			<img id='close_tjjc' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div id='xzgqSearch'>
+
+				<div class='xzgqInput1'>
+					<div>曲库选择</div>
+					<select id='qkxz'>
+						<option value="0">全部</option>
+						<option value="1">校区</option>
+						<option value="2">系统</option>
+					</select>
+				</div>
+				<div class='xzgqInput1'>
+					<div>歌曲类型</div>
+					<select id='gqlx'>
+						<option value="0">全部</option>
+						<option value="1">初级</option>
+						<option value="2">中级</option>
+						<option value="3">高级</option>
+					</select>
+				</div>
+				<div class='xzgqInput1'>
+					<div>歌曲难度</div>
+					<input id='gqnd' type='number'/>
+				</div>
+				<div class='xzgqInput1'>
+					<div>歌曲风格</div>
+					<select id='gqfg'>
+						<option value="0">全部</option>
+						<option value="流行">流行</option>
+						<option value="摇滚">摇滚</option>
+						<option value="芬克">芬克</option>
+						<option value="嘻哈">嘻哈</option>
+						<option value="拉丁">拉丁</option>
+						<option value="爵士">爵士</option>
+						<option value="电子">电子</option>
+						<option value="儿童">儿童</option>
+					</select>
+				</div>
+				<div class='xzgqInput1' style='margin-right: 0px;'>
+					<div>歌曲名称</div>
+					<div>
+						<input type="text" id='gqmc'/>
+						<img src="../../public/img/search.png" onclick="selectmusic(2)"/>
+					</div>
+				</div>
+
+			</div>
+
+			<div style="margin: 20px;">
+				<table class='jibenBiaoge'>
+					<thead>
+						<tr>
+							<th></th>
+							<th>序号</th>
+							<th>封面</th>
+							<th>歌曲名称</th>
+							<th>类型</th>
+							<th>歌曲时长</th>
+							<th>BPM
+								<div class='shunxu'>
+									<img src="../../public/img/shengxu.png" />
+									<img src="../../public/img/jiangxu.png" />
+								</div>
+							</th>
+							<th>风格</th>
+							<th>难度</th>
+						</tr>
+					</thead>
+					<tbody id='musicBody'>
+						<!--<tr>
+							<td>
+								<div class='xzlsSelect'><img src="../../public/img/login_tip.png" /></div>
+							</td>
+							<td>1</td>
+							<td>
+								<img class='xzgqImg' src="../../public/img/stu_temp/song2.jpg" />
+							</td>
+							<td>Falling Crazy in Love - Jessica</td>
+							<td>初级</td>
+							<td>03:20</td>
+							<td>80</td>
+							<td>流行/POP</td>
+							<td>1</td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<div class='addBottom'>
+			<div id='xzgqOk' onclick='musicOkSelect()'>确认选择</div>
+			<div id='xzgqNo'>取消</div>
+		</div>
+	</div>
+</div>
+
+<div id='xzxyTc'>
+	<div id='xzxyShadow'></div>
+	<div id='xzxyMain'>
+
+		<div>
+			<div>选择谱例</div>
+			<img id='close_xzxy' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div class='pulisearch'>
+				<div class='pulisearch1'>
+					<div>谱例名称</div>
+					<input id='puliname' type='text' />
+					<img id='pulisousuo' src="../../public/img/search.png" onclick="puliSearch(2)"/>
+				</div>
+			</div>
+			<div class='pulisearch2'>
+				<div>分类1:</div>
+				<div>
+					<div class='fenlei1 fenleiSelected'>全部</div>
+					<div class='fenlei1'>4分音符</div>
+					<div class='fenlei1'>8分音符</div>
+					<div class='fenlei1'>16分音符</div>
+					<div class='fenlei1'>32分音符</div>
+				</div>
+			</div>
+			<div class='pulisearch2'>
+				<div>分类2:</div>
+				<div>
+					<div class='fenlei2 fenleiSelected'>全部</div>
+					<div class='fenlei2'>军鼓</div>
+					<div class='fenlei2'>套鼓</div>
+					<div class='fenlei2'>基本节奏</div>
+					<div class='fenlei2'>加花</div>
+				</div>
+			</div>
+			
+			<div class='xzxytable'>
+				<table class='jibenBiaoge' style='margin-top:0px;'>
+					<thead>
+						<tr>
+							<th></th>
+							<th>谱例略缩图</th>
+							<th>谱例名称</th>
+							<th>分类1</th>
+							<th>分类2</th>
+						</tr>
+					</thead>
+					<tbody id='puliBody'>
+						<tr>
+							<td>
+								<div class='xzxySelect'><img src="../../public/img/login_tip.png" /></div>
+							</td>
+							<td>
+								<img class='puliimg' src="../../public/img/stu_temp/song3.jpg"/>
+							</td>
+							<td>中国音乐学员社会艺术水平考级全国通用教程</td>
+							<td>4分音符</td>
+							<td>军鼓</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class='xzxyBottom'>
+			<div>已选择了<span id='yxzStudent'>0</span>个谱例</div>
+			<div>
+				<div id='xzxsOk' onclick="selectPuli()">确认选择</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+	<div id='qrtj'>
+		<div id='qrtjShadow'></div>
+		<div id='qrtjMain'>
+			<div>
+				<div>确认转入正式库</div>
+				<img id='close_qrtj' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div style='padding: 20px;'>存为正式教材后，<span style='color:red;'>将无法再对 教材的课时数 进行添加或删除</span>，确认转为正式教材？</div>
+			</div>
+			
+			<div class='addBottom'>
+				<div id='scjc_ok' onclick="creatTb(1)">生成教材</div>
+				<div id='frcgx_ok' onclick="creatTb(2)">放入草稿箱</div>
+				<div id='qx_no'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+
+<script type="text/javascript" src="../../public/js/jiaoanStr.js"></script>
+<script type="text/javascript" src="../textbookLib/textbookLib.js"></script>

@@ -1,0 +1,546 @@
+<link rel="stylesheet" type="text/css" href="../campusAppli/campusAppli.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div></div>
+			<div>校区申请</div>
+			<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+			<!--<div id='create_banji'>新建班级</div>-->
+		</div>
+		
+		<div>
+			
+			<div id='classes_search'>
+				
+				<div>
+					<div>
+						<select id='classess_select1'>
+							<option val='bjmc'>机构名称</option>
+						</select>
+					</div>
+					<div>
+						<input type='text' id='classess_input1' />
+						<!--<img src="../../public/img/search.png" id='classess_sousuo' onclick="chaxun(1)"/>-->
+					</div>
+				</div>
+				<div>
+					<div>审核状态</div>
+					<div>
+						<select id='classess_select2'>
+							<option value="0">全部</option>
+							<option value="1">待审核</option>
+							<option value="2">不通过</option>
+							<option value="3">正常使用</option>
+							<option value="4">到期</option>
+							<option value="5">禁用</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div>提交日期</div>
+					<div>
+						<input id='datetime1' type='text' />
+						<img src="../../public/img/riqi.png"/ id='dateFocus1'>
+						<span>至</span>
+					</div>
+					<div>
+						<input id='datetime2' type='text' />
+						<img src="../../public/img/riqi.png" id='dateFocus2'/>
+					</div>
+				</div>
+				<div class='sousuo' onclick="chaxun(1)">查询</div>
+				<div id='_clear' onclick="clear()">清空</div>
+				
+			</div>
+			
+			<div id='classes_bottom'>
+				<div>当前结果: 共<span id='countNum'>0</span>个申请,其中待审核<span id='noCourse'>0</span>个</div>
+				<div>
+					<div class='TableBox'>
+						<table id='classes_table'>
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>提交日期</th>
+									<th>机构名称</th>
+									<th>负责人</th>
+									<th>手机号</th>
+									<th>申请版本</th>
+									<th>
+										到期时间
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(1,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(1,2)"/>
+										</div>
+									</th>
+									<th>状态</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id='campusBody'>
+								<!--<tr>
+									<td>1</td>
+									<td>2018-11-03</td>
+									<td>CANON HALL成人钢琴俱乐部(王家湾)</td>
+									<td>王小二</td>
+									<td>13800138000</td>
+									<td>基础版本</td>
+									<td>2019-11-03</td>
+									<td class='tongguo'>通过</td>
+									<td><div class='tobianji'>编辑</div></td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>2018-11-03</td>
+									<td>CANON HALL成人钢琴俱乐部(王家湾)</td>
+									<td>王小二</td>
+									<td>13800138000</td>
+									<td>基础版本</td>
+									<td>2019-11-03</td>
+									<td class='daishenghe'>待审核</td>
+									<td>
+										<div class='toTongguo'>通过</div>
+										<div class='toJujue'>拒绝</div>
+									</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>2018-11-03</td>
+									<td>CANON HALL成人钢琴俱乐部(王家湾)</td>
+									<td>王小二</td>
+									<td>13800138000</td>
+									<td>基础版本</td>
+									<td>2019-11-03</td>
+									<td class='butongguo'>不通过</td>
+									<td>
+										<div class='toTongguo'>
+											通过
+										</div>
+									</td>
+								</tr>-->
+							</tbody>
+						</table>
+					</div>
+					<div id='table_ctr'>
+						<div>
+							<div>
+								共<span id='all_num'>0</span>个申请,每页显示:
+								<select id='curr_num'>
+									<option value='5'>5个</option>
+									<option value='10'>10个</option>
+									<option value='20'>20个</option>
+								</select>
+							</div>
+							<div id='fenye'>
+								<div id='fenye_last_max'>&laquo;</div>
+								<div id='fenye_last'>&lt;</div>
+								<div id='fenye_num'>
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+									<div>4</div>
+									<div>5</div>
+								</div>
+								<div id='fenye_next'>&gt;</div>
+								<div id='fenye_next_max'>&raquo;</div>
+							</div>
+							<input type="number" id='curr_input'/>
+							<div id='table_ok'>确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class='alert' id='xqsq'>
+			<div class='alertShadow' id='xqsqShadow'></div>
+			<div class='alertMain' id='xqsqMain'>
+				<div>
+					<div>校区申请</div>
+					<img id='close_xqsq' src="../../public/img/close.png"/>
+				</div>
+				
+				<div>
+					<div id='schid' style='display: none;'></div>
+					<div class='campusInput1'>
+						<div>申请日期</div>
+						<div id='sqrq'>2018-11-03</div>
+					</div>
+					<div class='campusInput2'>
+						<div>机构名称</div>
+						<input type='text' id='jgmc'/>
+					</div>
+					
+					<div class='campusInput3'>
+						<div>机构地址</div>
+						<div>
+							<div>
+								<select id="prov">
+					                <!--<option selected="selected" style='display: none;'>省</option>-->
+					            </select>
+					            <select id="city">
+					               <!--<option selected="selected" style='display: none;'>市</option>-->
+					            </select>
+					            <select id="country">
+					                <!--<option selected="selected" style='display: none;'>区</option>-->
+					            </select>
+							</div>
+							<!--<input type="text" id='addr'/>-->
+						</div>
+					</div>
+					
+					<div class='campusInput2'>
+						<div>详细地址</div>
+						<input type="text" id='addr'/>
+					</div>
+					
+					<div class='campusInput2'>
+						<div>负责人</div>
+						<input type='text' id='guanliyuan'/>
+					</div>
+					<div class='campusInput2'>
+						<div>联系电话</div>
+						<input type='text' id='tel'/>
+					</div>
+					
+					<div class='campusInput4'>
+						<div><span style='color:red;margin-right: 5px;'>*</span>申请版本</div>
+						<select id='sqbb'>
+							<option value="1">试用版</option>
+							<option value="2">正式版</option>
+						</select>
+						<div><span style='color:red;margin-right: 5px;'>*</span>到期时间</div>
+						<div id='dqsj'>
+							<input type="text" id='etime'/>
+							<img id='etimeImg' src="../../public/img/riqi.png"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class='alertBottom'>
+					<div id='tongguo' onclick="Toexamine(3)">通过</div>
+					<div id='jujue' onclick="Toexamine(2)">拒绝</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class='alert' id='bjxq'>
+			<div class='alertShadow' id='bjxqShadow'></div>
+			<div class='alertMain' id='bjxqMain'>
+				<div>
+					<div>编辑校区</div>
+					<img id='close_bjxq' src="../../public/img/close.png"/>
+				</div>
+				
+				<div style='bottom: 80px;'>
+					<div id='schid1' style='display: none;'></div>
+					<div class='bianjiInput1'>
+						<div style='color:#999;'>开始日期</div>
+						<div id='sqrq1'></div>
+					</div>
+					<div class='bianjiInput2'>
+						<div>
+							<div class='bianjiInput1' style='margin-top: 0px;'>
+								<div><span style='color:red;margin-right: 5px;'>*</span>机构名称</div>
+								<input type='text' id='jgmc1'/>
+							</div>
+							<div class='bianjiInput3'>
+									<div><span style='color:red;margin-right: 5px;'>*</span>机构地址</div>
+									<div>
+										<div>
+											<select id="prov1">
+								                <!--<option selected="selected" style='display: none;'>省</option>-->
+								            </select>
+								            <select id="city1">
+								               <!--<option selected="selected" style='display: none;'>市</option>-->
+								            </select>
+								            <select id="country1" style='margin-right: 0px;'>
+								                <!--<option selected="selected" style='display: none;'>区</option>-->
+								            </select>
+										</div>
+										<input type="text" id='addr1'/>
+									</div>
+							</div>
+							<div class='bianjiInput5'>
+								<div><span style='color:red;margin-right: 5px;'>*</span>负责人</div>
+								<input type='text' id='guanliyuan1'/>
+								<div><span style='color:red;margin-right: 5px;'>*</span>联系方式</div>
+								<input type='text' style='width:195px;' id='tel1'/>
+							</div>
+						</div>
+						<div class='bianjiInput4'>
+							<div><span style='color:red;margin-right: 5px;'>*</span>机构logo</div>
+							<div class='update'>
+								<img id='studentImg' src="" />
+								<div>
+									<div id='upLogo'>上传logo</div>
+									<input id="imgInput" className="imgInput" type="file" accept="image/*" />
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class='bianjiInput6'>
+						<div>
+							<div class='_textAre'>
+								<div>经营范围</div>
+								<textarea rows="20" cols="20" id='jyfw1'></textarea>
+							</div>
+						</div>
+						<div>
+							<div class='_textAre'>
+								<div>机构简介</div>
+								<textarea rows="20" cols="20" id='jgjj1'></textarea>
+							</div>
+						</div>
+					</div>
+					
+					<div class='bianjiInput7'>
+						<div>
+							<div class='bianjiInput8'>
+								<div>营业执照</div>
+								<img id='studentImg1' src="" />
+								<div>
+									<div id='upLogo1'>上传</div>
+									<input id="imgInput1" className="imgInput" type="file" accept="image/*" />
+								</div>
+							</div>
+						</div>
+						<div>
+							<!--<div class='bianjiInput9'>
+								<div>校区相册<br>(<span style='color: #3267FE;'>5</span>/10)</div>
+								<div>
+										<div id='xiangche'>
+											<div class='xueyuanImg'>
+												<div>
+													<div class='removeXueyuan'>-</div>
+												</div>
+											</div>
+											<div class='xueyuanImg'>
+												<div>
+													<div class='removeXueyuan'>-</div>
+												</div>
+											</div>
+											<div class='xueyuanImg'>
+												<div>
+													<div class='removeXueyuan'>-</div>
+												</div>
+											</div>
+											<div class='xueyuanImg'>
+												<div>
+													<div class='removeXueyuan'>-</div>
+												</div>
+											</div>
+											<div class='xueyuanImg'>
+												<div>
+													<div class='removeXueyuan'>-</div>
+												</div>
+											</div>
+										</div>
+										<div id='addXueyuan'>
+											<div>+</div>
+										</div>
+								</div>
+							</div>-->
+						</div>
+					</div>
+					
+					<div class="bianjiInput10">
+						<div class='bianjiInput11'>
+							<div><span style='color:red;margin-right: 5px;'>*</span>试用版本</div>
+							<select id='sqbb1'>
+								<option value="1">试用版</option>
+								<option value="2">正式版</option>
+							</select>
+						</div>
+						<div class='bianjiInput11' style='margin-right: 25px;'>
+							<div><span style='color:red;margin-right: 5px;'>*</span>到期时间</div>
+							<div id='bianjiEtime'>
+								<input type="text" id='etime1'/>
+								<img id='etime1Img' src="../../public/img/riqi.png"/>
+							</div>
+						</div>
+						<div class='bianjiInput11'>
+							<div><span style='color:red;margin-right: 5px;'>*</span>账号状态</div>
+							<select id='zhzt'>
+							<!--	<option value="0">全部</option>
+								<option value="1">待审核</option>
+								<option value="2">不通过</option>-->
+								<option value="3">正常使用</option>
+								<option value="4">到期</option>
+								<option value="5">禁用</option>
+							</select>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class='alertBottom' style='height: 80px;border-top: 1px solid #dae3f3;'>
+					<div id='baocun' onclick="editCampus()">保存</div>
+					<div id='quxiao'>取消</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class='alert' id='xqxq'>
+			<div class='alertShadow' id='xqxqShadow'></div>
+			<div class='alertMain' id='xqxqMain'>
+				<div>
+					<div id='jgmc_top'></div>
+					<img id='close_xqxq' src="../../public/img/close.png"/>
+				</div>
+				
+				<div style='bottom: 80px;'>
+					<div id='schid2' style='display: none;'></div>
+					<div class='xqxqInline1'>
+						<div>
+							<div class='xqxqInline2'>
+								<div>使用版本</div>
+								<div id='sybb2'>正式版</div>
+							</div>
+							<div class='xqxqInline2'>
+								<div>开始时间</div>
+								<div style='width: auto;' id='kssj2'>2018-11-03</div>
+							</div>
+						</div>
+						<div>
+							<div class='xqxqInline2' style='float: right;'>
+								<div>账号状态</div>
+								<div style='width: auto;' id='zhzt2'><div style='color:#00ad5f;'>正常使用</div></div>
+							</div>
+							<div class='xqxqInline2' style='float: right;'>
+								<div>到期时间</div>
+								<div id='dqsj2'></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class='xqxqInline3'>
+						<div>
+							<div class='xqxqInline4'>
+								<div>机构名称</div>
+								<div id='jgmc2'></div>
+							</div>
+							<div class='xqxqInline4'>
+								<div>机构地址</div>
+								<div id='jgdz2'></div>
+							</div>
+							<div class='xqxqInline5'>
+								<div>负责人</div>
+								<div id='guanliyuan2'></div>
+								<div>联系方式</div>
+								<div id='tel2'></div>
+							</div>
+							<div class='xqxqInline4'>
+								<div>经营范围</div>
+								<div id='jyfw2'></div>
+							</div>
+							<div class='xqxqInline4'>
+								<div>机构简介</div>
+								<div id='jgjj2'>
+								</div>
+							</div>
+						</div>
+						
+						<div>
+							<img class='jigouImg' id='logo' src=''/>
+						</div>
+					</div>
+					
+					<div class='xqxqInline6'>
+						<div>
+							<div>营业执照</div>
+							<img id='yyzz2' src=''/>
+						</div>
+						<div>
+							<!--<div>校区相册<br>(共<span style='color:#3267FE;'>5</span>张)</div>
+							<div>
+								<div class='xiangce'></div>
+								<div class='xiangce'></div>
+								<div class='xiangce'></div>
+								<div class='xiangce'></div>
+								<div class='xiangce'></div>
+							</div>-->
+						</div>
+					</div>
+					
+					<div class='xqxqInline7'>
+						<div>校区数据</div>
+						<div class='jqsj'>
+							<div>师资力量</div>
+							<div>
+								<div>
+									<div>教室数量</div>
+									<div id='jssl'></div>
+								</div>
+								<div>
+									<div>任课老师</div>
+									<div id='rkls'></div>
+								</div>
+								<div>
+									<div>老师总数</div>
+									<div id='lszs'></div>
+								</div>
+							</div>
+						</div>
+						<div class='jqsj'>
+							<div>授课信息</div>
+							<div>
+								<div>
+									<div>当前数量</div>
+									<div id='dqsl'></div>
+								</div>
+								<div>
+									<div>历史班级</div>
+									<div id='lsbj'></div>
+								</div>
+								<div>
+									<div>历史课时</div>
+									<div id='lsks'></div>
+								</div>
+							</div>
+						</div>
+						<div class='jqsj'>
+							<div>师资力量</div>
+							<div>
+								<div>
+									<div>教材模板</div>
+									<div id='jcmb'></div>
+								</div>
+								<div>
+									<div>曲库统计</div>
+									<div id='qktj'></div>
+								</div>
+							</div>
+						</div>
+						<div class='jqsj'>
+							<div>师资力量</div>
+							<div>
+								<div>
+									<div>当前学生</div>
+									<div id='dqxs'></div>
+								</div>
+								<div>
+									<div>历史学生</div>
+									<div id='lsxs'></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class='alertBottom' style='height: 80px;border-top: 1px solid #dae3f3;'>
+					<div id='campusEdit' onclick="tobianji()">编辑校区</div>
+				</div>
+			</div>
+		</div>
+		
+		
+<script type='text/javascript' src="../../public/js/city1.js"></script>
+<script type="text/javascript" src="../campusAppli/campusAppli.js"></script>
+

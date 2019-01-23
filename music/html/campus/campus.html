@@ -1,0 +1,136 @@
+<link rel="stylesheet" type="text/css" href="../campus/campus.css" />
+
+<div id='campus_main'>
+	<div id='campus_top'>
+		<div>
+			<div></div>
+			<div>校区管理</div>
+			<div id='xgzl'>修改资料</div>
+		</div>
+
+		<form id='campus_top_bottom' enctype="multipart/form-data">
+			<div style='position: relative;'>
+				<!--<input id="file" type="file" name="file" />-->
+				<!--<button id="upload" type="button">upload</button>-->
+				<img id='studentImg' src="../../public/img/campusLogo.jpg" />
+				<div id='updateLogo' style='display: none;'>上传logo</div>
+				<input id="imgInput" className="imgInput" type="file" accept="image/*" />
+				<div id='campusId' style='display: none;'></div>
+			</div>
+
+			<div>
+				<div style='overflow: hidden;'>
+					<div class='_zuo'>
+						<input id='xiaoquName' type='text' value="" readonly="readonly" class='noborderInput' />
+						<div class='xiaoquInput'>
+							<div>负责人</div>
+							<input type='text' id="connect" value="" readonly="readonly" class='noborderInput' />
+						</div>
+						<div class='xiaoquInput'>
+							<div>联系方式</div>
+							<input type='text' value="" id="schTel" readonly="readonly" class='noborderInput' />
+						</div>
+						<div class='xiaoquInput'>
+							<div>教学地址</div>
+							<input type='text' value="" id="schAddr" readonly="readonly" class='noborderInput' />
+						</div>
+						<div class='xiaoquInput1'>
+							<div>经营范围</div>
+							<textarea rows="10" cols="10" id='jyfw' readonly="readonly" class='noborderText'></textarea>
+						</div>
+					</div>
+					<div class='_you'>
+						<div class='xiaoquInput1'>
+							<div>机构简介</div>
+							<textarea rows="10" cols="10" id='jgjj' readonly="readonly" class='noborderText'>        </textarea>
+						</div>
+					</div>
+				</div>
+				<div class='baocunquxiao' style='display: none;'>
+					<div id='xiaoquOk' onclick="upInfo()">保存</div>
+					<div id='xiaoquNo'>取消</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div id='campus_bottom'>
+
+		<div class='xiaoqubottom'>
+			<div>
+				<div></div>
+				<div>师资力量</div>
+			</div>
+			<div>
+				<div>
+					<div id="roomNum"></div>
+					<div>教室数量</div>
+				</div>
+				<div>
+					<div id="teaNum"></div>
+					<div>任课老师</div>
+				</div>
+				<div>
+					<div id="teaAll"></div>
+					<div>老师总数</div>
+				</div>
+			</div>
+		</div>
+		<div class='xiaoqubottom'>
+			<div>
+				<div></div>
+				<div>授课信息</div>
+			</div>
+			<div>
+				<div>
+					<div id="class"></div>
+					<div>当前班级</div>
+				</div>
+				<div>
+					<div id="classAll"></div>
+					<div>历史班级</div>
+				</div>
+				<div>
+					<div id="course1"></div>
+					<div>历史课时</div>
+				</div>
+			</div>
+		</div>
+		<div class='xiaoqubottom'>
+			<div>
+				<div></div>
+				<div>教材信息</div>
+			</div>
+			<div>
+				<div>
+					<div id="textbook"></div>
+					<div>教材模板</div>
+				</div>
+				<div>
+					<div id="music1"></div>
+					<div>曲库统计</div>
+				</div>
+			</div>
+		</div>
+		<div class='xiaoqubottom' style='margin-right: 0px;'>
+			<div>
+				<div></div>
+				<div>学生信息</div>
+			</div>
+			<div>
+				<div>
+					<div id="stuNum"></div>
+					<div>当前学生</div>
+				</div>
+				<div>
+					<div id="stuAll"></div>
+					<div>历史学生</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<script type="text/javascript" src="../campus/campus.js"></script>

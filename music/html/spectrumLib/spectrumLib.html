@@ -1,0 +1,179 @@
+<link rel="stylesheet" type="text/css" href="../spectrumLib/spectrumLib.css" />
+
+<div id='classes_main'>
+	<div>
+		<div></div>
+		<div>谱例管理</div>
+		<!--<div><img src="../../public/img/back.png" /><span>返回</span></div>-->
+		<!--<div id='drgq'>导入谱例</div>-->
+	</div>
+
+	<div>
+		<div class='shucaiku'>
+			<div id='classes_search'>
+				<div>
+					<div>谱例名称</div>
+					<div>
+						<input type='text' id='teacher_input1' />
+						<!--<img src="../../public/img/search.png" id='teacher_sousuo' onclick="chaxun(1)" />-->
+					</div>
+				</div>
+				<div>
+					<div>
+						<div>分类1</div>
+						<div>
+							<select id='musci_select1'>
+								<option value="0">全部</option>
+								<option value="4">4分音符</option>
+								<option value="8">8分音符</option>
+								<option value="16">16分音符</option>
+								<option value="32">32分音符</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<div>分类2</div>
+						<div>
+							<select id='musci_select2'>
+								<option value="0">全部</option>
+								<option value="军鼓">军鼓</option>
+								<option value="套鼓">套鼓</option>
+								<option value="基本节奏">基本节奏</option>
+								<option value="花架">花架</option>
+							</select>
+						</div>
+					</div>
+					<div class='sousuo' onclick="chaxun(1)">查询</div>
+					<div id='_clear'>清空</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id='classes_bottom'>
+			<div>当前结果: 共<span id='musicSum'>0</span>个谱例符合搜索</div>
+			<div>
+				<div class='TableBox'>
+					<table id='classes_table'>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>谱例略缩图</th>
+								<th>谱例名称</th>
+								<th>分类1</th>
+								<th>分类2</th>
+								<th>上传时间</th>
+								<th>上传人</th>
+							</tr>
+						</thead>
+						<tbody id='pulibody'>
+							
+	
+						</tbody>
+					</table>
+				</div>
+				<div id='table_ctr'>
+					<div>
+						<div>
+							共<span id='all_num'>0</span>个谱例,每页显示:
+							<select id='curr_num'>
+
+								<option value='10'>10个</option>
+								<option value='20'>20个</option>
+								<option value='50'>50个</option>
+							</select>
+						</div>
+						<div id='fenye'>
+							<div id='fenye_last_max'>&laquo;</div>
+							<div id='fenye_last'>&lt;</div>
+							<div id='fenye_num'>
+								<div>1</div>
+								<div>2</div>
+								<div>3</div>
+								<div>4</div>
+								<div>5</div>
+							</div>
+							<div id='fenye_next'>&gt;</div>
+							<div id='fenye_next_max'>&raquo;</div>
+						</div>
+						<input type="number" id='curr_input' />
+						<div id='table_ok'>确定</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='addMusic'>
+	<div id='musicShadow'></div>
+	<div id='musicMain'>
+
+		<div>
+			<div>导入谱例</div>
+			<img id='close_music' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div class='musicWenjian'>
+				<img class='musicImg' src="http://106.15.53.15:8093/music/cover/3.jpg"/>
+				<div class='musicWjCenter'>
+					<div>
+						<div>First Girl一只小蜜蜂</div>
+						<div>11.8M</div>
+					</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" role="progressbar"
+							 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+							 style="width: 60%;">
+							<span class="sr-only">90% 完成（成功）</span>
+						</div>
+					</div>
+				</div>
+				<div class='ifselect'>
+					<img src="../../public/img/login_tip.png"/>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div id='addMusic1'>
+	<div id='musicShadow1'></div>
+	<div id='musicMain1'>
+
+		<div>
+			<div>放弃上传</div>
+			<img id='close_music1' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div id='cancelTitle'>
+				列表中有为上传完成的文件,确定要放弃上传吗？
+			</div>
+		</div>
+
+		<div class='addBottom'>
+			<div id='musicOk'>确定</div>
+			<div id='musicNo'>取消</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='musicImg'>
+	<div id='musicImgShadow'></div>
+	<div id='musicImgMain'>
+
+		<div>
+			<div></div>
+			<img id='close_Img' src="../../public/img/close.png" />
+		</div>
+
+		<!--<div>-->
+			<img class='bigImg' src="../../public/img/stu_temp/jafm1.jpg"/>
+		<!--</div>-->
+
+	</div>
+</div>
+<script type="text/javascript" src="../spectrumLib/spectrumLib.js"></script>

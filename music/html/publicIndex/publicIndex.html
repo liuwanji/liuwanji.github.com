@@ -1,0 +1,116 @@
+<link rel="stylesheet" type="text/css" href="../publicIndex/publicIndex.css"/>
+<!--修改密码，更换手机号的弹窗h5-->
+		<div id='xgmm1' class='_alert'>
+			<div id='xgmm1Shadow' class='_alertShadow'></div>
+			<div id='xgmm1Main' class='_alertMain'>
+				<div>
+					<div>修改密码</div>
+					<img id='close_xgmm1' src="../../public/img/close.png"/>
+				</div>
+				
+				<div>
+					
+					<div>
+						<div class='loginInput'>
+							<div>手机号</div>
+							<input type="tel" id='changePwdTel' placeholder="请输入您所绑定的手机号码"/>
+						</div>
+						<div class='loginInput'>
+							<div>验证码</div>
+							<input id='yanzhengma1' type="text"/>
+							<div id='fsyzm1'>发送验证码</div>
+							<div id='fsyzm_time1' style='display: none;'>60s</div>
+						</div>
+						<div class='loginInput'>
+							<div>新密码</div>
+							<input type="password" id='newPwd1'/>
+						</div>
+						<div class='loginInput'>
+							<div>确认密码</div>
+							<input type="password" id='okPwd1'/>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class='_alertBottom'>
+					<div id='zhmmok1' class='_alertOk' onclick="changePW1()">确定</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div id='xgmm2' class='_alert'>
+			<div id='xgmm2Shadow' class='_alertShadow'></div>
+			<div id='xgmm2Main' class='_alertMain'>
+				<div>
+					<div>修改密码</div>
+					<img id='close_xgmm2' src="../../public/img/close.png"/>
+				</div>
+				
+				<div>
+					
+					<div>
+						<div class='loginInput'>
+							<div>原密码</div>
+							<input id='oldPwd2' type="password" placeholder="请输入您 当前使用 的登录密码"/>
+						</div>
+						<div class='loginInput'>
+							<div>新密码</div>
+							<input id='newPwd2' type="password" />
+						</div>
+						<div class='loginInput'>
+							<div>确认密码</div>
+							<input id='okPwd2' type="password" />
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class='_alertBottom'>
+					<div id='zhmmok2' class='_alertOk' onclick="changePW2()">确定</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div id='ghsjh' class='_alert'>
+			<div id='ghsjhShadow' class='_alertShadow'></div>
+			<div id='ghsjhMain' class='_alertMain'>
+				<div>
+					<div>更换手机号</div>
+					<img id='close_ghsjh' src="../../public/img/close.png"/>
+				</div>
+				
+				<div>
+					
+					<div>
+						<div class='loginInput'>
+							<div>原手机号码</div>
+							<input type="password" placeholder="请输入您 当前绑定 的手机号码" id='oldTel1'/>
+						</div>
+						<div class='loginInput'>
+							<div>新手机号码</div>
+							<input type="password" placeholder="请输入您 希望绑定 的手机号码" id='newTel1'/>
+						</div>
+						<div class='loginInput'>
+							<div>验证码</div>
+							<input id='yanzhengma2' type="text"/>
+							<!--<div id='hqyzm1'>发送验证码</div>-->
+							<div id='fsyzm2'>发送验证码</div>
+							<div id='fsyzm_time2' style='display: none;'>60s</div>
+						</div>
+						<!--<div class='_input'>
+							<div id='ghsjhok'>确定</div>
+						</div>-->
+					</div>
+					
+				</div>
+				
+				<div class='_alertBottom'>
+					<div id='ghsjhok' class='_alertOk' onclick="changePhoneTel()">确定</div>
+				</div>
+				
+			</div>
+		</div>
+<script src="../publicIndex/publicIndex.js"></script>

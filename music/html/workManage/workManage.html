@@ -1,0 +1,355 @@
+<link rel="stylesheet" type="text/css" href="../workManage/workManage.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div class='dayTop'>
+				<div id='kaoqing_left'><img src="../../public/img/left.png"/></div>
+				<div class='rilitime'><input id='dateWork' type="text" /><img id='dateWorkImg' src="../../public/img/rili1.png"/></div>
+				<div id='kaoqing_right'><img src="../../public/img/right.png"/></div>
+			</div>
+			<div id='todayCourse'>今日课程</div>
+		</div>
+		
+		<div>
+			
+			<div id='course_box'>
+				<div id='courseTime'>
+					<!--<div class='time_box'>
+						<div>09:00</div>
+						<div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>-->
+				</div>
+				<div id='courseList'>
+					
+					<!--<div class='courseBox'>
+							<div>
+								<div>201802电子鼓一班</div>
+								<div><img src="../../public/img/time.png"/><div>09:00-11:00</div></div>
+							</div>
+							<div>
+								<div class='string_hidden'>
+									<img src='../../public/img/time.png'/>
+									<span>班级人数: <span>6+1</span></span>
+								</div>
+								<div class='string_hidden'>
+									<img src='../../public/img/progress.png'/>
+									<span>第<span>7</span>节/共<span>15</span>节</span>
+								</div>
+								<div class='string_hidden'>
+									<img src='../../public/img/jiaoshi.png'/>
+									<span>教室: <span>一号教室</span></span>
+								</div>
+							</div>
+							<div>
+								<img src='../../public/img/zhongdain.png'/>
+								<span class='string_hidden'>
+									课程: <span>节拍器的新应用;四分音符的训练</span>
+								</span>
+							</div>
+							<div>
+								<div>
+									<img src='../../public/img/laoshiicon.png'/>
+									<div>老师: <span>张老师</span></div>
+									<div class='courseQingjia'>请假</div>
+								</div>
+								<div>
+									<img src='../../public/img/laoshiicon.png'/>
+									<div>代课老师: <span>张老师</span></div>
+								</div>
+							</div>
+							
+							<div>
+								<div class='zcqd'>
+									<div>正常签到</div>
+									<div>4</div>
+								</div>
+								<div class="qjxy">
+									<div>请假学员</div>
+									<div>1</div>
+								</div>
+								<div class='kkxy' style='border-right: none;'>
+									<div>旷课学员</div>
+									<div>2</div>
+								</div>
+							</div>
+							
+							<div class='course_id' style='display: none;'></div>
+							
+							<div class='courseBoxBottom1'>
+								<div class='lr'>录入考勤</div>
+							</div>
+							<div class='courseBoxBottom2'>
+								<div class='ylr'>已录入</div>
+								<div class='_bianji'>编辑</div>
+							</div>
+					</div>-->
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='lrkq' class='alert'>
+		<div id='lrkqShadow' class='alertShadow'></div>
+		<div id='lrkqMain' class='alertMain'>
+			<div>
+				<div>录入考勤</div>
+				<img id='close_lrkq' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div id='course_id' style='display: none;'></div>
+				<div class='workTop'>
+					<div class='workTop1'>
+						<div>课程状态</div>
+						<select id='courseStatus'>
+							<option value="0">未开始</option>
+							<option value="1">已完成</option>
+							<option value="2">停课</option>
+							<option value="3">时间异常</option>
+							<option value="4">已过期</option>
+						</select>
+					</div>
+					<div class='workTop2'>
+						<div class='workTop3'>
+							<div>主课老师</div>
+							<div id='teacherName' class='string_hidden'>李一纯</div>
+						</div>
+						<div class='workTop4'>
+							<div>代课老师</div>
+							<div class='string_hidden' id='selectTeacher' onclick="teacherSelect(1)">+ 选择老师</div>
+							<div id='selectedTeacher' onclick="teacherSelect(1)"><div id='teacher_id'></div><div><div id='teacher_name'></div> <img src="../../public/img/tihuan.png"/></div></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class='workMain'>
+					<div>
+						<div>已到学员</div>
+						<div class='selectStudent' onclick="selectStu(1)">选择学员</div>
+					</div>
+					<div id='chengyuanList1'>
+					</div>
+				</div>
+				<div class='workMain'>
+					<div>
+						<div>请假学员</div>
+						<div class='selectStudent' onclick="selectStu(2)">选择学员</div>
+					</div>
+					<div id='chengyuanList2'>
+					</div>
+				</div>
+				<div class='workMain'>
+					<div>
+						<div>旷课学员</div>
+						<div class='selectStudent' onclick="selectStu(3)">选择学员</div>
+					</div>
+					<div id='chengyuanList3' style='margin-bottom: 20px;'>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class='alertBottom'>
+				<div id='lrkqOk' class='_ok' onclick="editWork()">提交</div>
+				<div id='lrkqNo' class='_no'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='kqyc' class='alert'>
+		<div id='kqycShadow' class='alertShadow'></div>
+		<div id='kqycMain' class='alertMain'>
+			<div>
+				<div>考勤异常学生列表</div>
+				<img id='close_kqyc' src="../../public/img/close.png"/>
+			</div>
+			
+			<div style='padding: 10px 20px;'>
+				<table class='jibenBiaoge'>
+					<thead>
+						<tr>
+							<th>学生姓名</th>
+							<th>学生电话</th>
+							<th>紧急联系人</th>
+							<th>紧急联系人关系</th>
+							<th>紧急联系人电话</th>
+							<th>考勤状态</th>
+							<th>随班出勤率</th>
+						</tr>
+					</thead>
+					<tbody id='kqycTable'>
+
+						<!--<tr>
+							<td>刘丹</td>
+							<td>138001380000</td>
+							<td>刘爱国</td>
+							<td>妈妈</td>
+							<td>13800138000</td>
+							<td><div class='qingjia'>请假</div></td>
+							<td>1/3</td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+			
+			<div class='alertBottom'>
+				<div id='kqycOk' class='_ok'>确认</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='kqtip' class='alert'>
+		<div id='kqtipShadow' class='alertShadow'></div>
+		<div id='kqtipMain' class='alertMain'>
+			<div>
+				<div>考勤更改提示</div>
+				<img id='close_kqtip' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='tipDiv'>暂无本节课相关上课数据,是否手动更改课程状态</div>
+			</div>
+			
+			<div class='alertBottom' style='border-top: none;'>
+				<div id='kqtipOk' class='_ok'>好的</div>
+				<div id='kqtipNo' class='_no'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='xzls' class='alert'>
+		<div id='xzlsShadow' class='alertShadow'></div>
+		<div id='xzlsMain' class='alertMain'>
+			<div>
+				<div>选择老师</div>
+				<img id='close_xzls' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='searchTop'>
+					<div class='search'>
+						<div>老师姓名</div>
+						<div>
+							<input type="text" id='laoshi_name'/>
+							<img src="../../public/img/search.png" onclick="teacherSelect(2)"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class='tableBox'>
+					<table class='jibenBiaoge'>
+						<thead>
+							<tr>
+								<th></th>
+								<th>序号</th>
+								<th>姓名</th>
+								<th>手机号</th>
+								<th>状态</th>
+							</tr>
+						</thead>
+						<tbody id='xzlsTable'>
+							<!--<tr>
+								<td>
+									<div class='xzlsSelect'><img src="../../public/img/login_tip.png" /></div>
+								</td>
+								<td>1</td>
+								<td>
+									<div class='lsxm'>
+										<div></div>
+										<div>张晓鹏</div>
+									</div>
+								</td>
+								<td>1380013880000</td>
+								<td><div class='Lskongxian'>空闲</div></td>
+							</tr>-->
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div class='alertBottom'>
+				<div id='xzlsOk' class='_ok' onclick="teaOkselect()">确认选择</div>
+				<div id='xzlsNo' class='_no'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='xzxs' class='alert'>
+		<div id='xzxsShadow' class='alertShadow'></div>
+		<div id='xzxsMain' class='alertMain'>
+			<div>
+				<div>选择学员</div>
+				<img id='close_xzxs' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='searchTop'>
+					<div class='search' style='float: left;'>
+						<div>学员姓名</div>
+						<div>
+							<input type="text" id='xyxm'/>
+							<img src="../../public/img/search.png" onclick="stuSelect(2)"/>
+						</div>
+					</div>
+				</div>
+				
+				<div class='tableBox'>
+					<table class='jibenBiaoge'>
+						<thead>
+							<tr>
+								<th></th>
+								<th>序号</th>
+								<th>姓名</th>
+								<th>学生电话</th>
+							</tr>
+						</thead>
+						<tbody id='xzxsTable'>
+							<!--<tr>
+								<td>
+									<div class='xzxsSelect'><img src="../../public/img/login_tip.png" /></div>
+								</td>
+								<td>1</td>
+								<td>
+									<div class='lsxm'>
+										<div></div>
+										<div>张晓鹏</div>
+									</div>
+								</td>
+								<td>1380013880000</td>
+							</tr>-->
+						</tbody>
+					</table>
+				</div>
+				
+			</div>
+			
+			<div class='alertBottom'>
+				<div class='_bottom'>
+					<div>
+						<div>
+							<div class='xzxySelectAll'><img src="../../public/img/login_tip.png" /></div>
+							<span>全选</span>
+						</div>
+						<div>已选择了<span id='yxz' style='color:#2F80ED;'>0</span>个学生</div>
+					</div>
+					<div>
+						<div id='xzxsOk' class='_ok' onclick="selectStudent()">确认选择</div>
+						<div id='xzxsNo' class='_no'>取消</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+<script type="text/javascript" src="../workManage/workManage.js"></script>

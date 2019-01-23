@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>首页</title>
+		<meta name="viewport" charset="utf-8" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="./login.css" />
+	</head>
+	
+	<body>
+		<div id='main'>
+			<div></div>
+			<div id='loginMain'>
+				<img src="../../public/img/logo.png"/>
+				
+				<div id='denglu'>
+					<div class='loginInput'>
+						<div>账号id</div>
+						<input name="tel" type="tel" id="tel"/>
+					</div>
+					<!--<div id='iphoneTishi' style='display: none;'>手机号码格式不正确</div>-->
+					<div class='loginInput' style='margin-top: 45px;'>
+						<div>密码</div>
+						<input name='pw' type="password" id="password"/>
+					</div>
+					<div id='zddl'>
+						<div class='zddl'>
+							<img src="../../public/img/login_tip.png" id='selected' style='display: none;'/>
+						</div>
+						<div class='zddl'>记住账号</div>
+					</div>
+					
+					<div class='_input'>
+						<div id='lhdl' onclick="loginUp()">立即登录</div>
+					</div>
+					<div class='_input'>
+						<div>
+							<div id='zcxyh'>注册新用户</div>
+							<div id='wjmm'>忘记密码？</div>
+						</div>
+					</div>
+				</div>
+				
+				<div id='zhuce' style='display: none;'>
+					<div>
+						<div id='fhdl'><返回登录</div>
+					</div>
+					<div class='henxian'></div>
+					<div class='loginInput'>
+						<div>手机号</div>
+						<input type="tel"/>
+					</div>
+					<div id='iphoneTishi1' style="display: none;">手机号码格式不正确</div>
+					<div class='loginInput'>
+						<div>密码</div>
+						<input type="password"/>
+					</div>
+					<div class='loginInput'>
+						<div>验证码</div>
+						<input id='yzm' type="password"/>
+						<div id='hqyzm'>获取验证码</div>
+					</div>
+					<div class='_input'>
+						<div id='loginZhuce'>注册</div>
+					</div>
+				</div>
+				
+				<div id='zhmm' style='display: none;'>
+					<div>
+						<div id='fhdl1'><返回登录</div>
+					</div>
+					<div class='henxian'></div>
+					<div class='loginInput'>
+						<div>账号id</div>
+						<input type="tel" id='accid1' placeholder="请输入您的登录账号"/>
+					</div>
+					<div class='loginInput'>
+						<div>手机号</div>
+						<input type="tel" id='acc_user' placeholder='请输入您所绑定的手机号码'/>
+					</div>
+					<div id='iphoneTishi1' style="display: none;">手机号码格式不正确</div>
+					<div class='loginInput'>
+						<div>验证码</div>
+						<input id='yzm1' type="text"/>
+						<!--<div id='hqyzm1'>发送验证码</div>-->
+						<div id='_code'>发送验证码</div>
+						<div id='_code_time' style='display: none;'>60s</div>
+					</div>
+					<div class='loginInput'>
+						<div>新密码</div>
+						<input type="password" id='newPw'/>
+					</div>
+					<div class='loginInput'>
+						<div>确认密码</div>
+						<input type="password" id='newPw1'/>
+					</div>
+					<div class='_input'>
+						<div id='zhmmok' onclick="editAcc()">确定</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class='alert' id='register'>
+			<div class='alertShadow' id='registerShadow'></div>
+			<div class='alertMain' id='registerMain'>
+				<div>
+					<div>注册</div>
+					<img id='close_register' src="../../public/img/close.png"/>
+				</div>
+				
+				<div>
+					
+					<div class='xzxysearch'>
+						<div><span style='color:red;margin-right: 10px;'>*</span>申请版本</div>
+						<div class='xzxysearch1' onclick="selectVersion(1,this)">
+							<div>
+								<img style='display: block;' src="../../public/img/login_tip.png" />
+							</div>
+							<div>试用版</div>
+						</div>
+						<div class='xzxysearch1' onclick="selectVersion(2,this)">
+							<div>
+								<img src="../../public/img/login_tip.png" />
+							</div>
+							<div>正式版</div>
+						</div>
+					</div>
+					<div class='input1'>
+						<div><span style='color:red;margin-right: 10px;'>*</span>机构名称</div>
+						<input type='text' id='jgmc'/>
+					</div>
+					<div class='input2'>
+						<div><span style='color:red;margin-right: 10px;'>*</span>机构区域</div>
+						 <select id="prov">
+			                <!--<option selected="selected" style='display: none;'>省</option>-->
+			            </select>
+			            <select id="city">
+			               <!--<option selected="selected" style='display: none;'>市</option>-->
+			            </select>
+			            <select id="country">
+			                <!--<option selected="selected" style='display: none;'>区</option>-->
+			            </select>
+					</div>
+					<div class='input1'>
+						<div><span style='color:red;margin-right: 10px;'>*</span>详细地址</div>
+						<input type='text' id='xxdz'/>
+					</div>
+					<div class='input1'>
+						<div><span style='color:red;margin-right: 10px;'>*</span>负责人</div>
+						<input type='text' id='fzr'/>
+					</div>
+					<div class='input1'>
+						<div><span style='color:red;margin-right: 10px;'>*</span>联系电话</div>
+						<input type='text' id='lxdh'/>
+					</div>
+					<div class='input1' style='margin-bottom: 0px;'>
+						<div><span style='color:red;margin-right: 10px;'>*</span>账号id</div>
+						<input type='text' id='accid' placeholder="请使用 6~18 位,英文 或 数字" maxlength="18"/>
+						<div style="color:red;margin:0px 0px 0px 95px;text-align: left;width:440px;font-size: 12px;">* 账号id 将用于您登录本管理后台</div>
+					</div>
+					
+				</div>
+				
+				<div class='alertBottom'>
+					<div id='registerUp' onclick="update()">提交</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class='alert' id='tishi'>
+			<div class='alertShadow' id='tishiShadow'></div>
+			<div class='alertMain' id='tishiMain'>
+				<div>
+					<div>提示信息</div>
+					<img id='close_tishi' src="../../public/img/close.png"/>
+				</div>
+				
+				<div style='bottom: 60px;'>
+					<div id='message'>您的注册申请已提交,我们工作人员会很快与您联系,请留意接听电话.</div>
+				</div>
+				
+				<div class='alertBottom' style='height: 60px;'>
+					<div id='tishiOk'>好的</div>
+				</div>
+				
+			</div>
+		</div>
+		<script type='text/javascript' src="../../public/js/city1.js"></script>
+		<script type='text/javascript' src="../../public/js/jquery-3.0.0.min.js"></script>
+		<script type='text/javascript' src="../../public/js/ajax.js"></script>
+		<script type='text/javascript' src="../../public/js/md5.js"></script>
+		<script type="text/javascript" src="./login.js" ></script>
+	</body>
+</html>

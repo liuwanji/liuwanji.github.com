@@ -1,0 +1,504 @@
+<link rel="stylesheet" type="text/css" href="../teacher/teacher.css" />
+
+<div id='classes_main'>
+	<div>
+		<div></div>
+		<div>老师管理</div>
+		<!--<div><img src="../../public/img/back.png" /><span>返回</span></div>-->
+		<div id='create_teacher'>新建老师</div>
+	</div>
+
+	<div>
+
+		<div id='classes_search'>
+
+			<div>
+				<div>老师姓名</div>
+				<div>
+					<input type='text' id='teacher_input1' />
+					<!--<img src="../../public/img/search.png" id='teacher_sousuo' onclick='chaxun(1)' />-->
+				</div>
+			</div>
+			<div>
+				<div>老师状态</div>
+				<div>
+					<select id='teacher_select1'>
+						<option value="0">全部</option>
+						<option value="1">正常上课</option>
+						<option value="2">无课</option>
+						<option value="3">请假</option>
+						<option value="4">未开班</option>
+						<option value="5">已离职</option>
+
+					</select>
+				</div>
+			</div>
+			<div class='sousuo' onclick="chaxun(1)">查询</div>
+			<div id='_clear'>清空</div>
+
+		</div>
+
+		<div id='classes_bottom'>
+			<div>当前结果: 共<span id='countNum'>0</span>个老师,其中无课老师<span id='noCourse'>0</span>个</div>
+			<div>
+				<div class='TableBox'>
+					<table id='classes_table'>
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>姓名</th>
+								<th>联系方式</th>
+								<th>教龄</th>
+								<th>当前学生数
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(1,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(1,2)" />
+									</div>
+								</th>
+								<th>当前班级数
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(2,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(2,2)" />
+									</div>
+								</th>
+								<th>已上课时(月)
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(3,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(3,2)" />
+									</div>
+								</th>
+								<th>最近授课时间
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(4,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(4,2)" />
+									</div>
+								</th>
+								<th>下次授课时间
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(5,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(5,2)" />
+									</div>
+								</th>
+								<th>总课时
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(6,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(6,2)" />
+									</div>
+								</th>
+								<th>出勤率
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(7,1)" />
+										<img src="../../public/img/jiangxu.png" onclick="paixu(7,2)" />
+									</div>
+								</th>
+								<th>状态</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id='teacherTbody'>
+							
+						</tbody>
+					</table>
+				</div>
+				<div id='table_ctr'>
+					<div>
+						<div>
+							共<span id='all_num'>0</span>个老师,每页显示:
+							<select id='curr_num'>
+								<option value='10'>10个</option>
+								<option value='20'>20个</option>
+								<option value='30'>30个</option>
+							</select>
+						</div>
+						<div id='fenye'>
+							<div id='fenye_last_max'>&laquo;</div>
+							<div id='fenye_last'>&lt;</div>
+							<div id='fenye_num'>
+								<div>1</div>
+								<div>2</div>
+								<div>3</div>
+								<div>4</div>
+								<div>5</div>
+							</div>
+							<div id='fenye_next'>&gt;</div>
+							<div id='fenye_next_max'>&raquo;</div>
+						</div>
+						<input type="number" id='curr_input' />
+						<div id='table_ok'>确定</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='addStudent'>
+	<div id='studentShadow'></div>
+	<div id='studentMain'>
+
+		<div>
+			<div>添加老师</div>
+			<img id='close_student' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div class='studentInput1'>
+				<div>
+					<div class="studentInput">
+						<div><span style='color:red;margin-right: 5px;'>*</span>教师姓名</div>
+						<input name="stu_name" type="text" id="stu_name1" />
+					</div>
+					<div class="studentInput">
+						<div>教龄</div>
+						<input type="number" min="0" id='job_age1'/>
+						<span>年</span>
+						<input type="number" min="0" id='job_age2'/>
+						<span>月</span>
+					</div>
+				</div>
+				<div>
+					<div>头像</div>
+					<img id='studentImg' src="../../public/img/morenBG.png"/>
+					<div style='position: relative;'>
+						<div id='shangchuan'>上传</div>
+						<div style='color:#999;font-size: 13px;'>建议上传240*240大小图片</div>
+						<input id="imgInput" className="imgInput" type="file" accept="image/*" />
+					</div>
+				</div>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div><span style='color:red;margin-right: 5px;'>*</span>账号id</div>
+					<input name="stu_name" type="text" id="accid1" placeholder="请使用 6~18 位,英文 或 数字" maxlength="18"/>
+					<div style='color:red;font-size:12px;margin-left:100px;float: left;'>*该账号id用于老师登录教学端</div>
+				</div>
+				<div class="studentInput">
+					<div>手机号</div>
+					<input type="number" min="0" oninput="if(value.length>5)value=value.slice(0,11)" name="tel" id="tel1" />
+				</div>
+				<!--<div class="studentInput">
+					<div><span style='color:red;margin-right: 5px;'>*</span>验证码</div>
+					<div id='studentYSM'>
+						<input type="text" id='checkcode'/>
+						<div id='_code'>发送验证码</div>
+						<div id='_code_time'></div>
+					</div>
+				</div>-->
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>出生年月</div>
+					<input id='csny' class='dateInput' type="text" />
+				</div>
+				<div class="studentInput">
+					<div>性别</div>
+					<select id='sex1'>
+							<option value="1">男</option>
+							<option value="2">女</option>
+					</select>
+				</div>
+			</div>
+			<div class="studentInput">
+				<div>家庭地址</div>
+				<input id='jtdz' name="addr" type="text"  />
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>微信号</div>
+					<input name="wechat" type="text" id="wechat1"/>
+				</div>
+				<div class="studentInput">
+					<div>联系人姓名</div>
+					<input name='fname' type="text"  id="fname1"/>
+				</div>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>联系人电话</div>
+					<input name='ftel' type="text" id="ftel1" />
+				</div>
+				<div class="studentInput">
+					<div>与联系人关系</div>
+					<select name="relation" id="relation1">
+							<option value="" style="display: none;" selected="selected">请选择</option>
+							<option value="1">爸爸</option>
+							<option value="2">妈妈</option>
+							<option value="3">爷爷</option>
+							<option value="4">奶奶</option>
+							<option value="5">外公</option>
+							<option value="6">外婆</option>
+					</select>
+				</div>
+			</div>
+			<div class="studentInput">
+				<div>个人简介</div>
+				<textarea id='grjj' rows="10" cols="10" ></textarea>
+			</div>
+		</div>
+
+		<div class='addBottom'>
+			<div id='studentOk' onclick="createTeacher()">提交</div>
+			<div id='studentNo'>取消</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='changeStudent'>
+	<div id='xgxyShadow'></div>
+	<div id='xgxyMain'>
+
+		<div>
+			<div>修改老师资料</div>
+			<img id='close_xgxy' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div style='display: none;' id='changetuid'></div>
+			<div class='studentInput1'>
+				<div>
+					<div class="studentInput">
+						<div><span style='color:red;margin-right: 5px;'>*</span>老师姓名</div>
+						<input type="text" id='teachname'/>
+					</div>
+					<div class="studentInput">
+						<div>教龄</div>
+						<input type="number" id='job_age3'/>
+						<span>年</span>
+						<input type="number" id='job_age4'/>
+						<span>月</span>
+					</div>
+				</div>
+				<div>
+					<div>头像</div>
+					<img id='studentImg1' src=""/>
+					<div style='position: relative;'>
+						<div id='shangchuan1'>上传</div>
+						<div style='color:#999;font-size: 13px;'>建议上传240*240大小图片</div>
+						<input id="imgInput1" className="imgInput" type="file" accept="image/*" />
+					</div>
+				</div>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div><span style='color:red;margin-right: 5px;'>*</span>账号id</div>
+					<input name="stu_name" type="text" id="accid"  disabled="disabled"/>
+					<div style='color:red;font-size:12px;margin-left:100px;float: left;'>*该账号id用于老师登录教学端</div>
+				</div>
+				<div class="studentInput">
+					<div>手机号</div>
+					<input type="tel" id="xglstel"/>
+				</div>
+			</div>
+
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>出生年月</div>
+					<input type="text" id='birth' class='dateInput'/>
+				</div>
+				<div class="studentInput">
+					<div>性别</div>
+					<select id='sex'>
+							<option value="1">男</option>
+							<option value="2">女</option>
+					</select>
+				</div>
+			</div>
+			<div class="studentInput">
+				<div>家庭地址</div>
+				<input id='jtdz1' type="text"  />
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>微信号</div>
+					<input type="text" id='wechat'/>
+				</div>
+				<div class="studentInput">
+					<div>联系人姓名</div>
+					<input type="text" id='fname'/>
+				</div>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>联系人电话</div>
+					<input type="text" id='ftel'/>
+				</div>
+				<div class="studentInput">
+					<div>与联系人关系</div>
+					<select id='connect'>
+							<option value="" style="display: none;" selected="selected">请选择</option>
+							<option value="1">爸爸</option>
+							<option value="2">妈妈</option>
+							<option value="3">爷爷</option>
+							<option value="4">奶奶</option>
+							<option value="5">外公</option>
+							<option value="6">外婆</option>
+					</select>
+				</div>
+			</div>
+			<div class="studentInput">
+				<div>个人简介</div>
+				<textarea id='grjj1' rows="10" cols="10" ></textarea>
+			</div>
+		</div>
+
+		<div class='addBottom'>
+			<div id='xgxyOk' onclick="bianji()">保存</div>
+			<div id='xgxyNo'>取消</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='classes_main1' style='display: none;'>
+	<div>
+		<div></div>
+		<div>老师详情</div>
+		<div id='lsxqFanhui'><img src="../../public/img/back.png" /><span>返回</span></div>
+	</div>
+
+	<div>
+		<div class='xsxqTop'>
+			<div>
+				<div>
+					<img class='xsxqImg' id='xsxqImg'/>
+				</div>
+				<div>
+					<div id='stuid2' style="display: none;"></div>
+					<div class="xsxqJiben">
+						<div id='stu_name2'></div>
+						<img class='nan'  src="../../public/img/nan.png" />
+						<img class='nv' style='display: none;' src="../../public/img/nv.png" />
+						<div style='margin-right: 30px;' id='birh2'></div>
+						<div id='age2'></div>
+						<img style='margin-top: 2px;' src="../../public/img/bianji.png" id='bjxsxq' />
+					</div>
+					<div class='xsxqInput'>
+						<div>手机号: </div>
+						<div id='tel2'></div>
+					</div>
+					<div class='xsxqInput'>
+						<div>注册时间: </div>
+						<div id='reg2'></div>
+					</div>
+					<div class='xsxqInput'>
+						<div>账号状态: </div>
+						<div id='status'></div>
+					</div>
+					<div class='xsxqInput'>
+						<div>家庭住址: </div>
+						<div id='addr2'></div>
+					</div>
+				</div>
+				<div>
+					<div class='qingjia' id='status1'></div>
+					<div class='xsxqInput1'>
+						<div>联系人姓名: </div>
+						<div id='fname2'></div>
+					</div>
+					<div class='xsxqInput1'>
+						<div>联系人电话: </div>
+						<div id='ftel2'></div>
+					</div>
+					<div class='xsxqInput1'>
+						<div>与联系人关系: </div>
+						<div id='relation2'></div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class='xsxqRight'>
+					<div>出勤率</div>
+					<div id='tum'></div>
+				</div>
+				<div class='xsxqRight'>
+					<div>已上课时</div>
+					<div id='courseNum'></div>
+				</div>
+				<div class='xsxqRight'>
+					<div>剩余课时</div>
+					<div id='courseleft'></div>
+				</div>
+				<div class='xsxqRight'>
+					<div>总课时</div>
+					<div id='courseAll'></div>
+				</div>
+			</div>
+		</div>
+
+		<div id='classes_bottom1' style='margin: 0 auto;'>
+			<div></div>
+			<div class='detTableBox'>
+				<table class='jibenBiaoge'>
+					<thead>
+						<tr>
+							<th>上课日期
+								<div class='shunxu'>
+									<img src="../../public/img/shengxu.png" onclick="paixu1(1,1)"/>
+									<img src="../../public/img/jiangxu.png" onclick="paixu1(1,2)"/>
+								</div>
+							</th>
+							<th>上课时间
+								<div class='shunxu'>
+									<img src="../../public/img/shengxu.png" onclick="paixu1(2,1)"/>
+									<img src="../../public/img/jiangxu.png" onclick="paixu1(2,2)"/>
+								</div>
+							</th>
+							<th>课程名称</th>
+							<th>上课老师</th>
+							<th>教材名称</th>
+							<th>所在班级</th>
+							<th>教室</th>
+							<th>课程状态</th>
+							<th>个人状态</th>
+						</tr>
+					</thead>
+					<tbody id='teaDetBody'>
+						<tr>
+							<td>2018-09-30</td>
+							<td>14:30</td>
+							<td>181002基本乐科理论</td>
+							<td>张三</td>
+							<td>中国音乐学院社会艺术水平考试全国通用教材</td>
+							<td>181002基本乐科理论</td>
+							<td>三号教室</td>
+							<td>未开课</td>
+							<td>请假</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id='table_ctr1'>
+					<div>
+						<div>
+							共<span id='all_num1'>6</span>节课,每页显示:
+							<select id='curr_num1'>
+								<option value='10'>10个</option>
+								<option value='20'>20个</option>
+								<option value='30'>30个</option>
+							</select>
+						</div>
+						<div id='fenye1'>
+							<div id='fenye_last_max1'>&laquo;</div>
+							<div id='fenye_last1'>&lt;</div>
+							<div id='fenye_num1'>
+								<div>1</div>
+								<div>2</div>
+								<div>3</div>
+								<div>4</div>
+								<div>5</div>
+							</div>
+							<div id='fenye_next1'>&gt;</div>
+							<div id='fenye_next_max1'>&raquo;</div>
+						</div>
+						<input type="number" id='curr_input1' />
+						<div id='table_ok1'>确定</div>
+					</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script type="text/javascript" src="../teacher/teacher.js"></script>

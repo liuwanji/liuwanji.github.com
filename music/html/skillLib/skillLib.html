@@ -1,0 +1,161 @@
+<link rel="stylesheet" type="text/css" href="../skillLib/skillLib.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div></div>
+			<div>技巧库</div>
+			<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+			<div id='create_jiaoshi'>新建技巧</div>
+		</div>
+		
+		<div>
+			<div id='classes_search'>
+
+				<div>
+					<div>
+						<div>技巧名称</div>
+					</div>
+					<div>
+						<input type='text' id='classess_input1' />
+						<!--<img src="../../public/img/search.png" id='classess_sousuo' onclick="chaxun(1)"/>-->
+					</div>
+				</div>
+				<div class='sousuo' onclick="chaxun(1)">查询</div>
+				<!--<div id='_clear'>清空</div>-->
+	
+			</div>
+			
+			<div id='classes_bottom'>
+				<div>当前结果: 共<span id='skillSum'>0</span>个技巧符合搜索</div>
+				<div>
+					<div class='TableBox'>
+						<table id='classes_table'>
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>技巧略缩图</th>
+									<th>技巧名称</th>
+									<th>技巧视频地址</th>
+									<th>上传人</th>
+									<th>上传时间</th>
+									<th>启用状态</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id='skillBody'>
+								
+							</tbody>
+						</table>
+					</div>
+					<div id='table_ctr'>
+						<div>
+							<div>
+								共<span id='all_num'>0</span>个技巧,每页显示:
+								<select id='curr_num'>
+									<option value='10'>10个</option>
+									<option value='20'>20个</option>
+									<option value='30'>30个</option>
+								</select>
+							</div>
+							<div id='fenye'>
+								<div id='fenye_last_max'>&laquo;</div>
+								<div id='fenye_last'>&lt;</div>
+								<div id='fenye_num'>
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+									<div>4</div>
+									<div>5</div>
+								</div>
+								<div id='fenye_next'>&gt;</div>
+								<div id='fenye_next_max'>&raquo;</div>
+							</div>
+							<input type="number" id='curr_input'/>
+							<div id='table_ok'>确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='addClasses'>
+		<div id='adShadow'></div>
+		<div id='addMain'>
+			<div>
+				<div>新增技巧</div>
+				<img id='close_jiaoshi' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='jiaoshiInput'>
+					<div>技巧名称</div>
+					<input type='text' name="classroom" id="skillname" maxlength="15"/>
+					<div class='nameNUm' id='createNameNum'><span>0</span>/<span>15</span></div>
+				</div>
+				<div class='jiaoshiInput'>
+					<div>技巧视频地址</div>
+					<input type='text' name="include" id="skilladdr"/>
+				</div>
+				<div class='jiaoshiInput'>
+					<div>略缩图地址</div>
+					<input type='text' name="include" id="imageaddr"/>
+				</div>
+				<div class='jiaoshiInput'>
+					<div>启用状态</div>
+					<select id='skillstatus'>
+						<option value='1'>开启</option>
+						<option value='2'>关闭</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class='addBottom'>
+				<div id='create_classes' onclick="createClassroom()">提交</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='editClasses'>
+		<div id='editShadow'></div>
+		<div id='editMain'>
+			<div>
+				<div>编辑技巧</div>
+				<img id='close_edit' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div id='skillid' style='display: none;'></div>
+				<div class='jiaoshiInput'>
+					<div>技巧名称</div>
+					<input type='text' name="classroom" id="skillname1" maxlength="15"/>
+					<div class='nameNUm' id='editNameNum'><span>0</span>/<span>15</span></div>
+				</div>
+				<div class='jiaoshiInput'>
+					<div>技巧视频地址</div>
+					<input type='text' name="include" id="skilladdr1"/>
+				</div>
+				<div class='jiaoshiInput'>
+					<div>略缩图地址</div>
+					<input type='text' name="include" id="imageaddr1"/>
+				</div>
+				<div class='jiaoshiInput'>
+					<div>启用状态</div>
+					<select id='skillstatus1'>
+						<option value='1'>开启</option>
+						<option value='2'>关闭</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class='addBottom'>
+				<div id='edit_classes' onclick="editClassroom()">保存</div>
+				<div id='no_classes1'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+<script type="text/javascript" src="../skillLib/skillLib.js"></script>

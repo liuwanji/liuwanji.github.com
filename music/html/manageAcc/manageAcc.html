@@ -1,0 +1,333 @@
+<link rel="stylesheet" type="text/css" href="../manageAcc/manageAcc.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div></div>
+			<div>账号登录</div>
+			<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+			<div id='create_Acc'>新建账号</div>
+		</div>
+		
+		<div>
+			
+			<div id='classes_bottom'>
+				<div>
+					<div class='TableBox' style='top: 20px;'>
+						<table id='classes_table'>
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>姓名</th>
+									<th>生日</th>
+									<th>手机号</th>
+									<th>身份</th>
+									<th>
+										创建日期
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(1,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(1,2)"/>
+										</div>
+									</th>
+									<th>
+										最后登录时间
+										<div class='shunxu'>
+											<img src="../../public/img/shengxu.png" onclick="paixu(2,1)"/>
+											<img src="../../public/img/jiangxu.png" onclick="paixu(2,2)"/>
+										</div>
+									</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id='accBody'>
+								<!--<tr>
+									<td>25468180</td>
+									<td>王小凯</td>
+									<td>1983-10-18</td>
+									<td>13800138000</td>
+									<td>教务</td>
+									<td>2018-09-30</td>
+									<td>2018-10-21 12:34:10</td>
+									<td class='toBianji'>编辑</td>
+								</tr>-->
+							</tbody>
+						</table>
+					</div>
+					<div id='table_ctr'>
+						<div>
+							<div>
+								共<span id='all_num'>0</span>个账号,每页显示:
+								<select id='curr_num'>
+									<option value='5'>5个</option>
+									<option value='10'>10个</option>
+									<option value='20'>20个</option>
+								</select>
+							</div>
+							<div id='fenye'>
+								<div id='fenye_last_max'>&laquo;</div>
+								<div id='fenye_last'>&lt;</div>
+								<div id='fenye_num'>
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+									<div>4</div>
+									<div>5</div>
+								</div>
+								<div id='fenye_next'>&gt;</div>
+								<div id='fenye_next_max'>&raquo;</div>
+							</div>
+							<input type="number" id='curr_input'/>
+							<div id='table_ok'>确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='addStudent'>
+	<div id='studentShadow'></div>
+	<div id='studentMain'>
+
+		<div>
+			<div>添加账号</div>
+			<img id='close_student' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div class='studentInput1'>
+				<div>
+					<div class="studentInput" style='width:100%;'>
+						<div><span style='color:red;margin-right: 5px;'>*</span>登录账号</div>
+						<input type="tel" id="accid1" value="" placeholder="请使用 6~18 位,英文 或 数字" maxlength="18"/>
+						<div style='color:red;font-size:12px;margin-left:100px;float: left;'>*该账号用于登录系统</div>
+					</div>
+					<div class="studentInput" style='width:100%;margin-top: 15px;'>
+						<div><span style='color:red;margin-right: 5px;'>*</span>身份</div>
+						<select name="sex" id="shengfen1">
+							<option value="3" selected="selected">教务</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div>头像</div>
+					<img id='studentImg' src="../../public/img/morenBG.png"/>
+					<div style='position: relative;'>
+						<div id='shangchuan'>上传</div>
+						<div style='color:#999;font-size: 13px;'>建议上传240*240大小图片</div>
+						<input id="imgInput" className="imgInput" type="file" accept="image/*" />
+					</div>
+				</div>
+			</div>
+			<div class="studentInput">
+				<div><span style='color:red;margin-right: 5px;'>*</span>姓名</div>
+				<input name="stu_name" type="text" id="stu_name1" />
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div><span id='phoneRed' style='color:red;margin-right: 5px;'>*</span>手机号</div>
+					<input type="tel" name="tel" id="tel1" value=""/>
+				</div>
+				<div class="studentInput" id='yanzhengmaBox'>
+					<div><span style='color:red;margin-right: 5px;'>*</span>验证码</div>
+					<div class='studentYSM'>
+						<input type="text" id='code1'/>
+						<div id='_code'>发送验证码</div>
+						<div id='_code_time'></div>
+					</div>
+				</div>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>出生年月</div>
+					<input id='csny1' class='dateInput' name="birth" type="text" value="" />
+				</div>
+				<div class="studentInput">
+					<div>性别</div>
+					<select id='sex1'>
+						<option value="1">男</option>
+						<option value="2">女</option>
+					</select>
+				</div>
+			</div>
+			<div class="studentInput">
+				<div>家庭地址</div>
+				<input id='jtdz1' name="addr" type="text"  value="" />
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>微信号</div>
+					<input name="wechat" type="text" id="wechat1" value=""/>
+				</div>
+				<div class="studentInput">
+					<div>联系人姓名</div>
+					<input name='fname' type="text"  id="fname1" value=""/>
+				</div>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>联系人电话</div>
+					<input name='ftel' type="text" id="ftel1" value="" />
+				</div>
+				<div class="studentInput">
+					<div>与联系人关系</div>
+					<select name="relation" id="relation1">
+							<option value="1" selected="selected">爸爸</option>
+							<option value="2">妈妈</option>
+							<option value="3">爷爷</option>
+							<option value="4">奶奶</option>
+							<option value="5">外婆</option>
+							<option value="6">外公</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class='addBottom'>
+			<div id='studentOk' onclick="createAcc()">确定</div>
+			<div id='studentNo'>取消</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='changeStudent'>
+	<div id='xgxyShadow'></div>
+	<div id='xgxyMain'>
+
+		<div>
+			<div>修改账号</div>
+			<img id='close_xgacc' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div id='acc_id' style='display: none;'></div>
+			<div class='studentInput1'>
+				<div>
+					<div class="studentInput" style='width: 100%;'>
+						<div><span style='color:red;margin-right: 5px;'>*</span>登录账号</div>
+						<input type="tel" id="accid" value="" disabled="disabled"/>
+						<div style='color:red;font-size:12px;margin:5px 0px 0px 100px;float: left;'>*该账号用于登录系统</div>
+					</div>
+					<div class="studentInput" style='width: 100%;margin-top: 15px;'>
+						<div><span style='color:red;margin-right: 5px;'>*</span>身份</div>
+						<select id='shengfen' disabled="disabled">
+							<option value="1">超级管理员</option>
+							<option value="2">校长</option>
+							<option value="3">教务</option>
+							<option value="5">系统管理员</option>
+							<option value="6">系统教务</option>
+							<option value="10">教师</option>
+							<option value="20">学生</option>
+							<option value="30">游客</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div>头像</div>
+					<img id='studentImg1' src="http://106.15.53.15:8093/user/1/6.jpg"/>
+					<div style='position: relative;'>
+						<div id='shangchuan1'>上传</div>
+						<div style='color:#999;font-size: 13px;'>建议上传240*240大小图片</div>
+						<input id="imgInput1" className="imgInput" type="file" accept="image/*" />
+					</div>
+				</div>
+			</div>
+			<div class="studentInput">
+				<div><span style='color:red;margin-right: 5px;'>*</span>姓名</div>
+				<input type="text" id='stu_name'/>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>手机号</div>
+					<input type="tel" id="tel"/>
+				</div>
+				<div class="studentInput">
+					<div>验证码</div>
+					<div class='studentYSM'>
+						<input type="text" id='code2'/>
+						<div id='_code2'>发送验证码</div>
+						<div id='_code_time2'></div>
+					</div>
+				</div>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>出生年月</div>
+					<input type="text" id='csny' class='dateInput'/>
+				</div>
+				<div class="studentInput">
+					<div>性别</div>
+					<select id='sex'>
+						<option value="1">男</option>
+						<option value="2">女</option>
+					</select>
+				</div>
+			</div>
+			<div class="studentInput">
+				<div>家庭地址</div>
+				<input id='jtdz' type="text"  />
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>微信号</div>
+					<input type="text" id='wechat'/>
+				</div>
+				<div class="studentInput">
+					<div>联系人姓名</div>
+					<input type="text" id='fname'/>
+				</div>
+			</div>
+			<div class='studentInput1'>
+				<div class="studentInput">
+					<div>联系人电话</div>
+					<input type="text" id='ftel'/>
+				</div>
+				<div class="studentInput">
+					<div>与联系人关系</div>
+					<select id='relation'>
+							<option value="1" selected="selected">爸爸</option>
+							<option value="2">妈妈</option>
+							<option value="3">爷爷</option>
+							<option value="4">奶奶</option>
+							<option value="5">外婆</option>
+							<option value="6">外公</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class='addBottom'>
+			<div id='xgaccOk' onclick="editClassroom()">保存</div>
+			<div id='xgaccNo'>取消</div>
+		</div>
+
+	</div>
+</div>
+
+	<div id='czmm' class='_alert'>
+			<div id='czmmShadow' class='_alertShadow'></div>
+			<div id='czmmMain' class='_alertMain'>
+				<div>
+					<div>重置密码</div>
+					<img id='close_czmm' src="../../public/img/close.png"/>
+				</div>
+				
+				<div>
+					<div id='acc_id_pwd' style='display: none;'></div>
+					<div class='resetPwdTip'>
+						<div>?</div>
+						<div>确定将该账号 <span id='now_acc' style='color:#347efb;'>1112233</span> 的密码<br>设置为默认密码: <span style='color:#00ad5f;'>111111</span></div>
+					</div>
+					
+				</div>
+				
+				<div class='_alertBottom' style='border-top: none;'>
+					<div id='czmmOk' class='_alertOk' onclick="resetPwdOk()">确定</div>
+					<div id='czmmNo' class='_alertNo'>取消</div>
+				</div>
+				
+			</div>
+	</div>
+
+<script type="text/javascript" src="../manageAcc/manageAcc.js"></script>

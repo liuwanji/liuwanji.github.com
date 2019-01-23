@@ -1,0 +1,299 @@
+<link rel="stylesheet" type="text/css" href="../upManage/upManage.css" />
+	
+	<div id='classes_main'>
+		<div>
+			<div></div>
+			<div>更新管理</div>
+			<!--<div><img src="../../public/img/back.png"/><span>返回</span></div>-->
+			<div id='create_up'>新建渠道</div>
+		</div>
+		
+		<div>
+			
+			<div id='classes_search'>
+				
+				<div>
+					<div>Apkid</div>
+					<div>
+						<select id='classess_select2'>
+							<option value="0">全部</option>
+						</select>
+					</div>
+				</div>
+				
+				<div>
+					<div>端类型</div>
+					<div>
+						<select id='classess_select3'>
+							<option value="0">全部</option>
+							<option value="1">pc端</option>
+							<option value="2">安卓端</option>
+							<option value="3">ios端</option>
+							<option value="4">tv端</option>
+						</select>
+					</div>
+				</div>
+				
+				<div id='shuff'>刷新缓存</div>
+				
+			</div>
+			
+			<div id='classes_bottom'>
+				<div>
+					<div class='TableBox' style='overflow-x: auto;top:80px;'>
+						<table id='classes_table'>
+							<thead>
+								<tr>
+									<th>apk编号</th>
+									<th>apk包名</th>
+									<th>版本</th>
+									<th>允许登录的最低版本号</th>
+									<th>最新版本号</th>
+									<th>允许登录的最高版本号</th>
+									<th>下载地址1</th>
+									<th>下载地址2</th>
+									<th>更新标题</th>
+									<th>更新说明</th>
+									<th>Lua版本</th>
+									<th>Lua资源地址</th>
+									<th>白名单是否开启</th>
+									<th>白名单强更版本</th>
+									<th>白名单最新版本</th>
+									<th>白名单强更地址</th>
+									<th>白名单Lua版本</th>
+									<th>白名单Lua资源</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id='upBody'>
+								<tr>
+									<td>10161</td>
+									<td>IOS</td>
+									<td>IOS</td>
+									<td>0</td>
+									<td>0</td>
+									<td>http://www.baidu.com</td>
+									<td>http://www.baidu.com</td>
+									<td>全国麻将</td>
+									<td>热更测试111</td>
+									<td>0</td>
+									<td>http://www.baidu.com</td>
+									<td>
+										<div class='qiyong'>
+											<div class='qiyong_zhi'>启用</div>
+											<div class='qiyong_yuan'></div>
+										</div>
+										<div class='guanbi' style='display: none;'>
+											<div class='guanbi_zhi'>关闭</div>
+											<div class='guanbi_yuan'></div>
+										</div>
+										<div class='zhezhao'></div>
+									</td>
+									<td>0</td>
+									<td>http://www.baidu.com</td>
+									<td>0</td>
+									<td>http://www.baidu.com</td>
+									<td class='up_bianji'>编辑</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id='table_ctr'>
+						<div>
+							<div>
+								共<span id='all_num'>0</span>个账号,每页显示:
+								<select id='curr_num'>
+									<option value='10'>10个</option>
+									<option value='20'>20个</option>
+									<option value='30'>30个</option>
+									<option value='50'>50个</option>
+									<option value='100'>100个</option>
+								</select>
+							</div>
+							<div id='fenye'>
+								<div id='fenye_last_max'>&laquo;</div>
+								<div id='fenye_last'>&lt;</div>
+								<div id='fenye_num'>
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+									<div>4</div>
+									<div>5</div>
+								</div>
+								<div id='fenye_next'>&gt;</div>
+								<div id='fenye_next_max'>&raquo;</div>
+							</div>
+							<input type="number" id='curr_input'/>
+							<div id='table_ok'>确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id='tjqd' class='alert'>
+		<div id='tjqdShadow' class='alertShadow'></div>
+		<div id='tjqdMain' class='alertMain'>
+			<div>
+				<div id='tjqdTitle'>新增更新配置</div>
+				<img id='close_tjqd' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='input1'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>apk编号</div>
+					<input type='number' min='0' id='apkid'/>
+				</div>
+				<div class='input1'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>apk包名</div>
+					<textarea rows="5" cols="5"  id='packname'></textarea>
+				</div>
+				<div class='input1'>
+					<div>端类型</div>
+					<select id='duantype'>
+							<option value="1">pc端</option>
+							<option value="2">安卓端</option>
+							<option value="3">ios端</option>
+							<option value="4">tv端</option>
+					</select>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'><span style='color:red;margin-right: 10px;'>*</span>允许登录的最低版本</div>
+					<input type='number' min='0' id='minversion'/>
+				</div>
+				<div class='input1'>
+					<div>最新版本</div>
+					<input type='number' min='0' id='newversion'/>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'>允许登录的最高版本</div>
+					<input type='number' min='0' id='maxversion'/>
+				</div>
+				<div class='input1'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>包体大小</div>
+					<input type='text' min='0' id='appsize'/>
+				</div>
+				<div class='input1'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>下载地址1</div>
+					<textarea rows="5" cols="5" id='url1'></textarea>
+				</div>
+				<div class='input1'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>下载地址2</div>
+					<textarea rows="5" cols="5" id='url2'></textarea>
+				</div>
+				<div class='input1'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>更新标题</div>
+					<input type='text' id='title'/>
+				</div>
+				<div class='input1'>
+					<div><span style='color:red;margin-right: 10px;'>*</span>更新说明</div>
+					<textarea rows="5" cols="5" id='explain'></textarea>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'>包含md5<br>校验值</div>
+					<input type='text' id='md5'/>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'>开始更新<br>时间</div>
+					<div>
+						<input id='uptime'  type='text'/>
+						<img src="../../public/img/riqi.png"/ id='uptimeFocus'>
+					</div>
+				</div>
+				<div class='input1'>
+					<div>操作时间</div>
+					<input type='text' disabled="disabled" id='operatetime'/>
+				</div>
+				<div class='input1'>
+					<div>Lua版本</div>
+					<input type='number' min='0' id='luaversion'/>
+				</div>
+				<div class='input1'>
+					<div>Lua资源地址</div>
+					<input type='text' id='luaurl'/>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'>白名单是否<br>开启</div>
+					<div style='border: none;justify-content: flex-start;' id='whitetype'>
+						<div class='danxuan'>
+							<div class='danxuanSelect'></div>
+							<div>开启</div>
+						</div>
+						<div class='danxuan' style='margin-left: 20px;'>
+							<div></div>
+							<div>关闭</div>
+						</div>
+					</div>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'>白名单强更<br>版本</div>
+					<input type='number'  min='0' id='whiteversion'/>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'>白名单最新<br>版本</div>
+					<input type='number'  min='0' id='whitenewversion'/>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'>白名单强更<br>地址</div>
+					<input type='text' id='whiteurl'/>
+				</div>
+				<div class='input1'>
+					<div style='line-height: 17px;'>白名单Lua<br>版本</div>
+					<input type='number'  min='0' id='whiteluaversion'/>
+				</div>
+				<div class='input1' style="margin-bottom: 20px;">
+					<div style='line-height: 17px;'>白名单Lua<br>资源</div>
+					<input type='text' id='whiteluaurl'/>
+				</div>
+			</div>
+			
+			<div class='alertBottom'>
+				<div id='tjqdOk' class='_ok' onclick="createBanner()">提交</div>
+				<div id='tjqdNo' class='_no'>取消</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+	<div id='sxhc' class='alert'>
+		<div id='sxhcShadow' class='alertShadow'></div>
+		<div id='sxhcMain' class='alertMain'>
+			<div>
+				<div>刷新游戏包缓存</div>
+				<img id='close_sxhc' src="../../public/img/close.png"/>
+			</div>
+			
+			<div>
+				<div class='shuaxin'>
+					<div>选择服务器</div>
+					<div>
+						<div>
+							<div class='danxuan'>
+								<div class='danxuanSelect'></div>
+								<div>正式服</div>
+							</div>
+							<div id='shuaxin1'>刷新</div>
+						</div>
+						<div>
+							<div class='danxuan'>
+								<div></div>
+								<div>测试服</div>
+							</div>
+							<div id='shuaxin2'>刷新</div>
+						</div>
+					</div>
+				</div>
+				<div style='color:red;'>如果提交后刷新无效，请手动点击刷新按钮刷新</div>
+			</div>
+			
+			<div class='alertBottom'>
+				<div id='sxhcOk' class='_ok'>提交</div>
+			</div>
+			
+		</div>
+	</div>
+
+<script type="text/javascript" src="../upManage/upManage.js"></script>

@@ -1,0 +1,213 @@
+<link rel="stylesheet" type="text/css" href="../music/music.css" />
+
+<div id='classes_main'>
+	<div>
+		<div></div>
+		<div>曲库管理</div>
+		<!--<div><img src="../../public/img/back.png" /><span>返回</span></div>-->
+		<!--<div id='drgq'>导入歌曲</div>-->
+	</div>
+
+	<div>
+		<div class='shucaiku'>
+			<!--<div class='classes_search_left'>
+				<div class='_select2' onclick="saixuan(1,this)">全部教歌曲(<span>46</span>)</div>
+				<div onclick="saixuan(2,this)">系统曲库(<span>15</span>)</div>
+				<div onclick="saixuan(3,this)">校区曲库(<span>20</span>)</div>
+			</div>-->
+			<div id='classes_search'>
+				<div>
+					<div>歌曲名称</div>
+					<div>
+						<input type='text' id='teacher_input1' />
+						<!--<img src="../../public/img/search.png" id='teacher_sousuo' onclick="chaxun(1)" />-->
+					</div>
+				</div>
+				<div>
+					<div>曲库类型</div>
+					<div>
+						<select id='musci_select1'>
+							<option value="0">全部</option>
+							<option value="1">校区</option>
+							<option value="2">系统</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div>歌曲类型</div>
+					<div>
+						<select id='musci_select2'>
+							<option value="0">全部</option>
+							<option value="1">初级</option>
+							<option value="2">中级</option>
+							<option value="3">高级</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div>歌曲风格</div>
+					<div>
+						<select id='musci_select3'>
+							<option value="0">全部</option>
+							<option value="流行">流行</option>
+							<option value="摇滚">摇滚</option>
+							<option value="芬克">芬克</option>
+							<option value="嘻哈">嘻哈</option>
+							<option value="拉丁">拉丁</option>
+							<option value="爵士">爵士</option>
+							<option value="电子">电子</option>
+							<option value="儿童">儿童</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div>歌曲难度</div>
+					<div>
+						<input id='musci_select4' type='number'/>
+					</div>
+				</div>
+				<div class='sousuo' onclick="chaxun(1)">查询</div>
+				<div id='_clear'>清空</div>
+			</div>
+		</div>
+		
+		<div id='classes_bottom'>
+			<div>当前结果: 共<span id='musicSum'>6</span>首曲子</div>
+			<div>
+				<div class='TableBox'>
+					<table id='classes_table'>
+						<thead>
+							<tr>
+								<th>序号</th>
+	
+								<th>歌曲名</th>
+								<th>类型</th>
+								<th>
+									难度
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(1,1)"/>
+										<img src="../../public/img/jiangxu.png" onclick="paixu(1,2)"/>
+									</div>
+								</th>
+								<th>
+									BPM
+									<div class='shunxu'>
+										<img src="../../public/img/shengxu.png" onclick="paixu(2,1)"/>
+										<img src="../../public/img/jiangxu.png" onclick="paixu(2,2)"/>
+									</div>
+								</th>
+								<th>封面图</th>
+								<th>鼓组</th>
+								<th>风格</th>
+								<th>歌曲时长</th>
+								<th>制作人</th>
+							</tr>
+						</thead>
+						<tbody id='musicbody'>
+							<!--<tr>
+								<td>1</td>
+	
+								<td>First Girl一只小蜜蜂</td>
+								<td>初级</td>
+								<td>1</td>
+								<td>120</td>
+								<td><img class='fengmiantu' src="http://106.15.53.15:8093/music/cover/1.jpg" /></td>
+									<td>军鼓、底鼓、踩镲（闭镲）、吊镲</td>
+									<td>流行/POP</td>
+									<td>03:25</td>
+									<td>陈铭</td>
+							</tr>-->
+	
+						</tbody>
+					</table>
+				</div>
+				<div id='table_ctr'>
+					<div>
+						<div>
+							共<span id='all_num'>6</span>个曲目,每页显示:
+							<select id='curr_num'>
+
+								<option value='10'>10个</option>
+								<option value='20'>20个</option>
+								<option value='50'>50个</option>
+							</select>
+						</div>
+						<div id='fenye'>
+							<div id='fenye_last_max'>&laquo;</div>
+							<div id='fenye_last'>&lt;</div>
+							<div id='fenye_num'>
+								<div>1</div>
+								<div>2</div>
+								<div>3</div>
+								<div>4</div>
+								<div>5</div>
+							</div>
+							<div id='fenye_next'>&gt;</div>
+							<div id='fenye_next_max'>&raquo;</div>
+						</div>
+						<input type="number" id='curr_input' />
+						<div id='table_ok'>确定</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id='addMusic'>
+	<div id='musicShadow'></div>
+	<div id='musicMain'>
+
+		<div>
+			<div>导入歌曲</div>
+			<img id='close_music' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div class='musicWenjian'>
+				<img class='musicImg' src="http://106.15.53.15:8093/music/cover/3.jpg"/>
+				<div class='musicWjCenter'>
+					<div>
+						<div>First Girl一只小蜜蜂</div>
+						<div>11.8M</div>
+					</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" role="progressbar"
+							 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+							 style="width: 60%;">
+							<span class="sr-only">90% 完成（成功）</span>
+						</div>
+					</div>
+				</div>
+				<div class='ifselect'>
+					<img src="../../public/img/login_tip.png"/>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div id='addMusic1'>
+	<div id='musicShadow1'></div>
+	<div id='musicMain1'>
+
+		<div>
+			<div>放弃上传</div>
+			<img id='close_music1' src="../../public/img/close.png" />
+		</div>
+
+		<div>
+			<div id='cancelTitle'>
+				列表中有为上传完成的文件,确定要放弃上传吗？
+			</div>
+		</div>
+
+		<div class='addBottom'>
+			<div id='musicOk'>确定</div>
+			<div id='musicNo'>取消</div>
+		</div>
+
+	</div>
+</div>
+<script type="text/javascript" src="../music/music.js"></script>

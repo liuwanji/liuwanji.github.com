@@ -1,0 +1,163 @@
+/*通用的弹窗css*/
+._alert{
+	display: none;
+	z-index: 500;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+._alertShadow{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	background: #000;
+	opacity: 0;
+}
+._alertMain{
+	position: absolute;
+	width: 600px;
+	height: 440px;
+	opacity: 0;
+	top: 0%;bottom: 25%;left: 0px;right: 0px;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	box-shadow: 0px 0px 10px #dae3f3;
+	font-size: 15px;
+	text-align: center;
+}
+._alertMain>div:nth-child(1){
+	line-height: 50px;
+	overflow: hidden;
+	border-bottom: 1px solid #dae3f3;
+	padding: 0px 20px;
+}
+._alertMain>div:nth-child(1)>div:nth-child(1){
+	float: left;
+}
+._alertMain>div:nth-child(1)>img{
+	float: right;
+	width:12px;
+	height: 12px;
+	margin: 19px 0px;
+	cursor: pointer;
+}
+/*弹窗中部*/
+._alertMain>div:nth-child(2){
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top: 50px;
+	bottom: 0px;
+	overflow-y: auto;
+}
+/*底部css*/
+._alertBottom{
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	bottom: 0px;
+	text-align: center;
+	border-top: 1px solid #dae3f3;
+}
+._alertOk{
+	display: inline-block;
+	width:90px;
+	height:30px;
+	margin-top: 15px;
+	margin-right: 40px;
+	background:#347df8;
+	border-radius: 5px;
+	line-height: 30px;
+	color:#fff;
+	cursor: pointer;
+}
+._alertNo{
+	display: inline-block;
+	width:90px;
+	height:30px;
+	margin-top: 15px;
+	line-height: 30px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+/*修改密码弹窗1css样式*/
+#xgmm1Main{
+	width:450px;
+	height: 400px;
+}
+#xgmm2Main{
+	width:450px;
+	height: 340px;
+}
+#ghsjhMain{
+	width:450px;
+	height: 340px;
+}
+.loginInput{
+	width: 390px;
+	margin: 25px auto 0px auto;
+	overflow: hidden;
+}
+.loginInput>div:nth-child(1){
+	width: 75px;
+	text-align: right;
+	font-size: 15px;
+	float: left;
+	line-height: 40px;
+	margin-right: 10px;
+}
+.loginInput>input{
+	float: left;
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 0px 0px 0px 10px;
+	font-size: 15px;
+}
+#zhmmok1,#zhmmok2,#ghsjhok{
+	width:120px;
+	border-radius: 5px;
+	line-height: 34px;
+	height: 34px;
+	color:#fff;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	background: #3267fe;
+	margin: 13px auto;
+}
+
+#yanzhengma1,#yanzhengma2{
+	width:150px;
+}
+#fsyzm1,#fsyzm2,#fsyzm_time1,#fsyzm_time2{
+	float: left;
+	width: 135px;
+	height:40px;
+	line-height: 40px;
+	background: #f7f7f7;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	color:#888;
+	text-align: center;
+	margin-left: 15px;
+	cursor: pointer;
+}
+#fsyzm1,#fsyzm2{
+	background: #2F80ED;
+	color:#fff;
+}
+#fsyzm_time1,#fsyzm_time2{
+	display: none;
+}
