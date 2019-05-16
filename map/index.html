@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=9VdeUi8aWjqFfXpoWw86acTUv2cgHMHX"></script>
+<script>
+getLocation(114,30.58108413,function (distance,point,result) {
+        console.log(distance);
+        console.log(point);
+        console.log(result);
+        alert(distance);
+        alert(point.lng);
+        alert(point.lat);
+        alert(result);
+    });
+    function getLocation(lng,lat,callback){
+        /*新增当前城市位置的定位功能  @liu*/
+        var map = new BMap.Map("map1",{minZoom:12}); // 创建实例。设置地图显示最大级别为城市
+        var geoc = new BMap.Geocoder();
+        var geolocation = new BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r){
+            if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                geoc.getLocation(r.point, function(rs){
+                    var addComp = rs.addressComponents;
+                    var result = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber;
+                    var point1 = r.point;
+                    var point2 = new BMap.Point(lng, lat);
+                    var distance=parseInt(map.getDistance(point1,point2));
+                    callback(distance,r.point,result);
+                });
+            } else {
+                console.log('无法定位到您的当前位置，导航失败，请手动输入您的当前位置！'+this.getStatus());
+            }
+        },{enableHighAccuracy: true});
+    }
+</script>
+</body>
