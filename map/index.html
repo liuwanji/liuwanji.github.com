@@ -32,5 +32,9 @@ getLocation(114,30.58108413,function (distance,point,result) {
             }
         },{enableHighAccuracy: true});
     }
+	navigator.geolocation.getCurrentPosition(function(position){
+	alert("以获得经纬度!");
+	alert(position);
+	});
 </script>
 </body>
