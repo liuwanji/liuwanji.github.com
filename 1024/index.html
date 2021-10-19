@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1024快乐起来</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .fixRight{
+            position: fixed;
+            top: 50%;
+            right: 50px;
+        }
+        .fixRight p{
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            border: 1px solid #1890FF;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .fixRightSelect{
+            background: #1890FF;
+        }
+
+        .blessingBox{
+            position: relative;
+        }
+        .blessingList{
+            width: 100%;
+            height: 100vh;
+        }
+        .blessingContainer1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: all 0.5s;
+            background: url('./1024Static/alone.jpeg') center/100% 100% no-repeat;
+        }
+        .blessingTitle1{
+            font-size: 30px;
+            text-align: left;
+            line-height: 80px;
+            color: #1890FF;
+            margin: 0;
+        }
+        .blessingTitle1 span{
+            display: inline-block;
+            animation: titleMove 2s ease-in-out;
+        }
+        .blessingTitle2{
+            font-size: 30px;
+            text-align: left;
+            line-height: 80px;
+            color: #1890FF;
+            margin: 0;
+        }
+        .blessingTitle2 span{
+            display: inline-block;
+            animation: titleMoveBlessing 2s ease-in-out;
+        }
+        @keyframes titleMove {
+            0% {transform: translate(50px, -20px);}
+            100% {transform: translate(0px, 0px);}
+        }
+        @keyframes titleMoveBlessing {
+            0% {transform: translate(200px, -1000px);}
+            100% {transform: translate(0px, 0px);}
+        }
+        .Width480{
+            width: 480px;
+        }
+        .Width330{
+            width: 330px;
+        }
+        .Width150{
+            width: 125px;
+        }
+        .blessingContainer2, .blessingContainer3, .blessingContainer4{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: all 0.5s;
+            background: url('./1024Static/helloWorldBg.png') center/100% 100% no-repeat;
+        }
+        .blessingContainer2{
+            top: -100vh;
+        }
+        .blessingContainer3{
+            top: -100vh;
+        }
+        .blessingContainer4{
+            top: -100vh;
+        }
+        .linkStyle{
+            position: absolute;
+            top: 50px;
+            right: 100px;
+            font-size: 15px;
+            color: #FAAD14;
+            text-decoration: underline;
+            text-decoration-color: #FAAD14;
+            cursor: pointer;
+            animation: doudong 2s infinite;
+        }
+        @keyframes doudong {
+            0%{transform: rotate3d(1,1,1,360deg);}
+            100%{transform: rotate3d(0,0,0,0deg);}
+        }
+        .titleImg{
+            width: 800px;
+        }
+        .fontStyle1{
+            width: 380px;
+            font-size: 60px;
+            color: #f892bb;
+        }
+        .fontStyle2{
+            width: 600px;
+            height: 80px;
+            font-size: 50px;
+            font-weight: bold;
+            color: #eb737f;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="blessingBox">
+        <div class="blessingList">
+            <div class="blessingContainer1">
+                <p class="blessingTitle1 Width480"></p>
+                <p class="blessingTitle1 Width330"></p>
+                <p class="blessingTitle1 Width480"></p>
+                <p class="blessingTitle1 Width480"></p>
+                <p class="blessingTitle1 Width330"></p>
+                <p class="blessingTitle1 Width480"></p>
+                <p class="blessingTitle1 Width150"></p>
+            </div>
+            <div class="blessingContainer2">
+                <p class="blessingTitle2 Width480 fontStyle1"></p>
+                <p class="blessingTitle2 Width330 fontStyle2"></p>
+            </div>
+            <div class="blessingContainer3">
+                <img class="titleImg" src="./1024Static/1024Number.jpeg"/>
+            </div>
+            <div class="blessingContainer4">
+                <img class="titleImg" src="./1024Static/goodTitle.jpeg"/>
+                <a class="linkStyle" href="https://liuwanji.github.io/dafeiji">快乐链接-> 1024快乐起来</a>
+            </div>
+        </div>
+    </div>
+<!--    <div class="fixRight">-->
+<!--        <p class="fixRightSelect"></p>-->
+<!--        <p></p>-->
+<!--        <p></p>-->
+<!--        <p></p>-->
+<!--    </div>-->
+</body>
+<script>
+    // 诗词列表
+    let titleList = [
+        '十年生死两茫茫，写程序，到天亮。',
+        '千行代码，Bug何处藏。',
+        '纵使上线又怎样，朝令改，夕断肠。',
+        '领导每天新想法，天天改，日日忙。',
+        '相顾无言，惟有泪千行。',
+        '每晚灯火阑珊处，夜难寐，又加班。',
+        '工作狂!!!'
+    ];
+    // 祝福语列表
+    let blessingList = [
+        '1024程序员节',
+        '今天起，我们不加班！！！'
+    ];
+    window.onload = function() {
+        showTitle();
+    }
+    // 诗的动态js控制方法
+    function showTitle() {
+        addTitle(0);
+    }
+    // 诗词的显示方法
+    function addTitle(titleIndex) {
+        let title = titleList[titleIndex];
+        let element = document.getElementsByClassName('blessingTitle1')[titleIndex];
+        element.innerHTML = '';
+        let index = 0;
+        let timer = setInterval(() => {
+            if (index < title.length) {
+                let child = document.createElement('span');
+                child.innerText = title[index];
+                element.appendChild(child);
+                index++;
+            } else {
+                clearInterval(timer);
+                index = 0;
+                titleIndex++;
+                if (titleIndex < titleList.length) {
+                    addTitle(titleIndex);
+                } else {
+                    setTimeout(() => {
+                        selectPage(1);
+                        addBlessingTitle(0);
+                    }, 2000);
+                }
+            }
+        }, 500);
+    }
+    // 祝福语的显示方法
+    function addBlessingTitle(titleIndex) {
+        let title = blessingList[titleIndex];
+        let element = document.getElementsByClassName('blessingTitle2')[titleIndex];
+        element.innerHTML = '';
+        let index = 0;
+        let timer = setInterval(() => {
+            if (index < title.length) {
+                let child = document.createElement('span');
+                child.innerText = title[index];
+                element.appendChild(child);
+                index++;
+            } else {
+                clearInterval(timer);
+                index = 0;
+                titleIndex++;
+                if (titleIndex < blessingList.length) {
+                    addBlessingTitle(titleIndex);
+                } else {
+                    setTimeout(() => {
+                        selectPage(2);
+                        setTimeout(() => {
+                            selectPage(3);
+                        }, 3000);
+                    }, 2000);
+                }
+            }
+        }, 500);
+    }
+    // 页面切换
+    function selectPage(index) {
+        let pageList = ['blessingContainer1', 'blessingContainer2', 'blessingContainer3', 'blessingContainer4'];
+        for(let i = 0; i < pageList.length; i++) {
+            if (index === i) {
+                document.getElementsByClassName(pageList[i])[0].style.top = '0px';
+            } else {
+                document.getElementsByClassName(pageList[i])[0].style.top = '-100vh';
+            }
+        }
+    }
+</script>
+</html>
