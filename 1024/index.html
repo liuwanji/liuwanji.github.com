@@ -117,6 +117,9 @@
             cursor: pointer;
             animation: doudong 2s infinite;
         }
+		.top90{
+			top: 90px;
+		}
         @keyframes doudong {
             0%{transform: rotate3d(1,1,1,360deg);}
             100%{transform: rotate3d(0,0,0,0deg);}
@@ -161,6 +164,7 @@
             <div class="blessingContainer4">
                 <img class="titleImg" src="./1024Static/goodTitle.jpeg"/>
                 <a class="linkStyle" href="https://liuwanji.github.io/dafeiji">快乐链接-> 1024快乐起来</a>
+				<a class="linkStyle top90"  href="https://liuwanji.github.io/html5">快乐链接-> 1024快乐起来+1</a>
             </div>
         </div>
     </div>
@@ -188,7 +192,8 @@
         '今天起，我们不加班！！！'
     ];
     window.onload = function() {
-        showTitle();
+        // showTitle();
+		selectPage(3);
     }
     // 诗的动态js控制方法
     function showTitle() {
