@@ -1,0 +1,12 @@
+#!/bin/sh
+if test -e "/sbin/dhclient" 
+then 
+    IfExist=`ps awx -o command|awk '{print $1}'|awk -F/ '{print $NF}'|grep -x dhclient`
+    if [ "$IfExist" != "" ]
+    then
+        killall -9 dhclient
+    fi
+    
+    /sbin/dhclient $*
+fi
+
