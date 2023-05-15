@@ -1,0 +1,20 @@
+/*!
+	 **  Thenable -- Embeddable Minimum Strictly-Compliant Promises/A+ 1.1.1 Thenable
+	 **  Copyright (c) 2013-2014 Ralf S. Engelschall <http://engelschall.com>
+	 **  Licensed under The MIT License <http://opensource.org/licenses/MIT>
+	 **  Source-Code distributed on <http://github.com/rse/thenable>
+	 */
+
+/*! hellojs v1.19.5 - (c) 2012-2021 Andrew Dodson - MIT https://adodson.com/hello.js/LICENSE */
+
+/**
+ * @hello.js
+ *
+ * HelloJS is a client side Javascript SDK for making OAuth2 logins and subsequent REST calls.
+ *
+ * @author Andrew Dodson
+ * @website https://adodson.com/hello.js/
+ *
+ * @copyright Andrew Dodson, 2012 - 2015
+ * @license MIT: You are free to use and modify this code for any use, on the condition that this copyright notice remains.
+ */
